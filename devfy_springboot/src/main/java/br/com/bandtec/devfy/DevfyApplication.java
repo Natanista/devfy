@@ -1,4 +1,4 @@
-package br.com.devfy.devfy;
+package br.com.bandtec.devfy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
