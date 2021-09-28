@@ -1,4 +1,4 @@
-package br.com.bandtec.devfy;
+package br.com.devfy.devfy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
