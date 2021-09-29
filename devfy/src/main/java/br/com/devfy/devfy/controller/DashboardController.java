@@ -5,7 +5,7 @@ import br.com.devfy.devfy.helper.ListaObj;
 import java.util.List;
 
 import br.com.devfy.devfy.model.Projeto;
-import br.com.devfy.devfy.repository.DashboardRepository;
+import br.com.devfy.devfy.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ public class DashboardController {
 
 
     @Autowired
-    private DashboardRepository repository;
+    private ProjetoRepository repository;
 
     @GetMapping
     public List<Projeto> exibir() {
