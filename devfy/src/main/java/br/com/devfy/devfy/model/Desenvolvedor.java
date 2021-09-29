@@ -3,7 +3,7 @@ package br.com.devfy.devfy.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tlb_desenvolvedor")
+@Table(name = "tbl_desenvolvedor")
 public class Desenvolvedor {
 
     @Id

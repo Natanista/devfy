@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "aff2fc86-7941-4ba5-a148-afab6abc09d7",
+		"name": "Projetos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/devfy/projetos/deletar/{{id}}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/deletar/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"deletar",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos"
+					]
+				},
+				"description": "Lista os projetos da empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/atualizar/{{id}}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/atualizar/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"atualizar",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/cadastrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/cadastrar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

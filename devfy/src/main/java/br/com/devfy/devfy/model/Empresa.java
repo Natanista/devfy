@@ -3,7 +3,7 @@ package br.com.devfy.devfy.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tlb_empresa")
+@Table(name = "tbl_empresa")
 public class Empresa {
 
     @Id
@@ -44,4 +44,100 @@ public class Empresa {
     @Column(name = "emp_cnpj")
     private String cnpj;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getRepresentante() {
+        return representante;
+    }
+
+    public void setRepresentante(String representante) {
+        this.representante = representante;
+    }
+
+    public String getTelefoneRepresentante() {
+        return telefoneRepresentante;
+    }
+
+    public void setTelefoneRepresentante(String telefoneRepresentante) {
+        this.telefoneRepresentante = telefoneRepresentante;
+    }
+
+    public Boolean getAutenticado() {
+        return isAutenticado;
+    }
+
+    public void setAutenticado(Boolean autenticado) {
+        isAutenticado = autenticado;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 }

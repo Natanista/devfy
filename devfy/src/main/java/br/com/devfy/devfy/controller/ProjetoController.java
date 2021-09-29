@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/devfy")
-public class DashboardController {
+@RequestMapping("/devfy/projetos")
+public class ProjetoController {
 
 
     @Autowired
@@ -22,7 +22,7 @@ public class DashboardController {
         return repository.findAll();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/atualizar/{id}")
     public String atualizar(
             @PathVariable int id,
             @RequestBody Projeto projeto
@@ -32,14 +32,14 @@ public class DashboardController {
         return "Projeto atualizado com sucesso!";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public String deletar(
             @PathVariable int id) {
         repository.deleteById(id);
         return "Projeto deletado com sucesso!";
     }
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public String adicionar(
             @RequestBody Projeto projeto
     ) {
