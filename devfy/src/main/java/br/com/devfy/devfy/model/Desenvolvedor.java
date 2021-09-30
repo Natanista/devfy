@@ -1,5 +1,8 @@
 package br.com.devfy.devfy.model;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,7 +11,7 @@ public class Desenvolvedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_desenvolvedor")
+    @Column(name = "id_dev")
     private int id;
 
     @Column(name = "dev_nome")
@@ -20,7 +23,7 @@ public class Desenvolvedor {
     @Column(name = "dev_telefone")
     private String telefone;
 
-    @Column(name = "dev_")
+    @Column(name = "dev_nacionalidade")
     private String nacionalidade;
 
     @Column(name = "dev_cep")
@@ -36,7 +39,10 @@ public class Desenvolvedor {
     private Boolean autenticado;
 
     @Column(name = "dev_valor_hora")
-    private String valorHora;
+    private Double valorHora;
+
+    @Column(name = "linguagem_dev")
+    private String linguagemDev;
 
     @Column(name = "dev_anos_exp")
     private String anoExperiencia;
@@ -119,11 +125,11 @@ public class Desenvolvedor {
         this.autenticado = autenticado;
     }
 
-    public String getValorHora() {
+    public Double getValorHora() {
         return valorHora;
     }
 
-    public void setValorHora(String valorHora) {
+    public void setValorHora(Double valorHora) {
         this.valorHora = valorHora;
     }
 
@@ -150,4 +156,21 @@ public class Desenvolvedor {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getLinguagemDev() {
+        return linguagemDev;
+    }
+
+    public void setLinguagemDev(String linguagemDev) {
+        this.linguagemDev = linguagemDev;
+    }
+
+    public void login(){
+        this.autenticado = true;
+    }
+
+    public void logoff(){
+        this.autenticado = false;
+    }
+
 }

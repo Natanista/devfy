@@ -47,5 +47,36 @@ public class DesenvolvedorController {
         return "Projeto adicionado com sucesso!";
     }
 
+    @GetMapping("/login/{id}")
+    public String login(@PathVariable int id){
+        Desenvolvedor desenvolvedor = repository.getById(id);
+        desenvolvedor.login();
+        repository.save(desenvolvedor);
+        return "Login efetuado com sucesso!";
+    }
 
+    @GetMapping("/logoff/{id}")
+    public String logoff(@PathVariable int id){
+        Desenvolvedor desenvolvedor = repository.getById(id);
+        desenvolvedor.logoff();
+        repository.save(desenvolvedor);
+        return "Logoff efetuado com sucesso!";
+    }
+    /*
+    @PatchMapping("/login/{id}")
+    public String login(@PathVariable int id, @RequestBody Boolean autenticado){
+        Desenvolvedor desenvolvedor = repository.getById(id);
+        desenvolvedor.setAutenticado(true);
+        repository.save(desenvolvedor);
+        return "Login efetuado com sucesso!";
+    }
+
+    @PatchMapping("/login/{id}")
+    public String logoff(@PathVariable int id, @RequestBody Boolean autenticado){
+        Desenvolvedor desenvolvedor = repository.getById(id);
+        desenvolvedor.setAutenticado(autenticado);
+        repository.save(desenvolvedor);
+        return "";
+    }
+    */
 }
