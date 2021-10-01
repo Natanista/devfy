@@ -3,6 +3,7 @@ package br.com.devfy.devfy.controller;
 import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,49 +17,54 @@ public class DesenvolvedorController {
     private DesenvolvedorRepository repository;
 
     @GetMapping
-    public List<Desenvolvedor> exibir() {
-        return repository.findAll();
+    public ResponseEntity exibir() {
+        List<Desenvolvedor> desenvolvedores = repository.findAll();
+        if (desenvolvedores.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(desenvolvedores);
+
     }
 
     @PutMapping("/atualizar/{id}")
-    public String atualizar(
+    public ResponseEntity atualizar(
             @PathVariable int id,
             @RequestBody Desenvolvedor desenvolvedor
     ) {
         desenvolvedor.setId(id);
         repository.save(desenvolvedor);
-        return "Dev atualizado com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
     @DeleteMapping("/deletar/{id}")
-    public String deletar(
+    public ResponseEntity deletar(
             @PathVariable int id) {
         repository.deleteById(id);
-        return "Dev deletado com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
     @PostMapping("/cadastrar")
-    public String adicionar(
+    public ResponseEntity adicionar(
             @RequestBody Desenvolvedor desenvolvedor
     ) {
         repository.save(desenvolvedor);
-        return "Dev adicionado com sucesso!";
+        return ResponseEntity.status(201).build();
     }
 
     @GetMapping("/login/{id}")
-    public String login(@PathVariable int id){
+    public ResponseEntity login(@PathVariable int id) {
         Desenvolvedor desenvolvedor = repository.getById(id);
         desenvolvedor.login();
         repository.save(desenvolvedor);
-        return "Login efetuado com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
     @GetMapping("/logoff/{id}")
-    public String logoff(@PathVariable int id){
+    public ResponseEntity logoff(@PathVariable int id) {
         Desenvolvedor desenvolvedor = repository.getById(id);
         desenvolvedor.logoff();
         repository.save(desenvolvedor);
-        return "Logoff efetuado com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
 }

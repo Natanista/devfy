@@ -4,6 +4,7 @@ import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.model.Empresa;
 import br.com.devfy.devfy.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,33 +18,40 @@ public class EmpresaController {
     private EmpresaRepository repository;
 
     @GetMapping
-    public List<Empresa> exibir() {
-        return repository.findAll();
+    public ResponseEntity exibir() {
+
+        List<Empresa> empresas = repository.findAll();
+
+        if (empresas.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
+
+        return ResponseEntity.status(200).body(empresas);
     }
 
     @PutMapping("/atualizar/{id}")
-    public String atualizar(
+    public ResponseEntity atualizar(
             @PathVariable int id,
             @RequestBody Empresa empresa
     ) {
         empresa.setId(id);
         repository.save(empresa);
-        return "Empresa atualizada com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
     @DeleteMapping("/deletar/{id}")
-    public String deletar(
+    public ResponseEntity deletar(
             @PathVariable int id) {
         repository.deleteById(id);
-        return "Empresa deletada com sucesso!";
+        return ResponseEntity.status(200).build();
     }
 
     @PostMapping("/cadastrar")
-    public String adicionar(
+    public ResponseEntity adicionar(
             @RequestBody Empresa empresa
     ) {
         repository.save(empresa);
-        return "Empresa adicionada com sucesso!";
+        return ResponseEntity.status(201).build();
     }
 
 }
