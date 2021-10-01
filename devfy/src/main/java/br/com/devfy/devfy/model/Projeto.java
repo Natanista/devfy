@@ -31,7 +31,7 @@ public class Projeto {
     private String tipo;
 
 //    @OneToOne
-//    private Empresa empresa;
+//    private Empresa fkEmpresa;
 //
 //    @OneToOne
 //    private Desenvolvedor desenvolvedor;

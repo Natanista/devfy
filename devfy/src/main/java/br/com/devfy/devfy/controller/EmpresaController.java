@@ -28,14 +28,14 @@ public class EmpresaController {
     ) {
         empresa.setId(id);
         repository.save(empresa);
-        return "Projeto atualizado com sucesso!";
+        return "Empresa atualizada com sucesso!";
     }
 
     @DeleteMapping("/deletar/{id}")
     public String deletar(
             @PathVariable int id) {
         repository.deleteById(id);
-        return "Projeto deletado com sucesso!";
+        return "Empresa deletada com sucesso!";
     }
 
     @PostMapping("/cadastrar")
@@ -43,7 +43,7 @@ public class EmpresaController {
             @RequestBody Empresa empresa
     ) {
         repository.save(empresa);
-        return "Projeto adicionado com sucesso!";
+        return "Empresa adicionada com sucesso!";
     }
 
 }

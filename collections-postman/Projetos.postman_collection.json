@@ -72,6 +72,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Projetinho .net\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"tipo\": \"Senior projetinho\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/devfy/projetos/cadastrar",
 					"host": [

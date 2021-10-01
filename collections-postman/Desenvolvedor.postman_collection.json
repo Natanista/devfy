@@ -71,6 +71,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"nome\": \"Natan\",\n \"email\": \"bandtec@bandtec.com\",\n \"telefone\": \"11939393\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"0120120\",\n \"cpf\": \"21312321\",\n \"descricao\": \"sou dev java po\",\n \"isAutenticado\": true,\n \"valorHora\": 200,\n \"linguagem\": \"java\",\n \"anosExperiencia\": 2,\n \"usuario\": \"bandtec\",\n \"senha\": \"grupo1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/devfy/desenvolvedores/cadastrar",
 					"host": [
@@ -81,6 +90,48 @@
 						"devfy",
 						"desenvolvedores",
 						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/desenvolvedores/login/{{id}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/desenvolvedores/login/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"desenvolvedores",
+						"login",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/desenvolvedores/logoff/{{id}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/desenvolvedores/logoff/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"desenvolvedores",
+						"logoff",
+						"{{id}}"
 					]
 				}
 			},

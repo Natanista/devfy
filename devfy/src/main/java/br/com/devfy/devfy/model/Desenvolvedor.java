@@ -11,7 +11,7 @@ public class Desenvolvedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_dev")
+    @Column(name = "dev_id")
     private int id;
 
     @Column(name = "dev_nome")
@@ -36,13 +36,13 @@ public class Desenvolvedor {
     private String descricao;
 
     @Column(name = "dev_autenticado")
-    private Boolean autenticado;
+    private Boolean isAutenticado;
 
     @Column(name = "dev_valor_hora")
     private Double valorHora;
 
     @Column(name = "linguagem_dev")
-    private String linguagemDev;
+    private String linguagem;
 
     @Column(name = "dev_anos_exp")
     private String anoExperiencia;
@@ -117,12 +117,12 @@ public class Desenvolvedor {
         this.descricao = descricao;
     }
 
-    public Boolean getAutenticado() {
-        return autenticado;
+    public Boolean getIsAutenticado() {
+        return isAutenticado;
     }
 
-    public void setAutenticado(Boolean autenticado) {
-        this.autenticado = autenticado;
+    public void setIsAutenticado(Boolean autenticado) {
+        this.isAutenticado = autenticado;
     }
 
     public Double getValorHora() {
@@ -157,20 +157,20 @@ public class Desenvolvedor {
         this.senha = senha;
     }
 
-    public String getLinguagemDev() {
-        return linguagemDev;
+    public String getLinguagem() {
+        return linguagem;
     }
 
-    public void setLinguagemDev(String linguagemDev) {
-        this.linguagemDev = linguagemDev;
+    public void setLinguagem(String linguagemDev) {
+        this.linguagem = linguagemDev;
     }
 
-    public void login(){
-        this.autenticado = true;
+    public void login() {
+        this.isAutenticado = true;
     }
 
-    public void logoff(){
-        this.autenticado = false;
+    public void logoff() {
+        this.isAutenticado = false;
     }
 
 }

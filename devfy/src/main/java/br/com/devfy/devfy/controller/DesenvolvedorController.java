@@ -1,9 +1,7 @@
 package br.com.devfy.devfy.controller;
 
 import br.com.devfy.devfy.model.Desenvolvedor;
-import br.com.devfy.devfy.model.Projeto;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
-import br.com.devfy.devfy.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,14 +27,14 @@ public class DesenvolvedorController {
     ) {
         desenvolvedor.setId(id);
         repository.save(desenvolvedor);
-        return "Projeto atualizado com sucesso!";
+        return "Dev atualizado com sucesso!";
     }
 
     @DeleteMapping("/deletar/{id}")
     public String deletar(
             @PathVariable int id) {
         repository.deleteById(id);
-        return "Projeto deletado com sucesso!";
+        return "Dev deletado com sucesso!";
     }
 
     @PostMapping("/cadastrar")
@@ -44,7 +42,7 @@ public class DesenvolvedorController {
             @RequestBody Desenvolvedor desenvolvedor
     ) {
         repository.save(desenvolvedor);
-        return "Projeto adicionado com sucesso!";
+        return "Dev adicionado com sucesso!";
     }
 
     @GetMapping("/login/{id}")
@@ -62,21 +60,5 @@ public class DesenvolvedorController {
         repository.save(desenvolvedor);
         return "Logoff efetuado com sucesso!";
     }
-    /*
-    @PatchMapping("/login/{id}")
-    public String login(@PathVariable int id, @RequestBody Boolean autenticado){
-        Desenvolvedor desenvolvedor = repository.getById(id);
-        desenvolvedor.setAutenticado(true);
-        repository.save(desenvolvedor);
-        return "Login efetuado com sucesso!";
-    }
 
-    @PatchMapping("/login/{id}")
-    public String logoff(@PathVariable int id, @RequestBody Boolean autenticado){
-        Desenvolvedor desenvolvedor = repository.getById(id);
-        desenvolvedor.setAutenticado(autenticado);
-        repository.save(desenvolvedor);
-        return "";
-    }
-    */
 }

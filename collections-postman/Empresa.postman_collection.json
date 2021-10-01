@@ -6,6 +6,27 @@
 	},
 	"item": [
 		{
+			"name": "/empresas/login/{{id}} Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/empresas/login/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"empresas",
+						"login",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/devfy/empresas/deletar/{{id}}",
 			"request": {
 				"method": "DELETE",
@@ -71,6 +92,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Bandtec CA\",\n    \"email\": \"bandtec@bandtec.br\",\n    \"telefone\": \"11332321\",\n    \"pais\": \"Brasil\",\n    \"cep\": \"21312\",\n    \"representante\": \"Joao\",\n    \"telefoneRepresentante\": \"1213123\",\n    \"isAutenticado\": true,\n    \"usuario\": \"bandtec\",\n    \"senha\": \"bandte10\",\n    \"cnpj\": \"212312312\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/devfy/empresas/cadastrar",
 					"host": [
@@ -81,6 +111,27 @@
 						"devfy",
 						"empresas",
 						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/empresas/logoff/{{id}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/empresas/logoff/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"empresas",
+						"logoff",
+						"{{id}}"
 					]
 				}
 			},
