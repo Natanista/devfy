@@ -165,8 +165,13 @@ public class Desenvolvedor {
         this.linguagem = linguagemDev;
     }
 
-    public void login() {
-        this.isAutenticado = true;
+    public Boolean login(Desenvolvedor desenvolvedor) {
+        if (desenvolvedor.getUsuario().equals(usuario)
+                && desenvolvedor.getSenha().equals(senha)){
+             this.isAutenticado = true;
+                return true;
+        }
+        return false;
     }
 
     public void logoff() {

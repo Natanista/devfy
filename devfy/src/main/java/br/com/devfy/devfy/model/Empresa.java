@@ -140,4 +140,17 @@ public class Empresa {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
+
+    public Boolean login(Empresa empresa) {
+        if (empresa.getUsuario().equals(usuario)
+                && empresa.getSenha().equals(senha)){
+            this.isAutenticado = true;
+            return true;
+        }
+        return false;
+    }
+
+    public void logoff() {
+        this.isAutenticado = false;
+    }
 }

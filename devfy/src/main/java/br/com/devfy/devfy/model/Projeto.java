@@ -30,6 +30,27 @@ public class Projeto {
     @Column(name = "proj_tipo")
     private String tipo;
 
+    @Column(name = "proj_fkEmp")
+    private Integer fkEmp;
+
+    @Column(name = "proj_fkDev")
+    private Integer fkDev;
+
+    public Integer getFkEmp() {
+        return fkEmp;
+    }
+
+    public void setFkEmp(Integer fkEmp) {
+        this.fkEmp = fkEmp;
+    }
+
+    public Integer getFkDev() {
+        return fkDev;
+    }
+
+    public void setFkDev(Integer fkDev) {
+        this.fkDev = fkDev;
+    }
 //    @OneToOne
 //    private Empresa fkEmpresa;
 //
@@ -83,6 +104,10 @@ public class Projeto {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void associar(Integer id){
+        fkDev = id;
     }
 
 //    public Empresa getEmpresa() {

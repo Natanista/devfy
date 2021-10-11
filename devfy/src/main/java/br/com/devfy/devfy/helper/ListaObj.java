@@ -1,6 +1,6 @@
 package br.com.devfy.devfy.helper;
 
-public class ListaObj<T> {
+public class ListaObj <T> {
 
     // Atributos
     private T[] vetor;
@@ -26,7 +26,8 @@ public class ListaObj<T> {
     public void exibe() {
         if (nroElem == 0) {
             System.out.println("\nA lista está vazia.");
-        } else {
+        }
+        else {
             System.out.println("\nElementos da lista:");
             for (int i = 0; i < nroElem; i++) {
                 System.out.print(vetor[i] + "\t");
@@ -44,7 +45,7 @@ public class ListaObj<T> {
         return -1;
     }
 
-    public boolean removePeloIndice(int indice) {
+    public boolean removePeloIndice (int indice) {
         if (indice < 0 || indice >= nroElem) {
             System.out.println("\nÍndice inválido!");
             return false;
@@ -52,7 +53,7 @@ public class ListaObj<T> {
         // Loop para "deslocar para a esquerda" os elementos do vetor
         // sobrescrevendo o elemento removido
         for (int i = indice; i < nroElem - 1; i++) {
-            vetor[i] = vetor[i + 1];
+            vetor[i] = vetor[i+1];
         }
         nroElem--;
         return true;
@@ -74,9 +75,8 @@ public class ListaObj<T> {
     }
 
     public void limpa() {
-        for (int i = 0; i < nroElem; i++) {
-            vetor[i] = null;
-        }
         nroElem = 0;
     }
+
 }
+
