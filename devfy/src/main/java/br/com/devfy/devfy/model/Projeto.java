@@ -30,6 +30,10 @@ public class Projeto {
     @JoinColumn(name="dev_id", nullable=true)
     private Desenvolvedor desenvolvedor;
 
+    @ManyToOne
+    @JoinColumn(name="emp_id", nullable=true)
+    private Empresa empresa;
+
     public String getDesenvolvedor() {
         return desenvolvedor.getUsuario();
     }
@@ -38,6 +42,13 @@ public class Projeto {
         this.desenvolvedor = desenvolvedor;
     }
 
+    public String getEmpresa() {
+        return empresa.getNome();
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 
     public int getId() {
         return id;

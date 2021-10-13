@@ -1,6 +1,8 @@
 package br.com.devfy.devfy.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_empresa")
@@ -43,6 +45,24 @@ public class Empresa {
 
     @Column(name = "emp_cnpj")
     private String cnpj;
+
+    @OneToMany(mappedBy="empresa")
+    private List<Projeto> projetos;
+
+    public List<String> getProjetos() {
+        List<String> projs = new ArrayList<>();
+
+        for(Projeto projeto: projetos){
+            projs.add(projeto.getTitulo());
+        }
+
+        return  projs;
+    }
+
+
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
+    }
 
     public Boolean getAutenticado() {
         return isAutenticado;
