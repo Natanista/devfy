@@ -3,8 +3,10 @@ package br.com.devfy.devfy.controller;
 import java.util.List;
 
 import br.com.devfy.devfy.model.Desenvolvedor;
+import br.com.devfy.devfy.model.Empresa;
 import br.com.devfy.devfy.model.Projeto;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
+import br.com.devfy.devfy.repository.EmpresaRepository;
 import br.com.devfy.devfy.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,9 @@ public class ProjetoController {
 
     @Autowired
     private DesenvolvedorRepository devRepository;
+
+    @Autowired
+    private EmpresaRepository empresaRepository;
 
     @GetMapping
     public ResponseEntity exibir() {
@@ -73,7 +78,7 @@ public class ProjetoController {
     }
 
     @PutMapping("/associar-dev/{devId}/{projId}")
-    public ResponseEntity adicionarProjeto(
+    public ResponseEntity associarDev(
             @PathVariable int devId,
             @PathVariable int projId
     ){
@@ -81,6 +86,24 @@ public class ProjetoController {
             Projeto projeto = repository.getById(projId);
             Desenvolvedor dev = devRepository.getById(devId);
             projeto.setDesenvolvedor(dev);
+            repository.save(projeto);
+
+            return ResponseEntity.status(200).build();
+        }
+
+        return ResponseEntity.status(404).build();
+
+    }
+
+    @PutMapping("/associar-emp/{empId}/{projId}")
+    public ResponseEntity associarEmpresa(
+            @PathVariable int empId,
+            @PathVariable int projId
+    ){
+        if(repository.existsById(projId) && empresaRepository.existsById(empId)){
+            Projeto projeto = repository.getById(projId);
+            Empresa empresa = empresaRepository.getById(empId);
+            projeto.setEmpresa(empresa);
             repository.save(projeto);
 
             return ResponseEntity.status(200).build();
