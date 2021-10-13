@@ -1,10 +1,6 @@
 package br.com.devfy.devfy.model;
 
-import br.com.devfy.devfy.helper.ListaObj;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
-import javax.websocket.ClientEndpoint;
 
 @Entity
 @Table(name = "tbl_projeto")
@@ -15,7 +11,7 @@ public class Projeto {
     @Column(name = "id_projeto")
     private int id;
 
-    @Column(name = "proj_titulo" )
+    @Column(name = "proj_titulo")
     private String titulo;
 
     @Column(name = "proj_linguagem")
@@ -27,35 +23,20 @@ public class Projeto {
     @Column(name = "proj_categoria")
     private String categoria;
 
-    @Column(name = "proj_tipo")
-    private String tipo;
+    @Column(name = "proj_valor")
+    private String valor;
 
-    @Column(name = "proj_fkEmp")
-    private Integer fkEmp;
+    @ManyToOne
+    @JoinColumn(name="dev_id", nullable=true)
+    private Desenvolvedor desenvolvedor;
 
-    @Column(name = "proj_fkDev")
-    private Integer fkDev;
-
-    public Integer getFkEmp() {
-        return fkEmp;
+    public String getDesenvolvedor() {
+        return desenvolvedor.getUsuario();
     }
 
-    public void setFkEmp(Integer fkEmp) {
-        this.fkEmp = fkEmp;
+    public void setDesenvolvedor(Desenvolvedor desenvolvedor) {
+        this.desenvolvedor = desenvolvedor;
     }
-
-    public Integer getFkDev() {
-        return fkDev;
-    }
-
-    public void setFkDev(Integer fkDev) {
-        this.fkDev = fkDev;
-    }
-//    @OneToOne
-//    private Empresa fkEmpresa;
-//
-//    @OneToOne
-//    private Desenvolvedor desenvolvedor;
 
 
     public int getId() {
@@ -98,31 +79,11 @@ public class Projeto {
         this.categoria = categoria;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getValor() {
+        return valor;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
-
-    public void associar(Integer id){
-        fkDev = id;
-    }
-
-//    public Empresa getEmpresa() {
-//        return empresa;
-//    }
-//
-//    public void setEmpresa(Empresa empresa) {
-//        this.empresa = empresa;
-//    }
-//
-//    public Desenvolvedor getDesenvolvedor() {
-//        return desenvolvedor;
-//    }
-//
-//    public void setDesenvolvedor(Desenvolvedor desenvolvedor) {
-//        this.desenvolvedor = desenvolvedor;
-//    }
 }

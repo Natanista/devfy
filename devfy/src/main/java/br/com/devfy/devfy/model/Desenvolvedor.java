@@ -1,13 +1,15 @@
 package br.com.devfy.devfy.model;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import br.com.devfy.devfy.helper.ListaObj;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_desenvolvedor")
-public class Desenvolvedor {
+public class Desenvolvedor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +54,32 @@ public class Desenvolvedor {
 
     @Column(name = "dev_senha")
     private String senha;
+
+    @OneToMany(mappedBy="desenvolvedor")
+    private List<Projeto> projetos;
+
+    public List<String> getProjetos() {
+        List<String> projs = new ArrayList<>();
+
+        for(Projeto projeto: projetos){
+            projs.add(projeto.getTitulo());
+        }
+
+        return  projs;
+    }
+
+    public Boolean getAutenticado() {
+        return isAutenticado;
+    }
+
+    public void setAutenticado(Boolean autenticado) {
+        isAutenticado = autenticado;
+    }
+
+
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
+    }
 
     public int getId() {
         return id;
@@ -147,10 +175,6 @@ public class Desenvolvedor {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-
-    public String getSenha() {
-        return senha;
     }
 
     public void setSenha(String senha) {

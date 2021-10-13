@@ -44,6 +44,13 @@ public class Empresa {
     @Column(name = "emp_cnpj")
     private String cnpj;
 
+    public Boolean getAutenticado() {
+        return isAutenticado;
+    }
+
+    public void setAutenticado(Boolean autenticado) {
+        isAutenticado = autenticado;
+    }
 
     public int getId() {
         return id;
@@ -125,9 +132,6 @@ public class Empresa {
         this.usuario = usuario;
     }
 
-    public String getSenha() {
-        return senha;
-    }
 
     public void setSenha(String senha) {
         this.senha = senha;

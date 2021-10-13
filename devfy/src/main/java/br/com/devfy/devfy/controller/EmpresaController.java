@@ -60,7 +60,7 @@ public class EmpresaController {
         return ResponseEntity.status(201).build();
     }
 
-    @PutMapping ("/login")
+    @PostMapping ("/login")
     public ResponseEntity login(@RequestBody ModeloLogin empresa) {
         Empresa empresaEncontrada = repository.findEmpresaByUsuarioEqualsAndSenhaEquals(
                 empresa.getUsuario(), empresa.getSenha()
@@ -72,10 +72,10 @@ public class EmpresaController {
 
         empresaEncontrada.login();
         repository.save(empresaEncontrada);
-        return ResponseEntity.status(200).build();
+        return ResponseEntity.status(200).body(empresaEncontrada);
     }
 
-    @PutMapping("/logoff/{id}")
+    @PostMapping("/logoff/{id}")
     public ResponseEntity logoff(@PathVariable int id) {
         if (repository.existsById(id)) {
             Empresa empresa = repository.getById(id);

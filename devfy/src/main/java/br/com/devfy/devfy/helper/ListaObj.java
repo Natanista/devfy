@@ -1,5 +1,7 @@
 package br.com.devfy.devfy.helper;
 
+import java.util.List;
+
 public class ListaObj <T> {
 
     // Atributos
@@ -63,7 +65,7 @@ public class ListaObj <T> {
         return removePeloIndice(busca(elementoARemover));
     }
 
-    public int getTamanho() {
+    public int getSize() {
         return nroElem;
     }
 
@@ -77,6 +79,12 @@ public class ListaObj <T> {
     public void limpa() {
         nroElem = 0;
     }
+
+    public List<T> getVetor(){
+        return List.of(vetor);
+    }
+
+
 
 }
 

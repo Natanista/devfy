@@ -59,7 +59,7 @@ public class DesenvolvedorController {
             return ResponseEntity.status(201).build();
     }
 
-    @PutMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity login(@RequestBody ModeloLogin desenvolvedor) {
             Desenvolvedor devEncontrado = repository.findDesenvolvedorByUsuarioEqualsAndSenhaEquals(
                     desenvolvedor.getUsuario(), desenvolvedor.getSenha()
@@ -71,11 +71,11 @@ public class DesenvolvedorController {
 
         devEncontrado.login();
         repository.save(devEncontrado);
-        return ResponseEntity.status(200).build();
+        return ResponseEntity.status(200).body(devEncontrado);
         }
 
 
-    @GetMapping("/logoff/{id}")
+    @PostMapping("/logoff/{id}")
     public ResponseEntity logoff(@PathVariable int id) {
         if (repository.existsById(id)) {
             Desenvolvedor desenvolvedor = repository.getById(id);
