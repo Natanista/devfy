@@ -1,9 +1,8 @@
 package br.com.devfy.devfy.controller;
 
-import br.com.devfy.devfy.model.Desenvolvedor;
+import br.com.devfy.devfy.helper.ModeloLogin;
 import br.com.devfy.devfy.model.Empresa;
 import br.com.devfy.devfy.repository.EmpresaRepository;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -61,19 +60,22 @@ public class EmpresaController {
         return ResponseEntity.status(201).build();
     }
 
-    @GetMapping("/login")
-    public ResponseEntity login(@RequestBody Empresa empresa) {
-        List<Empresa> empresas = repository.findAll();
-        for (Empresa empresa1 : empresas){
-            if (empresa1.login(empresa)){
-                repository.save(empresa1);
-                return ResponseEntity.status(200).build();
-            }
+    @PutMapping ("/login")
+    public ResponseEntity login(@RequestBody ModeloLogin empresa) {
+        Empresa empresaEncontrada = repository.findEmpresaByUsuarioEqualsAndSenhaEquals(
+                empresa.getUsuario(), empresa.getSenha()
+        );
+
+        if(empresaEncontrada.equals(null)){
+            return ResponseEntity.status(404).build();
         }
-        return ResponseEntity.status(404).build();
+
+        empresaEncontrada.login();
+        repository.save(empresaEncontrada);
+        return ResponseEntity.status(200).build();
     }
 
-    @GetMapping("/logoff/{id}")
+    @PutMapping("/logoff/{id}")
     public ResponseEntity logoff(@PathVariable int id) {
         if (repository.existsById(id)) {
             Empresa empresa = repository.getById(id);

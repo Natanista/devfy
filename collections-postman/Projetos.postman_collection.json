@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "aff2fc86-7941-4ba5-a148-afab6abc09d7",
+		"_postman_id": "7d1ccbf6-6ce0-40ab-ad88-b4f4250ad55d",
 		"name": "Projetos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"titulo\": \"Projetinho .net\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"tipo\": \"Senior projetinho\"\n}",
+					"raw": "{\n    \"titulo\": \"Projetinho\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"tipo\": \"Senior projetinho\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,6 +91,27 @@
 						"devfy",
 						"projetos",
 						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/buscar-titulo-projeto/Projetinho",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/buscar-titulo-projeto/Projetinho",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"buscar-titulo-projeto",
+						"Projetinho"
 					]
 				}
 			},

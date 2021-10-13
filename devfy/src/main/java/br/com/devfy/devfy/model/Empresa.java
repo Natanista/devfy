@@ -109,11 +109,11 @@ public class Empresa {
         this.telefoneRepresentante = telefoneRepresentante;
     }
 
-    public Boolean getAutenticado() {
+    public Boolean getIsAutenticado() {
         return isAutenticado;
     }
 
-    public void setAutenticado(Boolean autenticado) {
+    public void setIsAutenticado(Boolean autenticado) {
         isAutenticado = autenticado;
     }
 
@@ -141,16 +141,11 @@ public class Empresa {
         this.cnpj = cnpj;
     }
 
-    public Boolean login(Empresa empresa) {
-        if (empresa.getUsuario().equals(usuario)
-                && empresa.getSenha().equals(senha)){
-            this.isAutenticado = true;
-            return true;
-        }
-        return false;
-    }
-
     public void logoff() {
         this.isAutenticado = false;
+    }
+
+    public void login(){
+        this.isAutenticado = true;
     }
 }

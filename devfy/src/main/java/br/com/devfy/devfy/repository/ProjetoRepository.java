@@ -11,4 +11,5 @@ Interface com os métodos de acesso a banco para a entidade Musica
  */
 public interface ProjetoRepository extends JpaRepository<Projeto, Integer> {
 
+    public Projeto findProjetoByTituloEquals(String titulo);
 }

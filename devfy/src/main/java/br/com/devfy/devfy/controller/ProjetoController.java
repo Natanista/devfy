@@ -1,13 +1,6 @@
 package br.com.devfy.devfy.controller;
 
-import br.com.devfy.devfy.helper.ListaObj;
-
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-
-import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.model.Projeto;
 import br.com.devfy.devfy.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +17,9 @@ public class ProjetoController {
 
     @GetMapping
     public ResponseEntity exibir() {
-        ListaObj<Projeto> projetos = (ListaObj<Projeto>) repository.findAll();
+        List<Projeto> projetos =  repository.findAll();
 
-        if (projetos.getTamanho()==0) {
+        if (projetos.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
         return ResponseEntity.status(200).body(projetos);
@@ -64,15 +57,13 @@ public class ProjetoController {
         return ResponseEntity.status(201).build();
     }
 
-    @GetMapping("/procurar/{nomeProjeto}")
-    public ResponseEntity getProjetoByNome(@PathVariable String nomeProjeto){
-        List<Projeto> projetos = repository.findAll();
-        for (Projeto projeto : projetos){
-            if (nomeProjeto.equals(projeto.getTitulo())){
-                return ResponseEntity.status(200).body(projeto);
-            }
+    @GetMapping("/buscar-titulo-projeto/{tituloProjeto}")
+    public ResponseEntity getProjetoByTitulo(@PathVariable String tituloProjeto){
+        Projeto projetoEncontrado = repository.findProjetoByTituloEquals(tituloProjeto);
+        if(projetoEncontrado.equals(null)){
+            return ResponseEntity.status(404).build();
         }
-        return ResponseEntity.status(404).build();
+        return ResponseEntity.status(200).body(projetoEncontrado);
     }
 
     @GetMapping("/associarDev/{idDev}/{idProj}")

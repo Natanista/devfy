@@ -1,6 +1,7 @@
 package br.com.devfy.devfy.controller;
 
-import br.com.devfy.devfy.helper.ListaObj;
+import br.com.devfy.devfy.helper.ModeloLogin;
+
 import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class DesenvolvedorController {
 
     @GetMapping
     public ResponseEntity exibir() {
-        ListaObj<Desenvolvedor> desenvolvedores = (ListaObj<Desenvolvedor>) repository.findAll();
-        if (desenvolvedores.getTamanho()==0) {
+        List<Desenvolvedor> desenvolvedores =  repository.findAll();
+        if (desenvolvedores.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
         return ResponseEntity.status(200).body(desenvolvedores);
@@ -55,21 +56,24 @@ public class DesenvolvedorController {
             @RequestBody Desenvolvedor desenvolvedor
     ) {
         repository.save(desenvolvedor);
-        return ResponseEntity.status(201).build();
+            return ResponseEntity.status(201).build();
     }
 
-    @GetMapping("/login")
-    public ResponseEntity login(@RequestBody Desenvolvedor desenvolvedor) {
-        List<Desenvolvedor> desenvolvedores = repository.findAll();
-        for (Desenvolvedor desenvolvedor1 : desenvolvedores){
-            if (desenvolvedor1.login(desenvolvedor)){
-                desenvolvedor1.setIsAutenticado(true);
-                repository.save(desenvolvedor1);
-                return ResponseEntity.status(200).build();
+    @PutMapping("/login")
+    public ResponseEntity login(@RequestBody ModeloLogin desenvolvedor) {
+            Desenvolvedor devEncontrado = repository.findDesenvolvedorByUsuarioEqualsAndSenhaEquals(
+                    desenvolvedor.getUsuario(), desenvolvedor.getSenha()
+                    );
+
+            if (devEncontrado.equals(null)){
+                return ResponseEntity.status(404).build();
             }
+
+        devEncontrado.login();
+        repository.save(devEncontrado);
+        return ResponseEntity.status(200).build();
         }
-        return ResponseEntity.status(404).build();
-    }
+
 
     @GetMapping("/logoff/{id}")
     public ResponseEntity logoff(@PathVariable int id) {

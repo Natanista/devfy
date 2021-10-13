@@ -1,17 +1,26 @@
 {
 	"info": {
-		"_postman_id": "f9827967-9e5a-4870-ad60-eba47480cc16",
+		"_postman_id": "da13acfe-d7ea-41f5-8d19-6dd546b2b4a1",
 		"name": "Empresa",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/empresas/login/{{id}} Copy",
+			"name": "/devfy/empresas/login",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"exemplo\",\n    \"senha\": \"exemplo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/devfy/empresas/login/{{id}}",
+					"raw": "localhost:8080/devfy/empresas/login",
 					"host": [
 						"localhost"
 					],
@@ -19,8 +28,7 @@
 					"path": [
 						"devfy",
 						"empresas",
-						"login",
-						"{{id}}"
+						"login"
 					]
 				}
 			},
@@ -32,12 +40,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/empresas/deletar/{{id}}",
+					"raw": "localhost:8080/devfy/empresas/deletar/{{id}}",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"devfy",
 						"empresas",
 						"deletar",
 						"{{id}}"
@@ -117,7 +126,7 @@
 			"response": []
 		},
 		{
-			"name": "/empresas/logoff/{{id}}",
+			"name": "devfy/empresas/logoff/{{id}}",
 			"request": {
 				"method": "GET",
 				"header": [],

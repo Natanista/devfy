@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f4645a20-4277-42a3-9474-ce0157c48ec3",
+		"_postman_id": "40ea6d70-bd95-4981-b0eb-f2c87111f921",
 		"name": "Desenvolvedor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,15 +11,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/desenvolvedores/deletar/{{id}}",
+					"raw": "localhost:8080/devfy/desenvolvedores/deletar/1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"devfy",
 						"desenvolvedores",
 						"deletar",
-						"{{id}}"
+						"1"
 					]
 				}
 			},
@@ -96,12 +97,21 @@
 			"response": []
 		},
 		{
-			"name": "/desenvolvedores/login/{{id}}",
+			"name": "/devfy/desenvolvedores/login",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"bandtec\",\n    \"senha\": \"grupo1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/login/{{id}}",
+					"raw": "localhost:8080/devfy/desenvolvedores/login",
 					"host": [
 						"localhost"
 					],
@@ -109,15 +119,14 @@
 					"path": [
 						"devfy",
 						"desenvolvedores",
-						"login",
-						"{{id}}"
+						"login"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/desenvolvedores/logoff/{{id}}",
+			"name": "/devfy/desenvolvedores/logoff/{{id}}",
 			"request": {
 				"method": "GET",
 				"header": [],
