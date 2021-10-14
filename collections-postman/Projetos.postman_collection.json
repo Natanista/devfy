@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"titulo\": \"Projetinho\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"tipo\": \"Senior projetinho\"\n}",
+					"raw": "{\n    \"titulo\": \"Projetinho\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"valor\": 100.0\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -112,6 +112,70 @@
 						"projetos",
 						"buscar-titulo-projeto",
 						"Projetinho"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/associar-dev/{{idProj}}/{{idDev}}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/associar-dev/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"associar-dev",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/associar-emp/{{empId}}/{{projId}}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/associar-emp/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"associar-emp",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/projetos/export-csv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/export-csv",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"export-csv"
 					]
 				}
 			},

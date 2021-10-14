@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"nome\": \"Natan\",\n \"email\": \"bandtec@bandtec.com\",\n \"telefone\": \"11939393\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"0120120\",\n \"cpf\": \"21312321\",\n \"descricao\": \"sou dev java po\",\n \"isAutenticado\": true,\n \"valorHora\": 200,\n \"linguagem\": \"java\",\n \"anosExperiencia\": 2,\n \"usuario\": \"bandtec\",\n \"senha\": \"grupo1\"\n}",
+					"raw": "{\n \"nome\": \"Natan\",\n \"email\": \"bandtec@bandtec.com\",\n \"telefone\": \"11939393\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"0120120\",\n \"cpf\": \"21312321\",\n \"descricao\": \"sou dev java po\",\n \"isAutenticado\": true,\n \"valorHora\": 200,\n \"linguagem\": \"java\",\n \"anosExperiencia\": 2,\n \"usuario\": \"Marcinho\",\n \"senha\": \"senha123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,11 +99,11 @@
 		{
 			"name": "/devfy/desenvolvedores/login",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"bandtec\",\n    \"senha\": \"grupo1\"\n}",
+					"raw": "{\n    \"usuario\": \"Marcinho\",\n    \"senha\": \"senha123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -111,7 +111,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/login",
+					"raw": "localhost:8080/devfy/desenvolvedores/logoff/1",
 					"host": [
 						"localhost"
 					],
@@ -119,7 +119,8 @@
 					"path": [
 						"devfy",
 						"desenvolvedores",
-						"login"
+						"logoff",
+						"1"
 					]
 				}
 			},
