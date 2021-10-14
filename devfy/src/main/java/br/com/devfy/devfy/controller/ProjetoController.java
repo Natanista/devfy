@@ -1,7 +1,11 @@
 package br.com.devfy.devfy.controller;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
+import br.com.devfy.devfy.helper.ListaObj;
 import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.model.Empresa;
 import br.com.devfy.devfy.model.Projeto;
@@ -11,6 +15,9 @@ import br.com.devfy.devfy.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import static br.com.devfy.devfy.helper.CsvGenerator.gravaArquivoCsv;
+import static br.com.devfy.devfy.helper.CsvGenerator.leArquivoCsv;
 
 @RestController
 @RequestMapping("/devfy/projetos")
@@ -113,6 +120,31 @@ public class ProjetoController {
 
     }
 
+    @GetMapping("/export-csv")
+    public ResponseEntity gerarRelatorio(
+
+    ){
+
+        int qtdProjetos = (int) repository.count();
+        List<Projeto> projetos = repository.findAll();
+        ListaObj<Projeto> projects =  new ListaObj<>(qtdProjetos);
+
+        for(Projeto projeto: projetos){
+            projects.adiciona(projeto);
+        }
+
+        gravaArquivoCsv(projects, "projetos");
+        String file =  leArquivoCsv("projetos");
 
 
-}
+        return ResponseEntity
+                .status(200)
+                .header("content-type", "application/csv")
+                .body(file);
+
+    }
+
+
+    }
+
+

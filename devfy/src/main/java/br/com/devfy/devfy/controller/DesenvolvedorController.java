@@ -55,6 +55,7 @@ public class DesenvolvedorController {
     public ResponseEntity adicionar(
             @RequestBody Desenvolvedor desenvolvedor
     ) {
+        desenvolvedor.logoff();
         repository.save(desenvolvedor);
             return ResponseEntity.status(201).build();
     }

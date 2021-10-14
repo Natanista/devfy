@@ -24,7 +24,7 @@ public class Projeto {
     private String categoria;
 
     @Column(name = "proj_valor")
-    private String valor;
+    private Double valor;
 
     @ManyToOne
     @JoinColumn(name="dev_id", nullable=true)
@@ -34,16 +34,16 @@ public class Projeto {
     @JoinColumn(name="emp_id", nullable=true)
     private Empresa empresa;
 
-    public String getDesenvolvedor() {
-        return desenvolvedor.getUsuario();
+    public Desenvolvedor getDesenvolvedor() {
+        return desenvolvedor;
     }
 
     public void setDesenvolvedor(Desenvolvedor desenvolvedor) {
         this.desenvolvedor = desenvolvedor;
     }
 
-    public String getEmpresa() {
-        return empresa.getNome();
+    public Empresa getEmpresa() {
+        return empresa;
     }
 
     public void setEmpresa(Empresa empresa) {
@@ -90,11 +90,11 @@ public class Projeto {
         this.categoria = categoria;
     }
 
-    public String getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 }

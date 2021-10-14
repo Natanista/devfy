@@ -35,7 +35,7 @@ public class Empresa {
     private String telefoneRepresentante;
 
     @Column(name = "emp_autenticado")
-    private Boolean isAutenticado;
+    private Boolean isAutenticado = false;
 
     @Column(name = "emp_usuario")
     private String usuario;
@@ -64,13 +64,6 @@ public class Empresa {
         this.projetos = projetos;
     }
 
-    public Boolean getAutenticado() {
-        return isAutenticado;
-    }
-
-    public void setAutenticado(Boolean autenticado) {
-        isAutenticado = autenticado;
-    }
 
     public int getId() {
         return id;

@@ -56,6 +56,7 @@ public class EmpresaController {
     public ResponseEntity adicionar(
             @RequestBody Empresa empresa
     ) {
+        empresa.logoff();
         repository.save(empresa);
         return ResponseEntity.status(201).build();
     }

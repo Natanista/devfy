@@ -38,7 +38,7 @@ public class Desenvolvedor implements Serializable {
     private String descricao;
 
     @Column(name = "dev_autenticado")
-    private Boolean isAutenticado;
+    private Boolean isAutenticado = false;
 
     @Column(name = "dev_valor_hora")
     private Double valorHora;
@@ -47,7 +47,7 @@ public class Desenvolvedor implements Serializable {
     private String linguagem;
 
     @Column(name = "dev_anos_exp")
-    private String anoExperiencia;
+    private int anoSExperiencia;
 
     @Column(name = "dev_usuario")
     private String usuario;
@@ -55,25 +55,17 @@ public class Desenvolvedor implements Serializable {
     @Column(name = "dev_senha")
     private String senha;
 
-    @OneToMany(mappedBy="desenvolvedor")
+    @OneToMany(mappedBy = "desenvolvedor")
     private List<Projeto> projetos;
 
     public List<String> getProjetos() {
         List<String> projs = new ArrayList<>();
 
-        for(Projeto projeto: projetos){
+        for (Projeto projeto : projetos) {
             projs.add(projeto.getTitulo());
         }
 
-        return  projs;
-    }
-
-    public Boolean getAutenticado() {
-        return isAutenticado;
-    }
-
-    public void setAutenticado(Boolean autenticado) {
-        isAutenticado = autenticado;
+        return projs;
     }
 
 
@@ -161,12 +153,8 @@ public class Desenvolvedor implements Serializable {
         this.valorHora = valorHora;
     }
 
-    public String getAnoExperiencia() {
-        return anoExperiencia;
-    }
-
-    public void setAnoExperiencia(String anoExperiencia) {
-        this.anoExperiencia = anoExperiencia;
+    public int getAnoSExperiencia() {
+        return anoSExperiencia;
     }
 
     public String getUsuario() {
@@ -193,7 +181,7 @@ public class Desenvolvedor implements Serializable {
         this.isAutenticado = false;
     }
 
-    public void login(){
+    public void login() {
         this.isAutenticado = true;
     }
 
