@@ -1,0 +1,45 @@
+.content-tudo{
+    margin: 9% 0px 0px 5%;
+    display: flex;
+    width: 90%;
+    height: 500px;
+    -webkit-box-shadow: 1px 1px 50px 0px #4A99D3;
+}
+
+.cont-one{
+    background-color:#2343C4;
+    width: 50%;
+}
+.cont-one img{
+    padding: 120px 100px 0px 100px;
+    width:300px;
+}
+.cont-two-login,
+.cont-two{
+    width: 50%;
+}
+.cont-two-login{
+    margin: 5% 5% 5% 5%;
+}
+.cont-two-login h2,
+.cont-two h2{
+    text-align: center;
+    padding-top: 30px;
+    color: #4A99D3;
+    text-decoration: underline;
+}
+.cont-info{
+    margin: 20px 50px 0px 100px;
+    height: 150px;
+}
+.input_info{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.cont-two-login button,
+.cont-two button{
+    margin: 2% 30% 0px 30%;
+}
