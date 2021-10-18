@@ -75,7 +75,7 @@ public class CsvGenerator {
         FileReader arq = null;  // objeto que representa o arquivo para leitura
         Scanner entrada = null; // objeto usado para ler do arquivo
         Boolean deuRuim = false;
-        String csv = "";
+        StringBuilder csv = new StringBuilder();
         nomeArq += ".csv";
 
         // Bloco try-catch para abrir o arquivo
@@ -92,10 +92,10 @@ public class CsvGenerator {
 
         // Bloco try-catch para ler do arquivo
         try {
-            csv += String.format("%10s %-20s %10s %-13s %6s %-16s %11s %-25s %12s %10s %10s %-20s %14s %-25s %14s\n",
+            csv.append(String.format("%10s %-20s %10s %-13s %6s %-16s %11s %-25s %12s %10s %10s %-20s %14s %-25s %14s\n",
                     "ID PROJETO","TITULO", "VALOR", "LINGUAGEM", "DEV ID", "DEV", "DEV CPF", "DEV EMAIL", "DEV TELEFONE",
-                    "DEV $/h", "EMPRESA ID", "EMPRESA", "EMPRESA CNPJ", "EMPRESA EMAIL", "EMPRESA TEL"
-            );
+                    "DEV $/h", "EMPRESA ID", "EMPRESA", "EMPRESA CNPJ", "EMPRESA EMAIL", "EMPRESA TEL"));
+
             while (entrada.hasNext()) {  //enquanto não for final do arquivo
                 int idEmpresa = entrada.nextInt();
                 String titulo = entrada.next();
@@ -112,9 +112,9 @@ public class CsvGenerator {
                 String empCnpj = entrada.next();
                 String empEmail = entrada.next();
                 String empTel = entrada.next();
-                csv += String.format("%10d %-20s %10.1f %-13s %6d %-16s %11s %-25s %12s %10.1f %10d %-20s %14s %-25s %14s",
+                csv.append(String.format("%10d %-20s %10.1f %-13s %6d %-16s %11s %-25s %12s %10.1f %10d %-20s %14s %-25s %14s\n",
                         idEmpresa, titulo, valor, linguagem, devId, devNome, devCpf, devEmail, devTel, devValorHora, empId
-                , empresa, empCnpj, empEmail, empTel);
+                        , empresa, empCnpj, empEmail, empTel)) ;
             }
         }
         catch (NoSuchElementException erro) {
@@ -138,6 +138,6 @@ public class CsvGenerator {
                 System.exit(1);
             }
         }
-    return  csv;
+    return  csv.toString();
     }
 }

@@ -3,11 +3,15 @@ package br.com.devfy.devfy.controller;
 import br.com.devfy.devfy.helper.ModeloLogin;
 
 import br.com.devfy.devfy.model.Desenvolvedor;
+import br.com.devfy.devfy.model.EmailService;
+import br.com.devfy.devfy.model.Notificacao;
+import br.com.devfy.devfy.model.SlackService;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -55,6 +59,7 @@ public class DesenvolvedorController {
     public ResponseEntity adicionar(
             @RequestBody Desenvolvedor desenvolvedor
     ) {
+        desenvolvedor.cancelarPremium();
         desenvolvedor.logoff();
         repository.save(desenvolvedor);
             return ResponseEntity.status(201).build();

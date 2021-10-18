@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "40ea6d70-bd95-4981-b0eb-f2c87111f921",
+		"_postman_id": "e43f14db-0b1e-42d1-88ab-916dcc44f7e2",
 		"name": "Desenvolvedor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -111,7 +111,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/logoff/1",
+					"raw": "localhost:8080/devfy/desenvolvedores/login",
 					"host": [
 						"localhost"
 					],
@@ -119,8 +119,7 @@
 					"path": [
 						"devfy",
 						"desenvolvedores",
-						"logoff",
-						"1"
+						"login"
 					]
 				}
 			},
@@ -142,6 +141,27 @@
 						"desenvolvedores",
 						"logoff",
 						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devfy/desenvolvedores/logoff/{{id}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/desenvolvedores/logoff/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"desenvolvedores",
+						"logoff",
+						"1"
 					]
 				}
 			},

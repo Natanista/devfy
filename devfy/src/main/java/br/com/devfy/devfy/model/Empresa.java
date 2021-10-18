@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tbl_empresa")
-public class Empresa {
+public class Empresa{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,10 @@ public class Empresa {
     private String telefoneRepresentante;
 
     @Column(name = "emp_autenticado")
-    private Boolean isAutenticado = false;
+    private Boolean isAutenticado;
+
+    @Column(name = "premium")
+    private Boolean isPremium;
 
     @Column(name = "emp_usuario")
     private String usuario;
@@ -64,6 +67,21 @@ public class Empresa {
         this.projetos = projetos;
     }
 
+    public Boolean getPremium() {
+        return isPremium;
+    }
+
+    public void setPremium(Boolean premium) {
+        isPremium = premium;
+    }
+
+    public void contratarPremium(){
+        this.isPremium = true;
+    }
+
+    public void cancelarPremium(){
+        this.isPremium = false;
+    }
 
     public int getId() {
         return id;
@@ -165,4 +183,6 @@ public class Empresa {
     public void login(){
         this.isAutenticado = true;
     }
+
+
 }

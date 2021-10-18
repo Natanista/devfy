@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tbl_desenvolvedor")
-public class Desenvolvedor implements Serializable {
+public class Desenvolvedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +38,10 @@ public class Desenvolvedor implements Serializable {
     private String descricao;
 
     @Column(name = "dev_autenticado")
-    private Boolean isAutenticado = false;
+    private Boolean isAutenticado;
+
+    @Column(name = "premium")
+    private Boolean isPremium;
 
     @Column(name = "dev_valor_hora")
     private Double valorHora;
@@ -183,6 +186,22 @@ public class Desenvolvedor implements Serializable {
 
     public void login() {
         this.isAutenticado = true;
+    }
+
+    public Boolean getPremium() {
+        return isPremium;
+    }
+
+    public void setPremium(Boolean premium) {
+        isPremium = premium;
+    }
+
+    public void contratarPremium(){
+        this.isPremium = true;
+    }
+
+    public void cancelarPremium(){
+        this.isPremium = false;
     }
 
 }

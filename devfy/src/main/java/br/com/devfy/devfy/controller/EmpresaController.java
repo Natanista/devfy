@@ -1,6 +1,7 @@
 package br.com.devfy.devfy.controller;
 
 import br.com.devfy.devfy.helper.ModeloLogin;
+import br.com.devfy.devfy.model.Desenvolvedor;
 import br.com.devfy.devfy.model.Empresa;
 import br.com.devfy.devfy.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,7 @@ public class EmpresaController {
     public ResponseEntity adicionar(
             @RequestBody Empresa empresa
     ) {
+        empresa.cancelarPremium();
         empresa.logoff();
         repository.save(empresa);
         return ResponseEntity.status(201).build();
@@ -75,6 +77,23 @@ public class EmpresaController {
         repository.save(empresaEncontrada);
         return ResponseEntity.status(200).body(empresaEncontrada);
     }
+
+//    @PostMapping("/login")
+//    public ResponseEntity login(@RequestBody ModeloLogin desenvolvedor) {
+//        Desenvolvedor devEncontrado = repository.findDesenvolvedorByUsuarioEqualsAndSenhaEquals(
+//                desenvolvedor.getUsuario(), desenvolvedor.getSenha()
+//        );
+//
+//        if (devEncontrado.equals(null)){
+//            return ResponseEntity.status(404).build();
+//        }
+//
+//        devEncontrado.login();
+//        repository.save(devEncontrado);
+//        return ResponseEntity.status(200).body(devEncontrado);
+//    }
+
+
 
     @PostMapping("/logoff/{id}")
     public ResponseEntity logoff(@PathVariable int id) {
