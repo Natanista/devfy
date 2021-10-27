@@ -3,7 +3,7 @@ import logo from '../html/img/LOGO.png';
 
 function Menu() {
   return (
-    <>
+    <div>
       <header class="header">
         <nav>
           <div class="container">
@@ -30,7 +30,7 @@ function Menu() {
           </div>
         </nav>
       </header>
-    </>
+    </div>
   );
 }
 

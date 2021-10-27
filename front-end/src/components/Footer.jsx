@@ -7,7 +7,7 @@ import rede4 from '../html/img/telephone.png';
 
 function Footer() {
   return (
-    <>
+    <div>
       <footer>
         <div class="container">
             <div class="cont-footer">
@@ -30,7 +30,7 @@ function Footer() {
             </div>
         </div>
     </footer>
-    </>
+    </div>
   );
 }
 

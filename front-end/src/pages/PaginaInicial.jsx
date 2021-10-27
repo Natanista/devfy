@@ -20,7 +20,7 @@ import rede4 from '../html/img/telephone.png';
 
 function PaginaInicial() {
   return (
-    <>
+    <div>
       <Menu />
       <div class="banner">
         <div class="container">
@@ -126,8 +126,8 @@ function PaginaInicial() {
         </div>
     </div>
 
-    <Footer />
-    </>
+    <Footer/>
+    </div>
   );
 }
 
