@@ -6,7 +6,7 @@ import logoGrande from '../html/img/LogoGrande.png';
 
 
 const Login = () => (
-   <>
+   <div>
     <Menu />
         <div class="content-tudo">
         <div class="cont-one">
@@ -25,7 +25,7 @@ const Login = () => (
             </div>
         </div>
     </div>
-    </>
+    </div>
 );
   
   export default Login;
