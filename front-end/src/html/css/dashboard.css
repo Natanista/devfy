@@ -1,6 +1,45 @@
+.div_fundo{
+    margin:120px 10px 10px 30px; 
+    /*background-color: green;*/
+    height: 530px;
+    width: 95%;
+    display: flex;
+}
+
 .div_cinza{
-    width: 100%;
-    height:50%;
-    top:20px;
-    background-color: blueviolet;
+    margin:10px 10px 10px 25px;
+    width: 30%;
+    height:500px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.549);
+    text-align: center;
+    padding: 10px;
+    -webkit-box-shadow: 5px 6px 16px -2px rgba(0,0,0,0.82); 
+    box-shadow: 5px 6px 16px -2px rgba(0,0,0,0.82);
+}
+
+.div_fundo_card{
+    margin-top: 10px;
+    width: 102%;
+    height: 95.5%;
+    overflow-y:auto;
+}
+
+.div_card_projetos{
+    padding:10px 0px 0px 10px;
+    background-color: rgb(255, 255, 255);
+    border-left: 10px solid #2343C4;
+    border-radius: 10px;
+    width: 91%;
+    height: 140px;
+    -webkit-box-shadow: 5px 6px 19px -5px rgba(0,0,0,0.82); 
+    box-shadow: 5px 6px 19px -5px rgba(0,0,0,0.82);
+    margin-bottom:10px;
+    text-align: left;
+}
+
+.div_card_projetos:hover{
+    width: 93%;
+    height: 146px;
+    transition: 0.2s;
 }
