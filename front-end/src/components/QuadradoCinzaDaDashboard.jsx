@@ -7,14 +7,9 @@ function QuadradoCinzaDaDashboard() {
     <div class="div_fundo">
       <div class="div_cinza">
           <h3>Projetos</h3>
-          
           <div class="div_fundo_card">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            <Card  projeto="eu nao vou sentir saudade" empresa="asd" linguagem="asd" tempoEst="to escrevendo na tela"/>
           </div>          
-      
       </div>
       <div class="div_cinza">
         <h3>Projetos em andamento</h3>
