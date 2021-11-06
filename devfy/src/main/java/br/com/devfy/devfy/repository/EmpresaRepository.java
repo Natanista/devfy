@@ -20,5 +20,7 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
     @Query("SELECT '*' FROM Empresa WHERE isPremium = true")
     List<Empresa> findByPremiumTrue();
 
+    List<Empresa> findByNomeIgnoreCase(String nome);
+
 
 }
