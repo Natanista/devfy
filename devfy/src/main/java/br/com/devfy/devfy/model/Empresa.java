@@ -1,8 +1,13 @@
 package br.com.devfy.devfy.model;
 
+import com.sun.istack.NotNull;
+import org.springframework.web.bind.annotation.PathVariable;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.*;
+
 
 @Entity
 @Table(name = "tbl_empresa")
@@ -13,24 +18,31 @@ public class Empresa{
     @Column(name = "emp_id")
     private int id;
 
+    @NotNull
     @Column(name = "emp_nome")
     private String nome;
 
+    @Email
     @Column(name = "emp_email")
     private String email;
 
+    @NotNull
     @Column(name = "emp_telefone")
     private String telefone;
 
+    @NotNull
     @Column(name = "emp_pais")
     private String  pais;
 
+    @NotNull
     @Column(name = "emp_cep")
     private String cep;
 
+    @NotNull
     @Column(name = "emp_representante")
     private String representante;
 
+    @NotNull
     @Column(name = "emp_tel_representante")
     private String telefoneRepresentante;
 
@@ -183,6 +195,5 @@ public class Empresa{
     public void login(){
         this.isAutenticado = true;
     }
-
 
 }

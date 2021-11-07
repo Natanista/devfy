@@ -106,4 +106,13 @@ public class EmpresaController {
         return ResponseEntity.status(404).build();
     }
 
+
+    @PostMapping("/{pesquisado}")
+    public ResponseEntity procurarProjeto(@PathVariable String pesquisado){
+            Empresa lista = new Empresa();
+                repository.findByNomeIgnoreCase(pesquisado)
+                .add(lista);
+                return ResponseEntity.status(200).body(lista);
+    }
+
 }

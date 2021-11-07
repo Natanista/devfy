@@ -3,6 +3,8 @@ package br.com.devfy.devfy.model;
 import br.com.devfy.devfy.helper.ListaObj;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,24 +18,30 @@ public class Desenvolvedor {
     @Column(name = "dev_id")
     private int id;
 
+    @NotNull
     @Column(name = "dev_nome")
     private String nome;
 
+    @Email
     @Column(name = "dev_email")
     private String email;
 
+    @NotNull
     @Column(name = "dev_telefone")
     private String telefone;
 
+    @NotNull
     @Column(name = "dev_nacionalidade")
     private String nacionalidade;
 
+    @NotNull
     @Column(name = "dev_cep")
     private String cep;
 
+    @NotNull
     @Column(name = "dev_cpf")
     private String cpf;
-
+    
     @Column(name = "dev_descricao")
     private String descricao;
 
