@@ -1,4 +1,5 @@
-package br.com.devfy.devfy.model;
+package br.com.devfy.devfy.entity;
+
 
 public interface Notificacao {
 

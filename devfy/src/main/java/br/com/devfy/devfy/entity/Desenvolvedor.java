@@ -1,11 +1,10 @@
-package br.com.devfy.devfy.model;
+package br.com.devfy.devfy.entity;
 
-import br.com.devfy.devfy.helper.ListaObj;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,10 +22,12 @@ public class Desenvolvedor {
     private String nome;
 
     @Email
+    @NotNull
     @Column(name = "dev_email")
     private String email;
 
     @NotNull
+    @Pattern(regexp = "\\d{11}", message = "O telefone deve conter 11 inteiros")
     @Column(name = "dev_telefone")
     private String telefone;
 
@@ -35,13 +36,18 @@ public class Desenvolvedor {
     private String nacionalidade;
 
     @NotNull
+    @Pattern(regexp =  "\\d{5}-\\d{3}",
+            message = "o cep deve conter 8 caracteres, sendo eles: 5 inteiros, seguido de traço e dos 3 inteiros restantes")
     @Column(name = "dev_cep")
     private String cep;
 
     @NotNull
+    @CPF
     @Column(name = "dev_cpf")
     private String cpf;
-    
+
+    @Size(min = 10, max = 60, message
+            = "Descriçao deve ter entre 10 e 60 caracteres")
     @Column(name = "dev_descricao")
     private String descricao;
 
@@ -54,15 +60,24 @@ public class Desenvolvedor {
     @Column(name = "dev_valor_hora")
     private Double valorHora;
 
+    @Size(min = 1, max = 30, message
+            = "A linguagem deve ter entre 1 e 30 caracteres")
     @Column(name = "linguagem_dev")
     private String linguagem;
 
+    @PositiveOrZero
     @Column(name = "dev_anos_exp")
     private int anoSExperiencia;
 
+    @NotNull
+    @Size(min = 8, max = 15, message
+            = "O campo usuario deve conter entre 8 e 15 caracteres")
     @Column(name = "dev_usuario")
     private String usuario;
 
+    @NotNull
+    @Size(min = 8, max = 20, message
+            = "A senha deve conter no minimo 8, e  no maximo 20 caracteres.")
     @Column(name = "dev_senha")
     private String senha;
 

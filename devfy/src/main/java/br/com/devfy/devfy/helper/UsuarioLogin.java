@@ -1,6 +1,6 @@
 package br.com.devfy.devfy.helper;
 
-public class ModeloLogin {
+public class UsuarioLogin {
 
    private String usuario;
    private String senha;

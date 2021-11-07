@@ -1,33 +1,40 @@
 {
 	"info": {
-		"_postman_id": "e43f14db-0b1e-42d1-88ab-916dcc44f7e2",
+		"_postman_id": "e38cfb3a-778d-4f3d-b84f-9a4ef44c1e6c",
 		"name": "Desenvolvedor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/devfy/desenvolvedores/deletar/{{id}}",
+			"name": "save",
 			"request": {
-				"method": "DELETE",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"nome\": \"Gersonilton\",\n \"email\": \"germiniano@bandtec.com\",\n \"telefone\": \"12345678911\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"12345-678\",\n \"cpf\": \"47831299831\",\n \"descricao\": \"Estudante de ADS\",\n \"valorHora\": 200,\n \"linguagem\": \"Java\",\n \"anosExperiencia\": 0,\n \"usuario\": \"Marcinho\",\n \"senha\": \"Senha1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/deletar/1",
+					"raw": "localhost:8080/devfy/desenvolvedores",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"devfy",
-						"desenvolvedores",
-						"deletar",
-						"1"
+						"desenvolvedores"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/desenvolvedores",
+			"name": "getAll",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -47,34 +54,13 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/desenvolvedores/atualizar/{{id}}",
+			"name": "update",
 			"request": {
 				"method": "PUT",
 				"header": [],
-				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/atualizar/{{id}}",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"desenvolvedores",
-						"atualizar",
-						"{{id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/desenvolvedores/cadastrar",
-			"request": {
-				"method": "POST",
-				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"nome\": \"Natan\",\n \"email\": \"bandtec@bandtec.com\",\n \"telefone\": \"11939393\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"0120120\",\n \"cpf\": \"21312321\",\n \"descricao\": \"sou dev java po\",\n \"isAutenticado\": true,\n \"valorHora\": 200,\n \"linguagem\": \"java\",\n \"anosExperiencia\": 2,\n \"usuario\": \"Marcinho\",\n \"senha\": \"senha123\"\n}",
+					"raw": "{\n \"nome\": \"Gersonilton\",\n \"email\": \"germiniano@bandtec.com\",\n \"telefone\": \"12345678911\",\n \"nacionalidade\": \"Brasileiro\",\n \"cep\": \"12345-678\",\n \"cpf\": \"47831299831\",\n \"descricao\": \"Estudante de CCO\",\n \"valorHora\": 200,\n \"linguagem\": \"Java\",\n \"anosExperiencia\": 0,\n \"usuario\": \"Marcinho\",\n \"senha\": \"Senha1234567\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,7 +68,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/cadastrar",
+					"raw": "localhost:8080/devfy/desenvolvedores/1",
 					"host": [
 						"localhost"
 					],
@@ -90,20 +76,40 @@
 					"path": [
 						"devfy",
 						"desenvolvedores",
-						"cadastrar"
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/desenvolvedores/login",
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/desenvolvedores/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"desenvolvedores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"Marcinho\",\n    \"senha\": \"senha123\"\n}",
+					"raw": "{\n    \"usuario\": \"Marcinho\",\n    \"senha\": \"Senha1234567\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,28 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/desenvolvedores/logoff/{{id}}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/devfy/desenvolvedores/logoff/{{id}}",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"desenvolvedores",
-						"logoff",
-						"{{id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/desenvolvedores/logoff/{{id}}",
+			"name": "logoff",
 			"request": {
 				"method": "POST",
 				"header": [],

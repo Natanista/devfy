@@ -1,7 +1,6 @@
 package br.com.devfy.devfy.repository;
 
-import br.com.devfy.devfy.model.Desenvolvedor;
-import br.com.devfy.devfy.model.Empresa;
+import br.com.devfy.devfy.entity.Desenvolvedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -17,7 +16,5 @@ public interface DesenvolvedorRepository extends JpaRepository<Desenvolvedor, In
 
     public Desenvolvedor findDesenvolvedorByUsuarioEqualsAndSenhaEquals(String usuario,String senha);
 
-    @Query("SELECT '*' FROM Desenvolvedor WHERE isPremium = true")
-    List<Desenvolvedor> findByPremiumTrue();
 
 }

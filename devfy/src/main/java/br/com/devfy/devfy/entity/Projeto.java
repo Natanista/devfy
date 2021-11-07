@@ -1,4 +1,4 @@
-package br.com.devfy.devfy.model;
+package br.com.devfy.devfy.entity;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
 package br.com.devfy.devfy.helper;
 
-import br.com.devfy.devfy.model.Projeto;
+import br.com.devfy.devfy.entity.Projeto;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

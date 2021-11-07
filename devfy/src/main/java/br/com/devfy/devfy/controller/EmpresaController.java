@@ -1,118 +1,65 @@
 package br.com.devfy.devfy.controller;
 
-import br.com.devfy.devfy.helper.ModeloLogin;
-import br.com.devfy.devfy.model.Desenvolvedor;
-import br.com.devfy.devfy.model.Empresa;
-import br.com.devfy.devfy.repository.EmpresaRepository;
+import br.com.devfy.devfy.helper.UsuarioLogin;
+import br.com.devfy.devfy.entity.Empresa;
+import br.com.devfy.devfy.service.EmpresaService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
+@Slf4j
 @RequestMapping("/devfy/empresas")
 public class EmpresaController {
 
 
     @Autowired
-    private EmpresaRepository repository;
+    private EmpresaService empresaService;
 
     @GetMapping
-    public ResponseEntity exibir() {
-
-        List<Empresa> empresas = repository.findAll();
-
-        if (empresas.isEmpty()) {
-            return ResponseEntity.status(204).build();
-        }
-
-        return ResponseEntity.status(200).body(empresas);
+    public ResponseEntity getAll() {
+        log.info("getAll em EmpresaController");
+        return empresaService.getAll();
     }
 
-    @PutMapping("/atualizar/{id}")
-    public ResponseEntity atualizar(
+    @PutMapping("/{id}")
+    public ResponseEntity update(
             @PathVariable int id,
-            @RequestBody Empresa empresa
+            @Valid @RequestBody Empresa empresa
     ) {
-        if (repository.existsById(id)) {
-            empresa.setId(id);
-            repository.save(empresa);
-            return ResponseEntity.status(200).build();
-        }
-        return ResponseEntity.status(404).build();
+        log.info("update em EmpresaControlelr");
+        return empresaService.update(id, empresa);
     }
 
-    @DeleteMapping("/deletar/{id}")
-    public ResponseEntity deletar(
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(
             @PathVariable int id) {
-        if (repository.existsById(id)){
-        repository.deleteById(id);
-        return ResponseEntity.status(200).build();
-        }
-        return ResponseEntity.status(404).build();
+        log.info("delete em EmpresaController");
+        return empresaService.delete(id);
         }
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity adicionar(
-            @RequestBody Empresa empresa
+    @PostMapping()
+    public ResponseEntity save(
+           @Valid @RequestBody Empresa empresa
     ) {
-        empresa.cancelarPremium();
-        empresa.logoff();
-        repository.save(empresa);
-        return ResponseEntity.status(201).build();
+        log.info("save em EmpresaController");
+        return empresaService.save(empresa);
     }
 
     @PostMapping ("/login")
-    public ResponseEntity login(@RequestBody ModeloLogin empresa) {
-        Empresa empresaEncontrada = repository.findEmpresaByUsuarioEqualsAndSenhaEquals(
-                empresa.getUsuario(), empresa.getSenha()
-        );
-
-        if(empresaEncontrada.equals(null)){
-            return ResponseEntity.status(404).build();
-        }
-
-        empresaEncontrada.login();
-        repository.save(empresaEncontrada);
-        return ResponseEntity.status(200).body(empresaEncontrada);
+    public ResponseEntity login( @Valid @RequestBody UsuarioLogin empresa) {
+        log.info("login em EmpresaController");
+        return empresaService.login(empresa);
     }
-
-//    @PostMapping("/login")
-//    public ResponseEntity login(@RequestBody ModeloLogin desenvolvedor) {
-//        Desenvolvedor devEncontrado = repository.findDesenvolvedorByUsuarioEqualsAndSenhaEquals(
-//                desenvolvedor.getUsuario(), desenvolvedor.getSenha()
-//        );
-//
-//        if (devEncontrado.equals(null)){
-//            return ResponseEntity.status(404).build();
-//        }
-//
-//        devEncontrado.login();
-//        repository.save(devEncontrado);
-//        return ResponseEntity.status(200).body(devEncontrado);
-//    }
-
-
 
     @PostMapping("/logoff/{id}")
-    public ResponseEntity logoff(@PathVariable int id) {
-        if (repository.existsById(id)) {
-            Empresa empresa = repository.getById(id);
-            empresa.logoff();
-            repository.save(empresa);
-            return ResponseEntity.status(200).build();
-        }
-        return ResponseEntity.status(404).build();
+    public ResponseEntity logoff(  @PathVariable int id) {
+       log.info("logoff em EmpresaController");
+       return empresaService.logoff(id);
     }
 
-
-    @PostMapping("/{pesquisado}")
-    public ResponseEntity procurarProjeto(@PathVariable String pesquisado){
-            Empresa lista = new Empresa();
-                repository.findByNomeIgnoreCase(pesquisado)
-                .add(lista);
-                return ResponseEntity.status(200).body(lista);
-    }
 
 }

@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "30c1f466-b5e9-4785-b0fe-71a475dc156f",
+		"_postman_id": "7476bfb3-fdd9-4a2c-9e7f-ac27d35ff933",
 		"name": "Empresa",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/devfy/empresas/login",
+			"name": "save",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"exemplo\",\n    \"senha\": \"exemplo\"\n}",
+					"raw": "{\n    \"nome\": \"BANDTEC DigitalSchool\",\n    \"email\": \"bandtec@bandtec.br\",\n    \"telefone\": \"11988887777\",\n    \"pais\": \"Brasil\",\n    \"cep\": \"12345-123\",\n    \"representante\": \"Veralucia\",\n    \"telefoneRepresentante\": \"11922223333\",\n    \"usuario\": \"DigitalSchool\",\n    \"senha\": \"Academico123\",\n    \"cnpj\": \"46.562.748/0001-89\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,43 +20,21 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/devfy/empresas/login",
+					"raw": "localhost:8080/devfy/empresas",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"devfy",
-						"empresas",
-						"login"
+						"empresas"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/empresas/deletar/{{id}}",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/devfy/empresas/deletar/{{id}}",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"empresas",
-						"deletar",
-						"{{id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/empresas",
+			"name": "getAll",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -76,34 +54,13 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/empresas/atualizar/{{id}}",
+			"name": "update",
 			"request": {
 				"method": "PUT",
 				"header": [],
-				"url": {
-					"raw": "localhost:8080/devfy/empresas/atualizar/{{id}}",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"empresas",
-						"atualizar",
-						"{{id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/empresas/cadastrar",
-			"request": {
-				"method": "POST",
-				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nome\": \"Bandtec CA\",\n    \"email\": \"bandtec@bandtec.br\",\n    \"telefone\": \"11332321\",\n    \"pais\": \"Brasil\",\n    \"cep\": \"21312\",\n    \"representante\": \"Joao\",\n    \"telefoneRepresentante\": \"1213123\",\n    \"isAutenticado\": true,\n    \"usuario\": \"bandtec\",\n    \"senha\": \"bandte10\",\n    \"cnpj\": \"212312312\"\n}",
+					"raw": "{\n    \"nome\": \"BANDTEC DigitalSchool\",\n    \"email\": \"bandtec@digitalschool.br\",\n    \"telefone\": \"11988887777\",\n    \"pais\": \"Brasil\",\n    \"cep\": \"12345-123\",\n    \"representante\": \"Veralucia\",\n    \"telefoneRepresentante\": \"11922223333\",\n    \"usuario\": \"DigitalSchool\",\n    \"senha\": \"Academico123\",\n    \"cnpj\": \"46.562.748/0001-89\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -111,7 +68,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/devfy/empresas/cadastrar",
+					"raw": "localhost:8080/devfy/empresas/1",
 					"host": [
 						"localhost"
 					],
@@ -119,19 +76,19 @@
 					"path": [
 						"devfy",
 						"empresas",
-						"cadastrar"
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "devfy/empresas/logoff/{{id}}",
+			"name": "delete",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/devfy/empresas/logoff/{{id}}",
+					"raw": "localhost:8080/devfy/empresas/1",
 					"host": [
 						"localhost"
 					],
@@ -139,21 +96,20 @@
 					"path": [
 						"devfy",
 						"empresas",
-						"logoff",
-						"{{id}}"
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/empresas/login",
+			"name": "login",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"bandtec\",\n    \"senha\": \"bandte10\"\n}",
+					"raw": "{\n    \"usuario\": \"DigitalSchool\",\n    \"senha\": \"Academico123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -176,19 +132,10 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/empresas/logoff",
+			"name": "logoff",
 			"request": {
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"Marcinho\",\n    \"senha\": \"senha123\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "localhost:8080/devfy/desenvolvedores/logoff/1",
 					"host": [

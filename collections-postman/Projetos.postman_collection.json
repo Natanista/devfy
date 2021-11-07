@@ -1,17 +1,17 @@
 {
 	"info": {
-		"_postman_id": "3ea304b8-1fdd-4132-8a08-e3b4067a65bb",
+		"_postman_id": "e0296549-caee-4e34-b8e6-946a5c163dc2",
 		"name": "Projetos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/devfy/projetos/deletar/{{id}}",
+			"name": "delete",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/devfy/projetos/deletar/{{id}}",
+					"raw": "localhost:8080/devfy/projetos/1",
 					"host": [
 						"localhost"
 					],
@@ -19,18 +19,77 @@
 					"path": [
 						"devfy",
 						"projetos",
-						"deletar",
-						"{{id}}"
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/projetos",
+			"name": "getAll",
 			"request": {
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/buscar/Site Institucional",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"buscar",
+						"Site Institucional"
+					]
+				},
+				"description": "Lista os projetos da empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Site Institucional\",\n    \"linguagem\": \"React\",\n    \"descricao\": \"Site moderno em React\",\n    \"categoria\": \"Web\",\n    \"valor\": 5100.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/devfy/projetos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devfy",
+						"projetos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Site Institucional\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Site para divulgar minha empresa\",\n    \"categoria\": \"Web\",\n    \"valor\": 3400.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/devfy/projetos",
 					"host": [
@@ -41,84 +100,33 @@
 						"devfy",
 						"projetos"
 					]
-				},
-				"description": "Lista os projetos da empresa"
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/projetos/atualizar/{{id}}",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/devfy/projetos/atualizar/{{id}}",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"projetos",
-						"atualizar",
-						"{{id}}"
-					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/projetos/cadastrar",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"titulo\": \"Projetinho\",\n    \"linguagem\": \".NET\",\n    \"descricao\": \"Quero um projetinho .NET\",\n    \"categoria\": \"Web app\",\n    \"valor\": 100.0\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/devfy/projetos/cadastrar",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"devfy",
-						"projetos",
-						"cadastrar"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/devfy/projetos/buscar-titulo-projeto/Projetinho",
+			"name": "getProjetoByTitulo",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/devfy/projetos/buscar-titulo-projeto/Projetinho",
+					"raw": "localhost:8080/devfy/buscar/projetos/Projeto",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"devfy",
+						"buscar",
 						"projetos",
-						"buscar-titulo-projeto",
-						"Projetinho"
+						"Projeto"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/devfy/projetos/associar-dev/{{idProj}}/{{idDev}}",
+			"name": "associarDev",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -140,7 +148,7 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/projetos/associar-emp/{{empId}}/{{projId}}",
+			"name": "associarEmp",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -162,7 +170,7 @@
 			"response": []
 		},
 		{
-			"name": "/devfy/projetos/export-csv",
+			"name": "export-csv",
 			"request": {
 				"method": "GET",
 				"header": [],

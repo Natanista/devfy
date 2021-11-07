@@ -1,7 +1,7 @@
-package br.com.devfy.devfy.model;
+package br.com.devfy.devfy.entity;
 
 import com.sun.istack.NotNull;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "tbl_empresa")
-public class Empresa{
+public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,14 +27,17 @@ public class Empresa{
     private String email;
 
     @NotNull
+    @Pattern(regexp = "\\d{11}", message = "O telefone deve conter 11 inteiros")
     @Column(name = "emp_telefone")
     private String telefone;
 
     @NotNull
     @Column(name = "emp_pais")
-    private String  pais;
+    private String pais;
 
     @NotNull
+    @Pattern(regexp =  "\\d{5}-\\d{3}",
+            message = "o cep deve conter 8 caracteres, sendo eles: 5 inteiros, seguido de traço e dos 3 inteiros restantes")
     @Column(name = "emp_cep")
     private String cep;
 
@@ -52,26 +55,33 @@ public class Empresa{
     @Column(name = "premium")
     private Boolean isPremium;
 
+    @NotNull
+    @Size(min = 8, max = 15, message
+            = "O campo usuario deve conter entre 8 e 15 caracteres")
     @Column(name = "emp_usuario")
     private String usuario;
 
+    @NotNull
+    @Size(min = 8, max = 20, message
+            = "A senha deve conter no minimo 8, e  no maximo 20 caracteres.")
     @Column(name = "emp_senha")
     private String senha;
 
+    @CNPJ
     @Column(name = "emp_cnpj")
     private String cnpj;
 
-    @OneToMany(mappedBy="empresa")
+    @OneToMany(mappedBy = "empresa")
     private List<Projeto> projetos;
 
     public List<String> getProjetos() {
         List<String> projs = new ArrayList<>();
 
-        for(Projeto projeto: projetos){
+        for (Projeto projeto : projetos) {
             projs.add(projeto.getTitulo());
         }
 
-        return  projs;
+        return projs;
     }
 
 
@@ -87,11 +97,11 @@ public class Empresa{
         isPremium = premium;
     }
 
-    public void contratarPremium(){
+    public void contratarPremium() {
         this.isPremium = true;
     }
 
-    public void cancelarPremium(){
+    public void cancelarPremium() {
         this.isPremium = false;
     }
 
@@ -192,7 +202,7 @@ public class Empresa{
         this.isAutenticado = false;
     }
 
-    public void login(){
+    public void login() {
         this.isAutenticado = true;
     }
 

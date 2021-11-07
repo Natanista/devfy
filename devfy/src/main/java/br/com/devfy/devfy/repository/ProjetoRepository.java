@@ -1,11 +1,7 @@
 package br.com.devfy.devfy.repository;
 
-import br.com.devfy.devfy.model.Desenvolvedor;
-import br.com.devfy.devfy.model.Projeto;
+import br.com.devfy.devfy.entity.Projeto;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 /*
 Interface com os métodos de acesso a banco para a entidade Musica
