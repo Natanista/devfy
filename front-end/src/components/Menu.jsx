@@ -24,10 +24,12 @@ function Menu() {
               </li>
             </ul>
             <ul class="menu_2">
-              <li>
+              <li class="menu_li">
+                
                 <Link to={'/Login'}>
                   <a href="#">Entrar</a>
                 </Link>
+                
               </li>
               <li>
                 <button class="btn_orange" href="login.html"> Registrar-se </button>
