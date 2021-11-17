@@ -62,13 +62,12 @@ public class EmpresaService {
                 empresa.getUsuario(), empresa.getSenha()
         );
 
-        if (empresaEncontrada.equals(null)) {
-            return ResponseEntity.status(404).build();
+        if(empresaEncontrada == null){
+            return ResponseEntity.status(200).body(false);
         }
-
         empresaEncontrada.login();
         empresaRepository.save(empresaEncontrada);
-        return ResponseEntity.status(200).body(empresaEncontrada);
+        return ResponseEntity.status(200).body(true);
     }
 
     public ResponseEntity logoff(int id) {

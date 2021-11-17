@@ -61,6 +61,7 @@ nav ul li a{
     width: 136px;
     border: none;
     color: white;
+    cursor: pointer;
     font-size: 0.9rem;
 }
 .btn_green{

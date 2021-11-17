@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/Menu";
+import MenuLogado from "../components/MenuLogado";
 import Footer from "../components/Footer";
 import QuadradoCinzaDaDashboard from "../components/QuadradoCinzaDaDashboard";
 
@@ -8,7 +8,7 @@ function Dashboard(){
     return(
 <div>        
     <div>
-        <Menu/>
+        <MenuLogado/>
     </div>
 
     <div>

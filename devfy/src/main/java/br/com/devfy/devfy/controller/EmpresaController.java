@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 @RestController
 @Slf4j
+@CrossOrigin
 @RequestMapping("/devfy/empresas")
 public class EmpresaController {
 
