@@ -1,6 +1,5 @@
 import React from "react";
 import logo from '../html/img/LOGO.png';
-import Login from "../pages/Login";
 import { Link } from "react-router-dom";
 
 function Menu() {
@@ -32,7 +31,9 @@ function Menu() {
                 
               </li>
               <li>
+                <Link to={'/Registrar'}>
                 <button class="btn_orange" href="login.html"> Registrar-se </button>
+                </Link>
               </li>
             </ul>
           </div>
