@@ -4,6 +4,7 @@ import PaginaInicial from './pages/PaginaInicial';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
+import DashboardEmpresa  from './pages/DashboardEmpresa';
 
 //BrowserRouter: da acesso para usar os recursos de rotas
 //Switch: permite navegar entre as rotas
@@ -17,6 +18,7 @@ function Rotas(){
                <Route exact path="/dashboard" component={Dashboard}/>
                <Route exact path="/login" component={Login}/>
                <Route exact path="/registrar" component={Registrar}/>
+               <Route exact path="/dashboardEmpresa" component={DashboardEmpresa}/>
             </Switch>
         </BrowserRouter>
     );

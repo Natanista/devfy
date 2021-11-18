@@ -1,0 +1,53 @@
+.div_fundo{
+    margin:120px 10px 10px 30px; 
+    height: 1000px;
+    width: 95%;
+    display: flex;
+    background-color: transparent ;
+}
+
+.div_esquerda{
+    margin: 80px 10px 10px 30px;
+    height: 750px;
+    width: 40%;
+    display: flex;
+    background-color:  transparent;
+    display: grid;
+}
+
+
+.div_status_projeto{
+    height: 400px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    background-color: #2343C4;
+}
+
+.div_status_cards{
+    margin: 0px 0px 0px 0px;
+    height: 200px;
+    width: 88%;
+    border-radius: 10px;
+    border-left: 10px solid #2343C4;
+    display: flex;
+    background-color: rgb(206, 206, 206);
+}
+
+
+.div_direita{
+    float:right;
+    margin: 0px 30px 10px 60px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    background-color: bisque;
+    display: grid;
+}
+
+.div_icons{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    background-color: aqua;
+}
