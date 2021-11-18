@@ -23,7 +23,7 @@ function Registrar() {
   function cadastrar(e) {
     e.preventDefault();
 
-    api.post(`https://localhost:8080/devfy/empresas`, {
+    api.post("/empresas", {
       nome: nomeDigitado,
       email: emailDigitado,
       telefone: telefoneDigitado,
