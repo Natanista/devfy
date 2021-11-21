@@ -1,6 +1,7 @@
 import React from "react";
 import MenuLogado from "../components/MenuLogado";
 import Footer from "../components/Footer";
+import Card from "../components/Card";
 import '../html/css/dashboardEmpresa.css';
 
 
@@ -25,9 +26,12 @@ function DashboardEmpresa(){
 
         <div class="div_direita">
             <div class="div_icons">
-                
+                <h4>Projetos</h4>
+            </div>    
+            <div class="div_cards">
+                <Card/> 
             </div>
-
+            
         </div>
 
     <br />
