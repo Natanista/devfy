@@ -23,6 +23,7 @@ import static br.com.devfy.devfy.helper.CsvGenerator.leArquivoCsv;
 
 @RestController
 @RequestMapping("/devfy/projetos")
+@CrossOrigin
 @Slf4j
 public class ProjetoController {
 

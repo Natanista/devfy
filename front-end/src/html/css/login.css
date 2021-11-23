@@ -6,13 +6,23 @@
     -webkit-box-shadow: 1px 1px 50px 0px #4A99D3;
 }
 
+.content-tudo-add-project{
+    margin: 9% 0px 0px 5%;
+    display: flex;
+    width: 90%;
+    height: 600px;
+    -webkit-box-shadow: 1px 1px 50px 0px #4A99D3;
+}
+
+
 .cont-one{
     background-color:#2343C4;
     width: 50%;
 }
-.cont-one img{
+.cont-one h1{
     padding: 120px 100px 0px 100px;
-    width:300px;
+    color: white;
+    font-size: 60px;
 }
 .cont-two-login,
 .cont-two{
