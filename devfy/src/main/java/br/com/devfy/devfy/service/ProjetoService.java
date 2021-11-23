@@ -34,6 +34,7 @@ public class ProjetoService {
     @Autowired
     private EmpresaRepository empresaRepository;
 
+
     List<Notificacao> notificacoes = Arrays.asList(new EmailService(), new SlackService());
 
     public ResponseEntity getAll() {
@@ -67,7 +68,6 @@ public class ProjetoService {
 
     public ResponseEntity save(Projeto projeto) {
         log.info("save em ProjetoService");
-        List<Notificacao> notificoes;
         projetoRepository.save(projeto);
         return ResponseEntity.status(201).build();
     }
