@@ -1,6 +1,5 @@
-.div_fundo{
+/* .div_fundo{
     margin:120px 10px 10px 30px; 
-    /*background-color: green;*/
     height: 530px;
     width: 95%;
     display: flex;
@@ -44,14 +43,13 @@
 .div_card_projetos p{
     padding: 10px 1px 1px 10px;
 }
-
-/* 
+ 
 .div_card_projetos:hover{
     width: 93%;
     height: 146px;
     transition: 0.4s;
 }
- */
+
 .div_card_button{
     height: 45px;
     width: 100%;
@@ -79,3 +77,4 @@
     background-color: white;
     border-top-right-radius: 10px;
 }
+ */

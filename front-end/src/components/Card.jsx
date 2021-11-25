@@ -1,10 +1,14 @@
 import React from "react";
+import icon_dow from '../html/img/baixar.png'
 import '../html/css/dashboardEmpresa.css'
 
 function Card(props) {
   return (
     <div class="div_card_projetos">
       <div class="div_card_conteudo">
+      <div class="icone_dow">
+      <img class="icone_dow_img" src={icon_dow} alt="icone de Download" />
+       </div>
           <p>
             <strong>Título: </strong>{props.projeto}
           </p>
@@ -20,17 +24,23 @@ function Card(props) {
           <p>
             <strong>Tempo estimado: </strong>{props.tempoEst}
           </p>
-
+          <p>
+            <b>Publicado em:</b>
+          </p>
           <p>
             <strong>Descrição: </strong>
           </p>
-
-          <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          <p class="card_descricao">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi corporis porro veniam laboriosam obcaecati doloribus nihil, corrupti accusantium. Assumenda ratione facere omnis quos molestias, nulla odit totam suscipit cupiditate! Asperiores?
+       Expedita excepturi labore quod nihil explicabo magni quo, accusantium error voluptatem consequuntur cumque necessitatibus a voluptatum dolorum possimus eveniet deleniti facilis dignissimos. Fugit a saepe nisi et hic architecto soluta.
           {props.descricao}
-          </span>
-
+          </p>
+      <button class="btn_verde">Editar</button>
+      <button class="btn_vermelho">Excluir</button>
+      <p class="p_valor"><b> R$ 150 - 150</b></p>
     </div>
+   
+    
     </div>
     );
 }
