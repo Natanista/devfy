@@ -3,10 +3,10 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import PaginaInicial from './pages/PaginaInicial';
 import Dashboard from './pages/Dashboard';
 import AddProject from './pages/AddProject';
-import ProjectEditor from './pages/ProjectEditor';
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
 import DashboardEmpresa  from './pages/DashboardEmpresa';
+import UpdateProject from './pages/UpdateProject';
 
 //BrowserRouter: da acesso para usar os recursos de rotas
 //Switch: permite navegar entre as rotas
@@ -20,9 +20,9 @@ function Rotas(){
                <Route exact path="/dashboard" component={Dashboard}/>
                <Route exact path="/login" component={Login}/>
                <Route exact path="/registrar" component={Registrar}/>
-               <Route exact path="/dashboardEmpresa" component={DashboardEmpresa}/>
+               <Route exact path="/dashboard-empresa" component={DashboardEmpresa}/>
                <Route exact path="/cadastrar-projeto" component={AddProject} />
-               <Route exact path="/editar-projeto" component={ProjectEditor} />
+               <Route exact path="/atualizar-projeto/:id" component={UpdateProject} />
             </Switch>
         </BrowserRouter>
     );

@@ -37,6 +37,16 @@ public class ProjetoController {
         return projetoService.getAll();
     }
 
+    @GetMapping("/{id}")
+    @CrossOrigin
+    public ResponseEntity getById(
+            @PathVariable int id
+    ){
+        log.info("getById em Projeto Controller");
+        return projetoService.getById(id);
+    }
+
+
 
     @PutMapping("/{id}")
     public ResponseEntity update(
