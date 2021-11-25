@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import api from "../api";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import { useHistory } from 'react-router';
 import logoGrande from '../html/img/LogoGrande.png';
 
@@ -46,70 +47,72 @@ function Registrar() {
     <div>
       <Menu />
 
-      <div class="content-tudo">
-        <div class="cont-one">
-          <img src={logoGrande} alt="" />
-        </div>
-        <div class="cont-two-login">
+      <div class="content-tudo-add-empresa">
+       
+        <div class="cont-two-empresa">
           <h2>Cadastrar</h2>
 
-          <form onSubmit={cadastrar}>
+          <form onSubmit={cadastrar} class="formulario">
             <label>
               Nome: <br />
-              <input type="text" onChange={e => setNomeDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setNomeDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Email: <br />
-              <input type="text" onChange={e => setemailDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setemailDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Telefone: <br />
-              <input type="text" onChange={e => settelefoneDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => settelefoneDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Pais: <br />
-              <input type="text" onChange={e => setpaisDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setpaisDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               CEP: <br />
-              <input type="text" onChange={e => setcepDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setcepDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               CNPJ: <br />
-              <input type="text" onChange={e => setcnpjDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setcnpjDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Representante: <br />
-              <input type="text" onChange={e => setrepresentanteDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setrepresentanteDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Telefone Representante: <br />
-              <input type="text" onChange={e => settelefoneRepresentanteDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => settelefoneRepresentanteDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Usuário: <br />
-              <input type="text" onChange={e => setusuarioDigitado(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setusuarioDigitado(e.target.value)} />
             </label>
             <br />
             <label>
               Senha: <br />
-              <input type="text" onChange={e => setsenhaDigitada(e.target.value)} />
+              <input class="input_info"  type="text" onChange={e => setsenhaDigitada(e.target.value)} />
             </label>
             <br />
 
-            <button type="submit">Enviar</button>
+            <button class="btn_green2" type="submit">Enviar</button>
 
           </form>
         </div>
       </div>
+
+      <div class="espacamento"></div>
+
+      <Footer />
     </div>
   );
 }
