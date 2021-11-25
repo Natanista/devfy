@@ -13,6 +13,17 @@
     height: 600px;
     -webkit-box-shadow: 1px 1px 50px 0px #4A99D3;
 }
+.content-tudo-add-empresa{
+    margin: 9% 0px 0px 25%;
+    display: flex;
+    width: 50%;
+    height: 60%;
+    -webkit-box-shadow: 1px 1px 50px 0px #4A99D3;
+}
+
+.espacamento {
+    height: 100px;
+}
 
 
 .cont-one{
@@ -33,6 +44,17 @@
 }
 .cont-two-login h2,
 .cont-two h2{
+    text-align: center;
+    padding-top: 30px;
+    color: #4A99D3;
+    text-decoration: underline;
+}
+
+.cont-two-empresa {
+    width: 50%;
+    margin: 5% 5% 5% 22%;
+}
+.cont-two-empresa h2 {
     text-align: center;
     padding-top: 30px;
     color: #4A99D3;

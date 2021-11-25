@@ -131,4 +131,11 @@ public class ProjetoService {
     }
 
 
+    public ResponseEntity getById(int id) {
+        if(projetoRepository.existsById(id)){
+            return ResponseEntity.status(200).body(projetoRepository.findById(id).get()) ;
+        }
+
+        return ResponseEntity.status(404).build();
+    }
 }
