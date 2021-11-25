@@ -21,7 +21,7 @@ function Registrar() {
   function cadastrar(e) {
     e.preventDefault();
 
-    api.post(`http://localhost:8080/devfy/projetos`, {
+    api.post(`/projetos`, {
       titulo: tituloDigitado,
       linguagem: linguagemDigitada,
       descricao: descricaoDigitada,
