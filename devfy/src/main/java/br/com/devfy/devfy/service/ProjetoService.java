@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -68,6 +69,7 @@ public class ProjetoService {
 
     public ResponseEntity save(Projeto projeto) {
         log.info("save em ProjetoService");
+        projeto.setPublicadoEm(LocalDateTime.now());
         projetoRepository.save(projeto);
         return ResponseEntity.status(201).build();
     }
@@ -81,15 +83,9 @@ public class ProjetoService {
         return ResponseEntity.status(200).body(projetoEncontrado);
     }
 
-    public ResponseEntity gerarRelatorioCsv() {
+    public ResponseEntity gerarRelatorioCsv(int id) {
         log.info("gerarRelatorioCsv em ProjetoService");
-        int qtdProjetos = (int) projetoRepository.count();
-        List<Projeto> projetos = projetoRepository.findAll();
-        ListaObj<Projeto> projects = new ListaObj<>(qtdProjetos);
-
-        for (Projeto projeto : projetos) {
-            projects.adiciona(projeto);
-        }
+        List<Projeto> projects = List.of(projetoRepository.findById(id).get());
 
         gravaArquivoCsv(projects, "projetos");
         String file = leArquivoCsv("projetos");
@@ -97,7 +93,7 @@ public class ProjetoService {
 
         return ResponseEntity
                 .status(200)
-                .header("content-type", "application/csv")
+                .header("content-type", "text/csv")
                 .body(file);
 
     }

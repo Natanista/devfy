@@ -22,6 +22,7 @@ public class ContaBancariaService<FilaObj> {
     PilhaObj<Operacao> pilhaOperacoes = new PilhaObj(1000);
     br.com.devfy.devfy.helper.FilaObj<Operacao> filaOperacoes = new br.com.devfy.devfy.helper.FilaObj<>(1000);
 
+
     public ResponseEntity getContaById(int id) {
 
      if(contaBancariaRepository.existsById(id))   {
@@ -118,6 +119,19 @@ public class ContaBancariaService<FilaObj> {
             conta.depositar(op.getValor());
             contaBancariaRepository.save(conta);
         }
+
+        return ResponseEntity.status(200).build();
+    }
+
+    public ResponseEntity saqueAgendado(int id, ValorContaDTO valorDTO) {
+        if(!contaBancariaRepository.existsById(id)){
+            return ResponseEntity.status(404).build();
+        }
+        ContaBancaria conta = contaBancariaRepository.getById(id);
+        conta.debitar(valorDTO.getValor());
+        Operacao operacao = new Operacao(conta, "debito", valorDTO.getValor());
+        filaOperacoes.insert(operacao);
+        contaBancariaRepository.save(conta);
 
         return ResponseEntity.status(200).build();
     }

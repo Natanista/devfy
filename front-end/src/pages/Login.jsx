@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import Menu from "../components/Menu";
 import logoGrande from '../html/img/LogoGrande.png';
 import api from "../api";
+import { useHistory } from "react-router";
 
 
 function Login() {
+    const history = useHistory();
 
     const [usuarioDigitado, setUsuarioDigitado] = useState("");
     const [senhaDigitado, setSenhaDigitado] = useState("");
@@ -13,15 +15,14 @@ function Login() {
     function logar(e) {
         e.preventDefault();
 
-        api.post(`http://localhost:8080/devfy/empresas/login`, {
+        api.post(`/empresas/login`, {
             usuario: usuarioDigitado,
             senha: senhaDigitado,
         }).then((resposta) => {
             if (!resposta.data) {
-                alert("senha Incorreta! //TODO criar os erros de senha")
+                alert("senha Incorreta! ")
             } else {
-                alert("Usuario Logado!");
-                window.location = "/dashboard"
+                history.push("/dashboard-empresa")
             }
             console.log(resposta);
         }).catch((erro) => {

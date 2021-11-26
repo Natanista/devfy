@@ -1,7 +1,6 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import PaginaInicial from './pages/PaginaInicial';
-import Dashboard from './pages/Dashboard';
 import AddProject from './pages/AddProject';
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
@@ -17,7 +16,6 @@ function Rotas(){
         <BrowserRouter>
             <Switch>
                <Route exact path="/" component={PaginaInicial}/> 
-               <Route exact path="/dashboard" component={Dashboard}/>
                <Route exact path="/login" component={Login}/>
                <Route exact path="/registrar" component={Registrar}/>
                <Route exact path="/dashboard-empresa" component={DashboardEmpresa}/>

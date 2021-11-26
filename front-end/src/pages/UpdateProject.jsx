@@ -50,7 +50,7 @@ function UpdateProject() {
       categoria: categoriaDigitada,
       valor: valorDigitado,
     }).then((resposta) => {
-      history.push("/dashboard")
+      history.push("/dashboard-empresa")
     }).catch((erro) => {
       alert("Erro ao atualizar projeto!")
     });

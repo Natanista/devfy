@@ -13,7 +13,7 @@
 }
 
 .div_status_projeto{
-    height: 300px;
+    height: 450px;
     border-radius: 10px;
     background-color: #2343C4;
     
@@ -23,7 +23,7 @@
     padding: 30px 10px 5px 20px;
     color: white;
 }
-.conteudo_financeiro button{
+.conteudo_financeiro-botao{
     width: 200px;
     height: 40px;
     font-size: 15px;
@@ -127,11 +127,13 @@
 }
 .btn_verde{
     background-color: green;
+    cursor: pointer;
 }
 
 .btn_vermelho{
     
     background-color: red;
+    cursor: pointer;
 }
 
 .p_valor{
@@ -150,6 +152,7 @@
     width: 40px;
     float: right;
     margin: 10px;
+    cursor: pointer;
 }
 
 .btn_cadastrar_projeto{

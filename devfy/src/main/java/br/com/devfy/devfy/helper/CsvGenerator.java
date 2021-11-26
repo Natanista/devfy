@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class CsvGenerator {
-    public static FileWriter gravaArquivoCsv (ListaObj<Projeto> lista, String nomeArq) {
+    public static FileWriter gravaArquivoCsv (List<Projeto> lista, String nomeArq) {
         FileWriter arq = null;     // objeto que representa o arquivo a ser gravado
         Formatter saida = null;    // objeto que usaremos para escrever no arquivo
         Boolean deuRuim = false;
@@ -28,25 +28,15 @@ public class CsvGenerator {
         // Bloco try-catch para percorrer a lista e gravar no arquivo
         try {
 
-            for (int i = 0; i < lista.getSize(); i++) {
-                Projeto proj = lista.getElemento(i);
+            for (int i = 0; i < lista.size(); i++) {
+                Projeto proj = lista.get(i);
                 saida.format(
-                        "%d;%s;%.1f;%s;%d;%s;%s;%s;%s;%.1f;%d;%s;%s;%s;%s\n",
+                        "%d;%s;%.1f;%s;%s\n",
                         proj.getId(),
                         proj.getTitulo(),
                         proj.getValor(),
                         proj.getLinguagem(),
-                        proj.getDesenvolvedor().getId(),
-                        proj.getDesenvolvedor().getUsuario(),
-                        proj.getDesenvolvedor().getCpf(),
-                        proj.getDesenvolvedor().getEmail(),
-                        proj.getDesenvolvedor().getTelefone(),
-                        proj.getDesenvolvedor().getValorHora(),
-                        proj.getEmpresa().getId(),
-                        proj.getEmpresa().getUsuario(),
-                        proj.getEmpresa().getCnpj(),
-                        proj.getEmpresa().getEmail(),
-                        proj.getEmpresa().getTelefone()
+                        proj.getPublicadoEm()
                 );
             }
         }
@@ -92,29 +82,17 @@ public class CsvGenerator {
 
         // Bloco try-catch para ler do arquivo
         try {
-            csv.append(String.format("%10s %-20s %10s %-13s %6s %-16s %11s %-25s %12s %10s %10s %-20s %14s %-25s %14s\n",
-                    "ID PROJETO","TITULO", "VALOR", "LINGUAGEM", "DEV ID", "DEV", "DEV CPF", "DEV EMAIL", "DEV TELEFONE",
-                    "DEV $/h", "EMPRESA ID", "EMPRESA", "EMPRESA CNPJ", "EMPRESA EMAIL", "EMPRESA TEL"));
+            csv.append(String.format("%10s %-20s %10s %-13s %-20s\n",
+                    "ID PROJETO","TITULO", "VALOR", "LINGUAGEM", "PUBLICADO EM"));
 
             while (entrada.hasNext()) {  //enquanto não for final do arquivo
                 int idEmpresa = entrada.nextInt();
                 String titulo = entrada.next();
                 Double valor = entrada.nextDouble();
                 String linguagem = entrada.next();
-                int devId = entrada.nextInt();
-                String devNome = entrada.next();
-                String devCpf = entrada.next();
-                String devEmail = entrada.next();
-                String devTel = entrada.next();
-                Double devValorHora = entrada.nextDouble();
-                int empId = entrada.nextInt();
-                String empresa = entrada.next();
-                String empCnpj = entrada.next();
-                String empEmail = entrada.next();
-                String empTel = entrada.next();
-                csv.append(String.format("%10d %-20s %10.1f %-13s %6d %-16s %11s %-25s %12s %10.1f %10d %-20s %14s %-25s %14s\n",
-                        idEmpresa, titulo, valor, linguagem, devId, devNome, devCpf, devEmail, devTel, devValorHora, empId
-                        , empresa, empCnpj, empEmail, empTel)) ;
+                String publicadoEm = entrada.next();
+                csv.append(String.format("%10d %-20s %10.1f %-13s %-20s\n",
+                        idEmpresa, titulo, valor, linguagem, publicadoEm)) ;
             }
         }
         catch (NoSuchElementException erro) {

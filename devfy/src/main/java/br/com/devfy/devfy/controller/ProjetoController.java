@@ -78,10 +78,12 @@ public class ProjetoController {
         return projetoService.getProjetoByTitulo(tituloProjeto);
     }
 
-    @GetMapping("/export-csv")
-    public ResponseEntity gerarRelatorioCsv() {
+    @GetMapping("/export-csv/{id}")
+    public ResponseEntity gerarRelatorioCsv(
+            @PathVariable int id
+    ) {
         log.info("gerarRelatorioCsv em ProjetoController");
-        return projetoService.gerarRelatorioCsv();
+        return projetoService.gerarRelatorioCsv(id);
 
     }
 

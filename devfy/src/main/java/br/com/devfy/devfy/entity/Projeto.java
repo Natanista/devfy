@@ -1,6 +1,7 @@
 package br.com.devfy.devfy.entity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tbl_projeto")
@@ -26,6 +27,9 @@ public class Projeto {
     @Column(name = "proj_valor")
     private Double valor;
 
+    @Column(name = "proj_publicacao")
+    private LocalDateTime publicadoEm;
+
     @ManyToOne
     @JoinColumn(name="dev_id", nullable=true)
     private Desenvolvedor desenvolvedor;
@@ -44,6 +48,14 @@ public class Projeto {
 
     public Empresa getEmpresa() {
         return empresa;
+    }
+
+    public LocalDateTime getPublicadoEm() {
+        return publicadoEm;
+    }
+
+    public void setPublicadoEm(LocalDateTime publicadoEm) {
+        this.publicadoEm = publicadoEm;
     }
 
     public void setEmpresa(Empresa empresa) {

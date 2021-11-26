@@ -62,6 +62,14 @@ public class ContaBancariaController {
         return contaBancariaService.depositoAgendado(id, valorDTO);
     }
 
+    @PostMapping("/saque-agendado")
+    public ResponseEntity saqueAgendado(
+            @PathVariable int id,
+            @RequestBody ValorContaDTO valorDTO
+    ){
+        return contaBancariaService.saqueAgendado(id, valorDTO);
+    }
+
     @PostMapping("/executar-operacao")
     public ResponseEntity executarOperacao(){
         return contaBancariaService.executarOperacao();
