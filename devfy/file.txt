@@ -1,0 +1,5 @@
+-> integração final do sistema de pagamentos
+-> integração final do donwload de projeto
+-> integração final da contagem/status
+-> integração final do import (Thalles)
+-> Login pegando a sessão do usuario

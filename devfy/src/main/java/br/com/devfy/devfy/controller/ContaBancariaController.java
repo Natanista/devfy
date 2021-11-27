@@ -24,6 +24,7 @@ public class ContaBancariaController {
     }
 
     @PatchMapping("/debitar/{id}")
+    @CrossOrigin
     public ResponseEntity debitar(
             @PathVariable int id,
             @RequestBody ValorContaDTO valor
@@ -32,6 +33,7 @@ public class ContaBancariaController {
     }
 
     @PatchMapping("/depositar/{id}")
+    @CrossOrigin
     public ResponseEntity depositar(
             @PathVariable int id,
             @RequestBody ValorContaDTO valor
@@ -39,13 +41,13 @@ public class ContaBancariaController {
         return contaBancariaService.depositar(valor, id);
     }
 
-    @PutMapping("/desfazer-operacao")
+    @PostMapping("/desfazer-operacao")
     public  ResponseEntity desfazer(){
         return contaBancariaService.desfazer();
     }
 
 
-    @PostMapping("/debito-agendado")
+    @PostMapping("/debito-agendado/{id}")
     public ResponseEntity debitoAgendado(
             @PathVariable int id,
             @RequestBody ValorContaDTO valorDTO
@@ -54,21 +56,15 @@ public class ContaBancariaController {
     }
 
 
-    @PostMapping("/deposito-agendado")
+    @PostMapping("/deposito-agendado/{id}")
     public ResponseEntity depositoAgendado(
             @PathVariable int id,
-            @RequestBody ValorContaDTO valorDTO
+            @RequestBody ValorContaDTO valor
     ){
-        return contaBancariaService.depositoAgendado(id, valorDTO);
+        return contaBancariaService.depositoAgendado(id, valor);
     }
 
-    @PostMapping("/saque-agendado")
-    public ResponseEntity saqueAgendado(
-            @PathVariable int id,
-            @RequestBody ValorContaDTO valorDTO
-    ){
-        return contaBancariaService.saqueAgendado(id, valorDTO);
-    }
+
 
     @PostMapping("/executar-operacao")
     public ResponseEntity executarOperacao(){

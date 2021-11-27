@@ -11,15 +11,14 @@ import br.com.devfy.devfy.repository.DesenvolvedorRepository;
 import br.com.devfy.devfy.repository.EmpresaRepository;
 import br.com.devfy.devfy.repository.ProjetoRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -42,24 +41,36 @@ public class ProjetoService {
     @Autowired
     private EmpresaRepository empresaRepository;
 
+    public ResponseEntity importProj(MultipartFile csv) throws IOException {
 
-    List<Notificacao> notificacoes = Arrays.asList(new EmailService(), new SlackService());
-
-    public ResponseEntity importProj(MultipartFile csv){
-        EmpresaService empServ = new EmpresaService();
         BufferedReader entrada = null;
+        String conteudo = new String(csv.getBytes());
+        System.out.println(conteudo);
         String registro, tipoRegistro;
-        String titulo, linguagem, descricao,categoria,publicadoEm;
+        String titulo, linguagem, descricao,categoria;
         Double valor;
-        int id, idEmp;
+        int id;
         try {
-            entrada = new BufferedReader(new FileReader(String.valueOf(csv.getBytes())));
+
+
+            File f = new File(csv.getOriginalFilename());
+
+            try (FileOutputStream fos = new FileOutputStream(f)) {
+                fos.write(csv.getBytes());
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+
+
+
+            entrada = new BufferedReader(new FileReader(f));
         }
         catch (IOException erro) {
             System.out.println("Erro ao abrir o arquivo: " + erro.getMessage());
         }
 
         try{
+            System.out.println("Aqui esta a entrada: " + entrada);
             registro = entrada.readLine();
 
             while (registro != null) {
@@ -72,7 +83,6 @@ public class ProjetoService {
                     descricao = registro.substring(55,154).trim();
                     categoria = registro.substring(155,174).trim();
                     valor = Double.valueOf(registro.substring(175,181).replace(',','.'));
-                    idEmp = Integer.valueOf(registro.substring(201,202));
                     Projeto p = new Projeto();
                     p.setId(id);
                     p.setTitulo(titulo);
@@ -81,7 +91,6 @@ public class ProjetoService {
                     p.setValor(valor);
                     p.setPublicadoEm(LocalDateTime.now());
                     p.setCategoria(categoria);
-                    p.setEmpresa(empServ.getById(idEmp));
                     projetoRepository.save(p);
                 }
                 else {
@@ -164,7 +173,6 @@ public class ProjetoService {
             Desenvolvedor dev = desenvolvedorRepository.getById(devId);
             projeto.setDesenvolvedor(dev);
             projetoRepository.save(projeto);
-            notificacoes.forEach(not -> not.notificarCliente());
 
             return ResponseEntity.status(200).build();
         }
@@ -178,7 +186,6 @@ public class ProjetoService {
             Empresa empresa = empresaRepository.getById(empId);
             projeto.setEmpresa(empresa);
             projetoRepository.save(projeto);
-            notificacoes.forEach(not -> not.notificarEmpresa());
 
             return ResponseEntity.status(200).build();
         }

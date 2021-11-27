@@ -86,7 +86,6 @@ public class ContaBancariaService<FilaObj> {
         conta.debitar(valorDTO.getValor());
         Operacao operacao = new Operacao(conta, "debito", valorDTO.getValor());
         filaOperacoes.insert(operacao);
-        contaBancariaRepository.save(conta);
 
         return ResponseEntity.status(200).build();
     }
@@ -99,7 +98,6 @@ public class ContaBancariaService<FilaObj> {
         conta.depositar(valorDTO.getValor());
         Operacao operacao = new Operacao(conta, "deposito", valorDTO.getValor());
         filaOperacoes.insert(operacao);
-        contaBancariaRepository.save(conta);
 
         return ResponseEntity.status(200).build();
     }

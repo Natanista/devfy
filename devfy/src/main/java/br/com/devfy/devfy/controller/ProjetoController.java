@@ -1,5 +1,9 @@
 package br.com.devfy.devfy.controller;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,9 +43,10 @@ public class ProjetoController {
     }
 
     @PostMapping("/import")
-    public ResponseEntity importProjeto(@RequestParam MultipartFile csv){
-        return projetoService.importProj(csv);
+    public ResponseEntity importProjeto(@RequestParam MultipartFile txt) throws IOException {
+        return projetoService.importProj(txt);
     }
+
 
     @GetMapping("/{id}")
     @CrossOrigin
