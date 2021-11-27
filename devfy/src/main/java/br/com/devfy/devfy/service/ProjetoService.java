@@ -14,8 +14,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +44,59 @@ public class ProjetoService {
 
 
     List<Notificacao> notificacoes = Arrays.asList(new EmailService(), new SlackService());
+
+    public ResponseEntity importProj(MultipartFile csv){
+        EmpresaService empServ = new EmpresaService();
+        BufferedReader entrada = null;
+        String registro, tipoRegistro;
+        String titulo, linguagem, descricao,categoria,publicadoEm;
+        Double valor;
+        int id, idEmp;
+        try {
+            entrada = new BufferedReader(new FileReader(String.valueOf(csv.getBytes())));
+        }
+        catch (IOException erro) {
+            System.out.println("Erro ao abrir o arquivo: " + erro.getMessage());
+        }
+
+        try{
+            registro = entrada.readLine();
+
+            while (registro != null) {
+                tipoRegistro = registro.substring(0, 2);
+
+                if (tipoRegistro.equals("02")) {
+                    id = Integer.valueOf(registro.substring(3,4));
+                    titulo = registro.substring(5,34).trim();
+                    linguagem = registro.substring(35,54).trim();
+                    descricao = registro.substring(55,154).trim();
+                    categoria = registro.substring(155,174).trim();
+                    valor = Double.valueOf(registro.substring(175,181).replace(',','.'));
+                    idEmp = Integer.valueOf(registro.substring(201,202));
+                    Projeto p = new Projeto();
+                    p.setId(id);
+                    p.setTitulo(titulo);
+                    p.setLinguagem(linguagem);
+                    p.setDescricao(descricao);
+                    p.setValor(valor);
+                    p.setPublicadoEm(LocalDateTime.now());
+                    p.setCategoria(categoria);
+                    p.setEmpresa(empServ.getById(idEmp));
+                    projetoRepository.save(p);
+                }
+                else {
+                    System.out.println("Tipo de registro inválido!");
+                }
+                registro = entrada.readLine();
+
+            }
+            entrada.close();
+        }
+        catch (IOException erro) {
+            System.out.println("Erro ao ler o arquivo: " + erro.getMessage());
+        }
+        return ResponseEntity.status(200).build();
+    }
 
     public ResponseEntity getAll() {
         log.info("getAll em ProjetoService");

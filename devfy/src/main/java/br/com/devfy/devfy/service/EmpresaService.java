@@ -1,5 +1,6 @@
 package br.com.devfy.devfy.service;
 
+import br.com.devfy.devfy.entity.Desenvolvedor;
 import br.com.devfy.devfy.helper.UsuarioLogin;
 import br.com.devfy.devfy.entity.Empresa;
 import br.com.devfy.devfy.repository.EmpresaRepository;
@@ -16,6 +17,10 @@ public class EmpresaService {
 
     @Autowired
     private EmpresaRepository empresaRepository;
+
+    public Empresa getById(int id){
+        return empresaRepository.getById(id);
+    }
 
     public ResponseEntity getAll() {
         log.info("getAll em EmpresaService");

@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -35,6 +36,11 @@ public class ProjetoController {
     public ResponseEntity getAll() {
         log.info("getAll em ProjetoController");
         return projetoService.getAll();
+    }
+
+    @PostMapping("/import")
+    public ResponseEntity importProjeto(@RequestParam MultipartFile csv){
+        return projetoService.importProj(csv);
     }
 
     @GetMapping("/{id}")

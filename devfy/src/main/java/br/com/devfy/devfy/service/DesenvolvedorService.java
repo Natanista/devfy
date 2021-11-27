@@ -17,6 +17,10 @@ public class DesenvolvedorService {
     @Autowired
     private DesenvolvedorRepository desenvolvedorRepository;
 
+    public Desenvolvedor getById(int id){
+        return desenvolvedorRepository.getById(id);
+    }
+
     public ResponseEntity save(Desenvolvedor desenvolvedor) {
         log.info("save em DesenvolvedorService");
         desenvolvedor.logoff();
