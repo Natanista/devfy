@@ -46,7 +46,7 @@ function Login() {
                         <input onChange={e => setUsuarioDigitado(e.target.value)} type="text" name="" id="" class="input_info" placeholder="Digite usuário ou e-mail" />
                         <br />
                         <label htmlFor="">Senha</label><br />
-                        <input onChange={e => setSenhaDigitado(e.target.value)} type="text" name="" id="" class="input_info" placeholder="*****" />
+                        <input onChange={e => setSenhaDigitado(e.target.value)} type="password" name="" id="" class="input_info" placeholder="*****" />
                         <br />
                         <button type="submit">Enviar</button>
                     </form>
