@@ -57,10 +57,10 @@
     margin: 5% 5% 5% 22%;
 }
 .cont-two-empresa h2 {
+    font-size: 40px;
     text-align: center;
-    padding-top: 30px;
-    color: #4A99D3;
-    text-decoration: underline;
+    padding-top: 10px;
+    color: #2343C4;
 }
 .cont-info{
     margin: 20px 50px 0px 100px;

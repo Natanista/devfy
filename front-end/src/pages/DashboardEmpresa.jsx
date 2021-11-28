@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState,  useParams} from "react";
 import MenuLogado from "../components/MenuLogado";
 import Footer from "../components/Footer";
 import icon_dow from '../html/img/import.png'
@@ -6,8 +6,12 @@ import Card from "../components/Card";
 import '../html/css/dashboardEmpresa.css';
 import api from "../api";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+
 
 function Cards() {
+
 
 
     const [numero, setNumero] = useState("");
@@ -112,12 +116,12 @@ function Cards() {
     useEffect(() => {
         async function buscarCards(){
           const resposta = await api.get(`/projetos`)
-          setCards(resposta.data)
+            setCards(resposta.data);
           console.log("olha o que veio da api!!!",resposta.data)
         }
         buscarCards()
       },[]);
-    
+
 
         return (
             <div>
@@ -166,6 +170,7 @@ function Cards() {
 
                             </div>
                         </div>
+
                         <div className="div_status_cards">
                             <div className="conteudo_status">
                                 <h3>Status dos cards</h3>
@@ -182,19 +187,21 @@ function Cards() {
                     <div className="div_direita">
                         <div className="div_icons">
 
-                            <img className="icone_dow_img" src={icon_dow} alt="icone de Download" />
+        
+    
+               
+        
+
+
+
                             <Link to="/cadastrar-projeto">
-                            <button className="btn_cadastrar_projeto">Cadastrar projeto</button>
+                            <button className="btn_cadastrar_projeto">Cadastrar projeto</button>        
                             </Link>
 
-                            <select id="card" className="dropdown_status">
-                                <option value="#">Selecione status do projeto</option>
-                                <option value="aberto">Aberto</option>
-                                <option value="finalizado">Finalizado</option>
-                                <option value="andamento">Andamento</option>
-                            </select>
+                            
 
                         </div>
+
                         <div className="div_cards">
                             { 
                                 cards.map((card) => (
@@ -211,8 +218,10 @@ function Cards() {
                                 ))
                             }
                         </div>
+                        
 
-                    </div>
+       
+                        </div>
 
                     <br />
                 </div>

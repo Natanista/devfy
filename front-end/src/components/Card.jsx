@@ -3,6 +3,7 @@ import icon_dow from '../html/img/baixar.png'
 import '../html/css/dashboardEmpresa.css'
 import api from "../api"
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 function Card(props) {
 
@@ -17,16 +18,46 @@ function Card(props) {
   }
 
   function donwload(){
-    api.get(`projetos/export-csv/${props.id}`)
-    .then((resposta)=>{
-    })
-    .catch((erro) => {
-      console.log("erro ao efetuar donwload")
-    })
-  }
+
+    //api.get(`http://localhost:8080/devfy/projetos/export-csv/${props.id}`)
+    //.catch((erro) => {
+     // console.log("erro ao efetuar donwload")
+    //})
+/* 
+    axios({
+      url: `http://localhost:8080/devfy/projetos/export-csv/${props.id}`,
+      method: "GET",
+      responseType: "blob" // important
+  }).then(response => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute(
+          "download",
+          `${this.props.file.name}.${this.props.file.mime}`
+      );
+      document.body.appendChild(link);
+      link.click();
+  });
+  } */
+
+  axios({
+    url: `http://localhost:8080/devfy/projetos/export-csv/${props.id}`,
+    method: "GET",
+    responseType: "blob" // important
+}).then(response => {
+    //const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = `http://localhost:8080/devfy/projetos/export-csv/${props.id}`;
+    document.body.appendChild(link);
+    link.click();
+});
+}
 
 
 
+
+ 
 
 
 
@@ -34,7 +65,7 @@ function Card(props) {
     <div class="div_card_projetos">
       <div class="div_card_conteudo">
       <div class="icone_dow">
-      <img onClick={donwload} target="_blank" class="icone_dow_img" src={icon_dow} alt="icone de Download" donwload/>
+      <img onClick={donwload} target="_blank" class="icone_dow_img" src={icon_dow} alt="icone de Download"/>
        </div>
           <p>
             <strong>Título: </strong>{props.titulo}
