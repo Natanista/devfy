@@ -29,6 +29,8 @@
 .cont-one{
     background-color:#2343C4;
     width: 50%;
+    display: flex;
+    align-content: center;
 }
 .cont-one h1{
     padding: 120px 100px 0px 100px;
@@ -71,7 +73,15 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.cont-two-login button,
-.cont-two button{
-    margin: 2% 30% 0px 30%;
+.btn_entrar{
+    background-color: #0DAEB6;
+    border-radius: 56px;
+    font-weight: bold;
+    height: 54px;
+    width: 136px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 5% 0 0 27%;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Menu from "../components/Menu";
 import logoGrande from '../html/img/LogoGrande.png';
+import LOGOBRANCA from '../html/img/LOGOBRANCA.svg';
 import api from "../api";
 import { useHistory } from "react-router";
 
@@ -37,7 +38,7 @@ function Login() {
             <Menu />
             <div class="content-tudo">
                 <div class="cont-one">
-                    <img src={logoGrande} alt="" />
+                    <img src={LOGOBRANCA} alt="" />
                 </div>
                 <div class="cont-two-login">
                     <h2>Login</h2>
@@ -48,7 +49,7 @@ function Login() {
                         <label htmlFor="">Senha</label><br />
                         <input onChange={e => setSenhaDigitado(e.target.value)} type="text" name="" id="" class="input_info" placeholder="*****" />
                         <br />
-                        <button type="submit">Enviar</button>
+                        <button class="btn_entrar" type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
