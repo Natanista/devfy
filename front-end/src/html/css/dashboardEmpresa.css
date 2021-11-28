@@ -13,7 +13,7 @@
 }
 
 .div_status_projeto{
-    height: 450px;
+    height: 700px;
     border-radius: 10px;
     background-color: #2343C4;
     
@@ -22,6 +22,7 @@
     height: 200px;
     padding: 30px 10px 5px 20px;
     color: white;
+    text-align: center;
 }
 .conteudo_financeiro-botao{
     width: 200px;
@@ -182,7 +183,7 @@
     background-color: #0DAEB6;
     border-radius: 5px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 136px;
     border: none;
     color: white;
@@ -193,10 +194,10 @@
 
 
 .button_proj2{
-    background-color: #2bb900;
+    background-color: #f19100;
     border-radius: 5px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 136px;
     border: none;
     color: white;
@@ -209,7 +210,7 @@
     background-color: #e78e08;
     border-radius: 5px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 136px;
     border: none;
     color: white;
@@ -219,32 +220,66 @@
 }
 
 .button_proj4{
-    background-color: #be018f;
+    background-color: #349b04;
     border-radius: 5px;
     font-weight: bold;
-    height: 25px;
-    width: 136px;
+    height: 100px;
+    width: 200px;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 25px;
+    margin-left: 50px;
 }
 
 .button_proj5{
-    background-color: #be3d01;
+    background-color: #9b0418;
     border-radius: 5px;
     font-weight: bold;
-    height: 25px;
-    width: 136px;
+    height: 100px;
+    width: 200px;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .botoes_juntos{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 50%;
+    /* grid-column: auto; */
+}
+
+.botoes_juntos2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    /* grid-column: auto; */
+}
+
+.saldo{
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.input_txt{
+    text-align: center;
+    font-size: 35px;
+}
+
+.btn_upload{
+    background-color: #349b04;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 100px;
+    width: 200px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 25px;
+    margin-left: 50px;
 }

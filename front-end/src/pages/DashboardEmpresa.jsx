@@ -19,6 +19,7 @@ function Cards() {
     const [valorDebito, setValorDebito] = useState("");
     const [valorDeposito, setValorDeposito] = useState("");
     const [file, setFile] = useState(null);
+    const [contagem, setContagem] = useState("")
 
 
 
@@ -31,6 +32,7 @@ function Cards() {
         api.post("/projetos/import", formData)
         .then((res) => {
             console.log(res)
+            location.reload();
         }).catch((err) => {
             console.log(err)
         });
@@ -53,6 +55,21 @@ function Cards() {
       }
       getConta();
     }, [])
+
+    useEffect(() => {
+        async function getContagem() {
+            const resposta = await api
+            .get("/projetos/contagem")
+            .then((resposta) => {
+    
+                setContagem(resposta.data);
+            })
+            .catch((erro) => {
+                console.log("Erro")
+            })
+        }
+        getContagem();
+      }, [])
 
     function depositar(e){
         e.preventDefault();
@@ -162,39 +179,32 @@ function Cards() {
                             <div className="conteudo_financeiro">
                                 <h3>Status dos projetos:</h3>
                                 <br/>
-                                <p><b>Projetos em aberto:</b> 3</p>
-                                <p><b>Projetos em andamentos:</b>5</p>
-                                <p><b>Projetos finalizados:</b>90</p>
-                                <p><b>Contratos em andamento:</b>3</p>
+                                <p><b>Projetos em aberto:</b> {contagem}</p>
+    
 
                                 <br />
                                 <h3>Financeiro</h3>
                                 <br />
                                 <p><b>Conta: </b> {numero}</p>
-                                <p><b>Saldo:</b> R${saldo}</p>
-                                <label htmlFor="saldoDeposito">Depósito: </label><br />
-                                <input onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
+                                <p class="saldo"><b>Saldo:</b> R${saldo}</p> 
+                               <p> <label class="saldo" htmlFor="saldoDeposito">Depósito: </label></p><br />
+                                <input class="input_txt" onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
                                 <br   />
                                 <div class="botoes_juntos">
                                 <button class="button_proj" onClick={depositar}>Deposito imediato</button>
                                 <button class="button_proj2" onClick={depositarAgendado}>Agendar deposito</button>
                                 </div>
 
-                                <label htmlFor="saldoSaque">Saque:     </label><br />
-                                <input onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
+                                <label class="saldo" htmlFor="saldoSaque">Saque:     </label><br />
+                                <input class="input_txt" onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
                                 <br />
                                 <div class="botoes_juntos">
-                                <button class="button_proj3" onClick={debitar}>Saque imeadiato</button>
-                
-
-                                <button class="button_proj4" onClick={debitarAgendado}>Agendar Saque</button>
-            
+                                <button class="button_proj" onClick={debitar}>Saque imeadiato</button>
+                                <button class="button_proj2" onClick={debitarAgendado}>Agendar Saque</button> 
                                 </div>
-                                
-                                <div class="botoes_juntos">
-                                <button class="button_proj2" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
+                                <div class="botoes_juntos2">
+                                <button class="button_proj4" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
                                 <button class="button_proj5" onClick={desfazer} ><b>Desfazer</b></button>
-                            
                                 </div>
 
                             </div>
@@ -216,7 +226,7 @@ function Cards() {
                     <div className="div_direita">
                         <div className="div_icons">
                         <input  type="file" name="file" onChange={(e) => setFile(e.target.files[0])} />
-                <button onClick={submitForm}> 
+                <button class="btn_upload" onClick={submitForm}> 
                   Upload! 
                 </button> 
 

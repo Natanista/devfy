@@ -119,6 +119,13 @@ public class ProjetoController {
 
     }
 
+    @GetMapping("/contagem")
+    public ResponseEntity getContagem() {
+        log.info("associarEpresa em ProjetoCOntroller");
+        return projetoService.getContagem();
+
+    }
+
 
 }
 
