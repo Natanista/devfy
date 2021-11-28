@@ -171,30 +171,25 @@ function Cards() {
                                 <h3>Financeiro</h3>
                                 <br />
                                 <p><b>Conta: </b> {numero}</p>
-                                <p><b>Saldo:</b> R${saldo}</p>
-                                <label htmlFor="saldoDeposito">Depósito: </label><br />
-                                <input onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
+                                <p class="saldo"><b>Saldo:</b> R${saldo}</p> 
+                               <p> <label class="saldo" htmlFor="saldoDeposito">Depósito: </label></p><br />
+                                <input class="input_txt" onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
                                 <br   />
                                 <div class="botoes_juntos">
                                 <button class="button_proj" onClick={depositar}>Deposito imediato</button>
                                 <button class="button_proj2" onClick={depositarAgendado}>Agendar deposito</button>
                                 </div>
 
-                                <label htmlFor="saldoSaque">Saque:     </label><br />
-                                <input onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
+                                <label class="saldo" htmlFor="saldoSaque">Saque:     </label><br />
+                                <input class="input_txt" onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
                                 <br />
                                 <div class="botoes_juntos">
-                                <button class="button_proj3" onClick={debitar}>Saque imeadiato</button>
-                
-
-                                <button class="button_proj4" onClick={debitarAgendado}>Agendar Saque</button>
-            
+                                <button class="button_proj" onClick={debitar}>Saque imeadiato</button>
+                                <button class="button_proj2" onClick={debitarAgendado}>Agendar Saque</button> 
                                 </div>
-                                
-                                <div class="botoes_juntos">
-                                <button class="button_proj2" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
+                                <div class="botoes_juntos2">
+                                <button class="button_proj4" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
                                 <button class="button_proj5" onClick={desfazer} ><b>Desfazer</b></button>
-                            
                                 </div>
 
                             </div>
@@ -216,7 +211,7 @@ function Cards() {
                     <div className="div_direita">
                         <div className="div_icons">
                         <input  type="file" name="file" onChange={(e) => setFile(e.target.files[0])} />
-                <button onClick={submitForm}> 
+                <button class="btn_upload" onClick={submitForm}> 
                   Upload! 
                 </button> 
 
