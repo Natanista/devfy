@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import '../html/css/dashboardEmpresa.css';
 import api from "../api";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 
 
@@ -18,6 +18,24 @@ function Cards() {
     const [saldo, setSaldo] = useState("");
     const [valorDebito, setValorDebito] = useState("");
     const [valorDeposito, setValorDeposito] = useState("");
+    const [file, setFile] = useState(null);
+
+
+
+
+    function submitForm() {
+        const formData = new FormData();
+
+        formData.append("txt", file);
+
+        api.post("/projetos/import", formData)
+        .then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
+        });
+    
+    }
 
 
     useEffect(() => {
@@ -123,6 +141,15 @@ function Cards() {
       },[]);
 
 
+    
+      
+
+
+
+
+
+
+
         return (
             <div>
                 <div>
@@ -186,11 +213,10 @@ function Cards() {
 
                     <div className="div_direita">
                         <div className="div_icons">
-
-        
-    
-               
-        
+                        <input  type="file" name="file" onChange={(e) => setFile(e.target.files[0])} />
+                <button onClick={submitForm}> 
+                  Upload! 
+                </button> 
 
 
 
