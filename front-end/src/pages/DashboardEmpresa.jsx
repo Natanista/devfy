@@ -19,6 +19,7 @@ function Cards() {
     const [valorDebito, setValorDebito] = useState("");
     const [valorDeposito, setValorDeposito] = useState("");
     const [file, setFile] = useState(null);
+    const [contagem, setContagem] = useState("")
 
 
 
@@ -31,6 +32,7 @@ function Cards() {
         api.post("/projetos/import", formData)
         .then((res) => {
             console.log(res)
+            location.reload();
         }).catch((err) => {
             console.log(err)
         });
@@ -53,6 +55,21 @@ function Cards() {
       }
       getConta();
     }, [])
+
+    useEffect(() => {
+        async function getContagem() {
+            const resposta = await api
+            .get("/projetos/contagem")
+            .then((resposta) => {
+    
+                setContagem(resposta.data);
+            })
+            .catch((erro) => {
+                console.log("Erro")
+            })
+        }
+        getContagem();
+      }, [])
 
     function depositar(e){
         e.preventDefault();
@@ -162,10 +179,8 @@ function Cards() {
                             <div className="conteudo_financeiro">
                                 <h3>Status dos projetos:</h3>
                                 <br/>
-                                <p><b>Projetos em aberto:</b> 3</p>
-                                <p><b>Projetos em andamentos:</b>5</p>
-                                <p><b>Projetos finalizados:</b>90</p>
-                                <p><b>Contratos em andamento:</b>3</p>
+                                <p><b>Projetos em aberto:</b> {contagem}</p>
+    
 
                                 <br />
                                 <h3>Financeiro</h3>

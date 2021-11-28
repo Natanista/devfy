@@ -77,20 +77,18 @@ public class ProjetoService {
                 tipoRegistro = registro.substring(0, 2);
 
                 if (tipoRegistro.equals("02")) {
-                    id = Integer.valueOf(registro.substring(3,4));
-                    titulo = registro.substring(5,34).trim();
-                    linguagem = registro.substring(35,54).trim();
-                    descricao = registro.substring(55,154).trim();
-                    categoria = registro.substring(155,174).trim();
-                    valor = Double.valueOf(registro.substring(175,181).replace(',','.'));
+                    titulo = registro.substring(0,15);
+//                    linguagem = registro.substring(33,52).trim();
+//                    descricao = registro.substring(53,152).trim();
+//                    categoria = registro.substring(153,172).trim();
+//                    valor = Double.valueOf(registro.substring(173,179).replace(',','.'));
                     Projeto p = new Projeto();
-                    p.setId(id);
                     p.setTitulo(titulo);
-                    p.setLinguagem(linguagem);
-                    p.setDescricao(descricao);
-                    p.setValor(valor);
+                    p.setLinguagem("JAVA");
+                    p.setDescricao("PROJETO PARA EMPRESA");
+                    p.setValor(200.0);
                     p.setPublicadoEm(LocalDateTime.now());
-                    p.setCategoria(categoria);
+                    p.setCategoria("WEB APP");
                     projetoRepository.save(p);
                 }
                 else {
@@ -200,5 +198,9 @@ public class ProjetoService {
         }
 
         return ResponseEntity.status(404).build();
+    }
+
+    public ResponseEntity getContagem() {
+        return  ResponseEntity.status(200).body(projetoRepository.count());
     }
 }
