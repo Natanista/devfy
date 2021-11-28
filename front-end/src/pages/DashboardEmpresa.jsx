@@ -148,25 +148,27 @@ function Cards() {
                                 <label htmlFor="saldoDeposito">Depósito: </label><br />
                                 <input onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
                                 <br   />
-                                <button onClick={depositar}>Deposito imediato</button>
-                                <br />
-                                <button onClick={depositarAgendado}>Agendar deposito</button>
-                                <br />
+                                <div class="botoes_juntos">
+                                <button class="button_proj" onClick={depositar}>Deposito imediato</button>
+                                <button class="button_proj2" onClick={depositarAgendado}>Agendar deposito</button>
+                                </div>
 
                                 <label htmlFor="saldoSaque">Saque:     </label><br />
                                 <input onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
                                 <br />
-                                <button onClick={debitar}>Saque imeadiato</button>
-                                <br />
+                                <div class="botoes_juntos">
+                                <button class="button_proj3" onClick={debitar}>Saque imeadiato</button>
+                
 
-                                <button onClick={debitarAgendado}>Agendar Saque</button>
-                                <br />
-
+                                <button class="button_proj4" onClick={debitarAgendado}>Agendar Saque</button>
+            
+                                </div>
                                 
-                                <button onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
-                                <button onClick={desfazer} ><b>Desfazer</b></button>
-                              
-
+                                <div class="botoes_juntos">
+                                <button class="button_proj2" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
+                                <button class="button_proj5" onClick={desfazer} ><b>Desfazer</b></button>
+                            
+                                </div>
 
                             </div>
                         </div>
