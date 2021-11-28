@@ -23,7 +23,7 @@ function Card(props) {
     //.catch((erro) => {
      // console.log("erro ao efetuar donwload")
     //})
-
+/* 
     axios({
       url: `http://localhost:8080/devfy/projetos/export-csv/${props.id}`,
       method: "GET",
@@ -39,7 +39,20 @@ function Card(props) {
       document.body.appendChild(link);
       link.click();
   });
-  }
+  } */
+
+  axios({
+    url: `http://localhost:8080/devfy/projetos/export-csv/${props.id}`,
+    method: "GET",
+    responseType: "blob" // important
+}).then(response => {
+    //const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = `http://localhost:8080/devfy/projetos/export-csv/${props.id}`;
+    document.body.appendChild(link);
+    link.click();
+});
+}
 
 
 
