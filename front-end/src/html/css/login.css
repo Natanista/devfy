@@ -31,6 +31,7 @@
     width: 50%;
     display: flex;
     align-content: center;
+    justify-content: center;
 }
 .cont-one h1{
     padding: 120px 100px 0px 100px;
