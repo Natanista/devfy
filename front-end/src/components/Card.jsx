@@ -90,7 +90,7 @@ function Card(props) {
           {props.descricao}
           </p>
 
-
+      <div className="info_baixo">
       <Link to="/dashboard-empresa">
       <button class="btn_vermelho" onClick={deletarMusica}>Excluir</button>
       </Link>
@@ -100,6 +100,7 @@ function Card(props) {
       </Link>
       
       <p class="p_valor"><b> R${props.valor}</b></p>
+      </div>
     </div>
    
     

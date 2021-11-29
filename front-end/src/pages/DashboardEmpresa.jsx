@@ -177,67 +177,47 @@ function Cards() {
                     <div className="div_esquerda">
                         <div className="div_status_projeto">
                             <div className="conteudo_financeiro">
-                                <h3>Status dos projetos:</h3>
-                                <br/>
-                                <p><b>Projetos em aberto:</b> {contagem}</p>
-    
-
+                                <h2>Financeiro dos projetos</h2>
+                                <br/> <br />
+                                <p>Projetos em aberto:     {contagem}</p>
                                 <br />
-                                <h3>Financeiro</h3>
+                                <p>Conta:  {numero}</p>
                                 <br />
-                                <p><b>Conta: </b> {numero}</p>
-                                <p class="saldo"><b>Saldo:</b> R${saldo}</p> 
-                               <p> <label class="saldo" htmlFor="saldoDeposito">Depósito: </label></p><br />
+                                <h3><b>Saldo:</b>    R${saldo}</h3> 
+                                <br />
+                               <p> <label class="saldo" htmlFor="saldoDeposito">Depósito: </label></p>
+                               <br />
                                 <input class="input_txt" onChange={e => setValorDeposito(e.target.value)} type="text" name="saldoDeposito" id="saldoDeposito" />
                                 <br   />
-                                <div class="botoes_juntos">
-                                <button class="button_proj" onClick={depositar}>Deposito imediato</button>
-                                <button class="button_proj2" onClick={depositarAgendado}>Agendar deposito</button>
-                                </div>
-
-                                <label class="saldo" htmlFor="saldoSaque">Saque:     </label><br />
-                                <input class="input_txt" onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" />
+                                <button class="btn_todos" id="btn_cor_azul" onClick={depositar}>Deposito imediato</button>
+                                <button class="btn_todos" id="btn_cor_amarelo" onClick={depositarAgendado}>Agendar deposito</button>
+                                
+                                <label  htmlFor="saldoSaque">Saque:     </label>
+                                <br /> <br />
+                                <input class="input_text" onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" class="input_txt"/>
+                               <br />
+                                <button class="btn_todos" id="btn_cor_azul" onClick={debitar}>Saque imeadiato</button>
+                                <button class="btn_todos" id="btn_cor_amarelo" onClick={debitarAgendado}>Agendar Saque</button> 
                                 <br />
-                                <div class="botoes_juntos">
-                                <button class="button_proj" onClick={debitar}>Saque imeadiato</button>
-                                <button class="button_proj2" onClick={debitarAgendado}>Agendar Saque</button> 
-                                </div>
-                                <div class="botoes_juntos2">
-                                <button class="button_proj4" onClick={executarOperacao}> <b> Atualiza Financeiro</b> </button>
-                                <button class="button_proj5" onClick={desfazer} ><b>Desfazer</b></button>
-                                </div>
+                                <button class="btn_todos" id="btn_cor_verde" onClick={executarOperacao}> Atualiza Financeiro</button>
+                                <button class="btn_todos" id="btn_cor_vermelha" onClick={desfazer} >Desfazer</button>
+                              
 
                             </div>
                         </div>
 
-                        <div className="div_status_cards">
-                            <div className="conteudo_status">
-                                <h3>Status dos cards</h3>
-                                <br />
-                                <ul>
-                                    <li className="li_1">Aberto</li>
-                                    <li className="li_1">Finalizado</li>
-                                    <li className="li_1">Andamento</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
 
                     <div className="div_direita">
                         <div className="div_icons">
-                        <input  type="file" name="file" onChange={(e) => setFile(e.target.files[0])} />
-                <button class="btn_upload" onClick={submitForm}> 
-                  Upload! 
-                </button> 
+                       <Link to="/cadastrar-projeto">
+                            <button class="btn_todos"  id="btn_cor_amarelo_cad">Cadastrar projeto</button>        
+                            </Link> 
+                        <label for="arquivo" class="txt_upload"> Escolher arquivo</label> 
+                         <input type="file" name="arquivo" id="arquivo" onChange={(e) => setFile(e.target.files[0])} />
 
-
-
-                            <Link to="/cadastrar-projeto">
-                            <button className="btn_cadastrar_projeto">Cadastrar projeto</button>        
-                            </Link>
-
-                            
-
+                         <button class="btn_todos" id="btn_cor_azul" onClick={submitForm}>Upload!</button>
+                       
                         </div>
 
                         <div className="div_cards">
