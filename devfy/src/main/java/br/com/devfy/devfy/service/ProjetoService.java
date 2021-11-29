@@ -77,18 +77,18 @@ public class ProjetoService {
                 tipoRegistro = registro.substring(0, 2);
 
                 if (tipoRegistro.equals("02")) {
-                    titulo = registro.substring(0,15);
-//                    linguagem = registro.substring(33,52).trim();
-//                    descricao = registro.substring(53,152).trim();
-//                    categoria = registro.substring(153,172).trim();
-//                    valor = Double.valueOf(registro.substring(173,179).replace(',','.'));
+                    titulo = registro.substring(2,22);
+                    linguagem = registro.substring(22,35).trim();
+                    descricao = registro.substring(35,135).trim();
+                    categoria = registro.substring(135,157).trim();
+                    valor = Double.valueOf(registro.substring(157,162).replace(',','.'));
                     Projeto p = new Projeto();
                     p.setTitulo(titulo);
-                    p.setLinguagem("JAVA");
-                    p.setDescricao("PROJETO PARA EMPRESA");
-                    p.setValor(200.0);
+                    p.setLinguagem(linguagem);
+                    p.setDescricao(descricao);
+                    p.setValor(valor);
                     p.setPublicadoEm(LocalDateTime.now());
-                    p.setCategoria("WEB APP");
+                    p.setCategoria(categoria);
                     projetoRepository.save(p);
                 }
                 else {
