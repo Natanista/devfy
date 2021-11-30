@@ -13,9 +13,7 @@
 .content-tudo-cad{
     height: 1100px;
 }
-.content-tudo-cad form{
-    padding: 10px 40px 10px 10px;
-}
+.content-tudo-cad form,
 .content-tudo-login form,
 .content-tudo form{
     padding: 10px 40px 10px 40px;
@@ -29,7 +27,7 @@
 .content-tudo-cad input,
 .content-tudo-login input,
 .content-tudo input{
-    width: 90%;
+    width: 95%;
     padding: 10px 10px 10px 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
@@ -45,5 +43,5 @@
     color: white;
     cursor: pointer;
     font-size: 0.9rem;
-    margin: 0% 50% 0% 39.9%;
+    margin: 0% 50% 0% 39.5%;
 }

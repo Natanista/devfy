@@ -49,55 +49,55 @@ function Registrar() {
 
       <div class="content-tudo-cad">
           <h1>Cadastrar</h1>
-          <form onSubmit={cadastrar} class="formulario">
+          <form onSubmit={cadastrar} >
             <label>
               Nome: <br />
-              <input class="input_info"  type="text" onChange={e => setNomeDigitado(e.target.value)} />
+              <input  type="text" onChange={e => setNomeDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Email: <br />
-              <input class="input_info"  type="text" onChange={e => setemailDigitado(e.target.value)} />
+              <input  type="text" onChange={e => setemailDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Telefone: <br />
-              <input class="input_info"  type="text" onChange={e => settelefoneDigitado(e.target.value)} />
+              <input   type="text" onChange={e => settelefoneDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Pais: <br />
-              <input class="input_info"  type="text" onChange={e => setpaisDigitado(e.target.value)} />
+              <input  type="text" onChange={e => setpaisDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               CEP: <br />
-              <input class="input_info"  type="text" onChange={e => setcepDigitado(e.target.value)} />
+              <input   type="text" onChange={e => setcepDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               CNPJ: <br />
-              <input class="input_info"  type="text" onChange={e => setcnpjDigitado(e.target.value)} />
+              <input   type="text" onChange={e => setcnpjDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Representante: <br />
-              <input class="input_info"  type="text" onChange={e => setrepresentanteDigitado(e.target.value)} />
+              <input   type="text" onChange={e => setrepresentanteDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Telefone Representante: <br />
-              <input class="input_info"  type="text" onChange={e => settelefoneRepresentanteDigitado(e.target.value)} />
+              <input   type="text" onChange={e => settelefoneRepresentanteDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Usuário: <br />
-              <input class="input_info"  type="text" onChange={e => setusuarioDigitado(e.target.value)} />
+              <input   type="text" onChange={e => setusuarioDigitado(e.target.value)} />
             </label>
             <br /> <br />
             <label>
               Senha: <br />
-              <input class="input_info"  type="text" onChange={e => setsenhaDigitada(e.target.value)} />
+              <input  type="text" onChange={e => setsenhaDigitada(e.target.value)} />
             </label>
             <br />
             <br />
