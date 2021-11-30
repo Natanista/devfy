@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../api";
-import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import { useHistory, useParams } from 'react-router';
-import logoGrande from '../html/img/LogoGrande.png';
 import MenuLogado from "../components/MenuLogado";
-import BotaoVerde from "../components/Botao2";
 
 function UpdateProject() {
 
@@ -60,46 +58,45 @@ function UpdateProject() {
   return (
     <div>
       <MenuLogado />
-
-      <div class="content-tudo-add-project">
-        <div class="cont-one">
-          <h1>Atualização de projeto</h1>
-        </div>
-        <div class="cont-two-login">
-
+        <div class="content-tudo">
+        <h1>Atualização de projeto</h1>
           <form onSubmit={update}>
             <label>
               Titulo: <br />
               <input class="input_info" type="text" onChange={e => setTituloDigitado(e.target.value)} value={tituloDigitado} />
             </label>
             <br />
+            <br />
             <label>
-              Linguagem: <br />
+              Linguagem: <br /> 
               <input class="input_info" type="text" onChange={e => setLinguagemDigitada(e.target.value)} value={linguagemDigitada} />
             </label>
+            <br />
             <br />
             <label>
               Descricao: <br />
               <input class="input_info" type="text" onChange={e => setDescricaoDigitada(e.target.value)} value={descricaoDigitada} />
             </label>
             <br />
+            <br />
             <label>
               Categoria: <br />
               <input class="input_info" type="text" onChange={e => setCategoriaDigitada(e.target.value)} value={categoriaDigitada} />
             </label>
+            <br />
             <br />
             <label>
               Valor: <br />
               <input class="input_info" type="text" onChange={e => setValorDigitado(e.target.value)} value={valorDigitado} />
             </label>
             <br />
-
-            <button type="submit" class="btn_green"> Atualizar </button>
+<br />
+            <button type="submit" class="btn_global"> Atualizar </button>
 
           </form>
         </div>
+        <Footer />
       </div>
-    </div>
   );
 }
 

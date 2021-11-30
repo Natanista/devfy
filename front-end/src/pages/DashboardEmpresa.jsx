@@ -1,12 +1,10 @@
 import React, { useEffect, useState,  useParams} from "react";
 import MenuLogado from "../components/MenuLogado";
 import Footer from "../components/Footer";
-import icon_dow from '../html/img/import.png'
 import Card from "../components/Card";
 import '../html/css/dashboardEmpresa.css';
 import api from "../api";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 
 
@@ -191,8 +189,8 @@ function Cards() {
                                 <br   />
                                 <button class="btn_todos" id="btn_cor_azul" onClick={depositar}>Deposito imediato</button>
                                 <button class="btn_todos" id="btn_cor_amarelo" onClick={depositarAgendado}>Agendar deposito</button>
-                                
-                                <label  htmlFor="saldoSaque">Saque:     </label>
+                                <br />
+                                <label >Saque:     </label>
                                 <br /> <br />
                                 <input class="input_text" onChange={e => setValorDebito(e.target.value)}  type="text" name="saldoSaque" id="saldoSaque" class="input_txt"/>
                                <br />

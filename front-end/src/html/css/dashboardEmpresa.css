@@ -13,7 +13,7 @@
     color: white;
     cursor: pointer;
     font-size: 16px;
-    margin: 15px 15px 10px 15px;
+    margin: 15px 18px 10px 0px;
 }
 
 /* Div do lado Esquerdo */
@@ -87,11 +87,6 @@
 
 /* Design do botão de cadastrar projeto */
 
-#btn_cor_amarelo_cad:hover{
-    transition: 0.5s;
-    background-color: #2343C4;
-    cursor:pointer;
-}
 .txt_upload{
     border-radius: 2px;
     width: 200px;

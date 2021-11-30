@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
+import Footer from "../components/Footer";
 import Menu from "../components/Menu";
-import logoGrande from '../html/img/LogoGrande.png';
 import LOGOBRANCA from '../html/img/LOGOBRANCA.svg';
+import LOGO from '../html/img/LOGO.png';
 import api from "../api";
 import { useHistory } from "react-router";
 
@@ -36,23 +36,20 @@ function Login() {
     return (
         <div>
             <Menu />
-            <div class="content-tudo">
-                <div class="cont-one">
-                    <img src={LOGOBRANCA} alt="" />
-                </div>
-                <div class="cont-two-login">
-                    <h2>Login</h2>
+            <div class="content-tudo-login">
+                <br />
+                    <h1>Login</h1>
                     <form onSubmit={logar} class="cont-info">
                         <label for="">Usuário</label><br />
                         <input onChange={e => setUsuarioDigitado(e.target.value)} type="text" name="" id="" class="input_info" placeholder="Digite usuário ou e-mail" />
-                        <br />
+                        <br /> <br />
                         <label htmlFor="">Senha</label><br />
                         <input onChange={e => setSenhaDigitado(e.target.value)} type="password" name="" id="" class="input_info" placeholder="*****" />
-                        <br />
-                        <button class="btn_entrar" type="submit">Enviar</button>
+                        <br /> <br />
+                        <button class="btn_global" type="submit">Enviar</button>
                     </form>
-                </div>
             </div>
+            <Footer />
         </div>
     );
 

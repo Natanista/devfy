@@ -47,67 +47,63 @@ function Registrar() {
     <div>
       <Menu />
 
-      <div class="content-tudo-add-empresa">
-       
-        <div class="cont-two-empresa">
-          <h2>Cadastrar</h2>
-
+      <div class="content-tudo-cad">
+          <h1>Cadastrar</h1>
           <form onSubmit={cadastrar} class="formulario">
             <label>
               Nome: <br />
               <input class="input_info"  type="text" onChange={e => setNomeDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Email: <br />
               <input class="input_info"  type="text" onChange={e => setemailDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Telefone: <br />
               <input class="input_info"  type="text" onChange={e => settelefoneDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Pais: <br />
               <input class="input_info"  type="text" onChange={e => setpaisDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               CEP: <br />
               <input class="input_info"  type="text" onChange={e => setcepDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               CNPJ: <br />
               <input class="input_info"  type="text" onChange={e => setcnpjDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Representante: <br />
               <input class="input_info"  type="text" onChange={e => setrepresentanteDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Telefone Representante: <br />
               <input class="input_info"  type="text" onChange={e => settelefoneRepresentanteDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Usuário: <br />
               <input class="input_info"  type="text" onChange={e => setusuarioDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /> <br />
             <label>
               Senha: <br />
               <input class="input_info"  type="text" onChange={e => setsenhaDigitada(e.target.value)} />
             </label>
             <br />
-
-            <button class="btn_green2" type="submit">Enviar</button>
+            <br />
+            <button class="btn_global" type="submit">Enviar</button>
 
           </form>
-        </div>
       </div>
 
       <div class="espacamento"></div>
