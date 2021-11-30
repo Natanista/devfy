@@ -39,45 +39,41 @@ function Registrar() {
     <div>
       <MenuLogado />
 
-      <div class="content-tudo-add-project">
-        <div class="cont-one">
+      <div class="content-tudo">
           <h1>Cadastro de projeto</h1>
-        </div>
-        <div class="cont-two-login">
-
           <form onSubmit={cadastrar}>
+            <br />
             <label>
               Titulo: <br />
               <input class="input_info" type="text" onChange={e => setTituloDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /><br />
             <label>
               Linguagem: <br />
               <input class="input_info" type="text" onChange={e => setLinguagemDigitada(e.target.value)} />
             </label>
-            <br />
+            <br /><br />
             <label>
               Descricao: <br />
               <input class="input_info" type="text" onChange={e => setDescricaoDigitada(e.target.value)} />
             </label>
-            <br />
+            <br /><br />
             <label>
               Categoria: <br />
               <input class="input_info" type="text" onChange={e => setCategoriaDigitada(e.target.value)} />
             </label>
-            <br />
+            <br /><br />
             <label>
               Valor: <br />
               <input class="input_info" type="text" onChange={e => setValorDigitado(e.target.value)} />
             </label>
-            <br />
+            <br /><br />
 
-            <button type="submit" class="btn_green"> Cadastrar </button>
+            <button type="submit" class="btn_global"> Cadastrar </button>
 
           </form>
         </div>
       </div>
-    </div>
   );
 }
 
