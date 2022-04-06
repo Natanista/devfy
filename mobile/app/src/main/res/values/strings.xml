@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">devfy-app</string>
+    <string name="app_pagamento_informativo">Este pagamento será realizado ao desenvolvedor somente quando for apontado que ele finalizou o projeto.</string>
 </resources>
