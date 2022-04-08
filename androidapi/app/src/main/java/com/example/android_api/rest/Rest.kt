@@ -14,6 +14,5 @@ object Rest {
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
     }
 }

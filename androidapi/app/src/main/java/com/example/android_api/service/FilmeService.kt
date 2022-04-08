@@ -11,5 +11,7 @@ interface FilmeService {
     fun list(): Call<List<Filme>>
 
     @GET("/filme/{id}")
-    fun getById(@Path("id")): Call<Filme>
+    fun getById(
+        @Path("id") id: Long
+    ): Call<List<Filme>>
 }
