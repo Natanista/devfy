@@ -72,7 +72,9 @@
                 android:id="@+id/btnPagar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pagar" />
+                android:text="Pagar"
+                android:backgroundTint="@color/primary_devfy_blue"
+                />
 
         </LinearLayout>
 
@@ -89,16 +91,6 @@
                 android:text="@string/app_pagamento_informativo" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/logo"
-            android:scaleType="fitXY"
-            android:layout_gravity="center"
-            android:layout_marginTop="90dp"
-
-            />
 
 
     </LinearLayout>

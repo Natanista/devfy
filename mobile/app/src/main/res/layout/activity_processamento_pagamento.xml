@@ -15,32 +15,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20sp"
             android:text="Pagamento"
             android:textAlignment="center"
             android:textSize="34dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20sp"
-            />
+            android:textStyle="bold" />
 
 
         <ImageView
             android:id="@+id/imgResultadoPagamento"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:srcCompat="@drawable/ok"
-            android:layout_gravity="center"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center">
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ok" />
 
-    <Button
-        android:id="@+id/btnFindMe"
-        android:layout_width="150sp"
-        android:layout_height="wrap_content"
-        android:text="VOLTAR"
-        android:gravity="center"/>
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20sp"
+            android:text="Pagamento efetuado com sucesso!"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnFindMe"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="VOLTAR"
+                android:backgroundTint="@color/primary_devfy_blue"
+                />
+        </LinearLayout>
+
 
 
 

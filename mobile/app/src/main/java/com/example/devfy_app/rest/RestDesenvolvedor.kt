@@ -1,12 +1,12 @@
 package com.example.android_api.rest
 
-import com.example.android_api.rest.Rest.baseUrl
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object Rest {
+object RestDesenvolvedor {
 
-    val baseUrl = "https://61c71fed90318500175472ff.mockapi.io/api/"
+    //mock com dados de desenvolvedores
+    val baseUrl = "https://618324d791d76c00172d17c8.mockapi.io/"
 
     fun getInstance(): Retrofit {
         return Retrofit
@@ -14,6 +14,5 @@ object Rest {
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
     }
 }

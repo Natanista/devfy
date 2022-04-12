@@ -29,42 +29,42 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    fun buscarPorId(view: View) {
-        val id = etFilme.text.toString().toLong()
-        val filmeRequest = retrofit.create(
-            FilmeService::class.java
-        )
-        filmeRequest.getById(id).enqueue(
-            object : Callback<Filme> {
-                override fun onResponse(call: Call<Filme>, response: Response<Filme>) {
-                    if (response.isSuccessful) {
-                        val filme = response.body()?.title
-                        val tvFilme =TextView(baseContext)
-                        tvFilme.text = filme
-                        layoutContainer.removeAllViews()
-                        layoutContainer.addView(tvFilme)
-
-                    } else {
-                        Toast.makeText(
-                            baseContext,
-                            "Verifique os logs",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-
-                }
-
-                override fun onFailure(call: Call<Filme>, t: Throwable) {
-                    Toast.makeText(
-                        baseContext,
-                        t.message,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-
-            }
-        )
-    }
+//    fun buscarPorId(view: View) {
+//        val id = etFilme.text.toString().toLong()
+//        val filmeRequest = retrofit.create(
+//            FilmeService::class.java
+//        )
+//        filmeRequest.getById(id).enqueue(
+//            object : Callback<Filme> {
+//                override fun onResponse(call: Call<Filme>, response: Response<Filme>) {
+//                    if (response.isSuccessful) {
+//                        val filme = response.body()?.title
+//                        val tvFilme =TextView(baseContext)
+//                        tvFilme.text = filme
+//                        layoutContainer.removeAllViews()
+//                        layoutContainer.addView(tvFilme)
+//
+//                    } else {
+//                        Toast.makeText(
+//                            baseContext,
+//                            "Verifique os logs",
+//                            Toast.LENGTH_LONG
+//                        ).show()
+//                    }
+//
+//                }
+//
+//                override fun onFailure(call: Call<Filme>, t: Throwable) {
+//                    Toast.makeText(
+//                        baseContext,
+//                        t.message,
+//                        Toast.LENGTH_LONG
+//                    ).show()
+//                }
+//
+//            }
+//        )
+//    }
 
     fun buscarTodos(view: View) {
         val filmesRequest = retrofit.create(FilmeService::class.java)
