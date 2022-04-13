@@ -42,6 +42,7 @@ public class EmpresaController {
         return empresaService.delete(id);
         }
 
+        //ENDPOINT DE CADASTRO DE EMPRESA
     @PostMapping()
     public ResponseEntity save(
            @Valid @RequestBody Empresa empresa
@@ -50,12 +51,15 @@ public class EmpresaController {
         return empresaService.save(empresa);
     }
 
+    //endpoint de login de empresa
     @PostMapping ("/login")
     public ResponseEntity login( @Valid @RequestBody UsuarioLogin empresa) {
         log.info("login em EmpresaController");
         return empresaService.login(empresa);
     }
 
+
+    //endpoint de logoff de empresa
     @PostMapping("/logoff/{id}")
     public ResponseEntity logoff(  @PathVariable int id) {
        log.info("logoff em EmpresaController");

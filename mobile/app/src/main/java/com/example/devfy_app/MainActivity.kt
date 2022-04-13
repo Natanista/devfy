@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val telaTeste: Intent = Intent(
             baseContext,
             //COLOQUE AQUI A TELA PRA ONDE QUER IR
-            RecomendacaoDesenvolvedores::class.java
+            AdicionarProjeto::class.java
         )
 //        tela2.putExtra("nome_usuario", "Caio")
 //        tela2.putExtra("idade_usuario", 26)
