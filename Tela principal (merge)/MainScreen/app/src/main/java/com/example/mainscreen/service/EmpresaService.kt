@@ -11,5 +11,8 @@ interface EmpresaService {
     @POST("/LoginResponse")
     fun logar(@Body userEmpresa: UserEmpresa): Call<LoginResponse>
 
+    @POST("/Empresas")
+    fun registrar(@Body registerEmpresa: RegisterEmpresa): Call<RegisterEmpresa>
+
 
 }
