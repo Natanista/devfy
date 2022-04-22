@@ -50,12 +50,14 @@
             android:gravity="center"
             android:orientation="vertical">
             <EditText
+                android:id="@+id/et_representante"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:hint="Nome"
                 android:textAlignment="center"
                 android:background="@drawable/customborder"/>
             <EditText
+                android:id="@+id/et_email"
                 android:layout_marginTop="15dp"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -64,6 +66,7 @@
                 android:textAlignment="center"
                 android:background="@drawable/customborder"/>
             <EditText
+                android:id="@+id/et_senha"
                 android:layout_marginTop="15dp"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -72,6 +75,7 @@
                 android:textAlignment="center"
                 android:background="@drawable/customborder"/>
             <EditText
+                android:id="@+id/et_nome"
                 android:layout_marginTop="15dp"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -79,6 +83,7 @@
                 android:textAlignment="center"
                 android:background="@drawable/customborder"/>
             <EditText
+                android:id="@+id/et_cnpj"
                 android:layout_marginTop="15dp"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -97,11 +102,12 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="350dp"
                 android:layout_height="66dp"
-                android:text="Entrar"
+                android:text="Cadastrar"
                 android:textAllCaps="false"
                 android:backgroundTint="@color/azuldevfy"
                 android:textColor="@color/white"
                 android:textStyle="bold"
+                android:onClick="cadastrar"
 
                 />
             <Button

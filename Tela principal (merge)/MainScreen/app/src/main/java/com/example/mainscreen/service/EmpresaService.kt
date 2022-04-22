@@ -1,18 +1,17 @@
 package com.example.android_api.service
 
-import com.example.android_api.model.LoginResponse
-import com.example.android_api.model.UserEmpresa
+import com.example.android_api.model.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface EmpresaService {
 
-    @POST("/LoginResponse")
-    fun logar(@Body userEmpresa: UserEmpresa): Call<LoginResponse>
+    @POST("empresas/login")
+    fun logar(@Body UserLoginEmpresa: UserLoginEmpresa): Call<Boolean>
 
-    @POST("/Empresas")
-    fun registrar(@Body registerEmpresa: RegisterEmpresa): Call<RegisterEmpresa>
+    @POST("empresas")
+    fun cadastrarEmpresa(@Body userCadastroEmpresa: UserCadastroEmpresa): Call<Void>
 
 
 }

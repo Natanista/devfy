@@ -26,26 +26,22 @@ public class Empresa {
     @Column(name = "emp_email")
     private String email;
 
-    @NotNull
     @Pattern(regexp = "\\d{11}", message = "O telefone deve conter 11 inteiros")
     @Column(name = "emp_telefone")
     private String telefone;
 
-    @NotNull
     @Column(name = "emp_pais")
     private String pais;
 
-    @NotNull
     @Pattern(regexp =  "\\d{5}-\\d{3}",
             message = "o cep deve conter 8 caracteres, sendo eles: 5 inteiros, seguido de traço e dos 3 inteiros restantes")
     @Column(name = "emp_cep")
     private String cep;
 
-    @NotNull
+
     @Column(name = "emp_representante")
     private String representante;
 
-    @NotNull
     @Column(name = "emp_tel_representante")
     private String telefoneRepresentante;
 
@@ -55,13 +51,11 @@ public class Empresa {
     @Column(name = "premium")
     private Boolean isPremium;
 
-    @NotNull
     @Size(min = 8, max = 15, message
             = "O campo usuario deve conter entre 8 e 15 caracteres")
     @Column(name = "emp_usuario")
     private String usuario;
 
-    @NotNull
     @Size(min = 8, max = 20, message
             = "A senha deve conter no minimo 8, e  no maximo 20 caracteres.")
     @Column(name = "emp_senha")

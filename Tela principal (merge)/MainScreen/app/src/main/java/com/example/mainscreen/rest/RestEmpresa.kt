@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RestEmpresa {
 
     //mock com dados de desenvolvedores
-    val baseUrl = "https://618324d791d76c00172d17c8.mockapi.io"
+    val baseUrl = "http://devfy.sytes.net:8080/devfy/"
 
     fun getInstance(): Retrofit {
         return Retrofit
