@@ -18,7 +18,8 @@ public class Empresa {
     @Column(name = "emp_id")
     private int id;
 
-    @NotNull
+    @NotEmpty
+    @NotBlank
     @Column(name = "emp_nome")
     private String nome;
 
@@ -39,6 +40,8 @@ public class Empresa {
     private String cep;
 
 
+    @NotEmpty(message = "Nome do Representante nao pode estar vazio!")
+    @NotBlank
     @Column(name = "emp_representante")
     private String representante;
 
@@ -51,17 +54,18 @@ public class Empresa {
     @Column(name = "premium")
     private Boolean isPremium;
 
-    @Size(min = 8, max = 15, message
-            = "O campo usuario deve conter entre 8 e 15 caracteres")
+    @NotEmpty(message = "Usuario nao pode estar vazio!")
+    @NotBlank
     @Column(name = "emp_usuario")
     private String usuario;
 
-    @Size(min = 8, max = 20, message
-            = "A senha deve conter no minimo 8, e  no maximo 20 caracteres.")
+    @NotEmpty(message = "Senha nao pode estar vazio!")
+    @NotBlank
     @Column(name = "emp_senha")
     private String senha;
 
-    @CNPJ
+    @NotEmpty(message = "CNPJ nao pode estar vazio!")
+    @NotBlank
     @Column(name = "emp_cnpj")
     private String cnpj;
 

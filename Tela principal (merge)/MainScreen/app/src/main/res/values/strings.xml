@@ -2,4 +2,5 @@
     <string name="app_name">MainScreen</string>
     <string name="japossuiconta"><u>Já possuo conta</u></string>
     <string name="esquecisenha"><u>Esqueci minha senha</u></string>
+    <string name="usuario_autenticado">Login efetuado, seja bem-vindo, %s!</string>
 </resources>

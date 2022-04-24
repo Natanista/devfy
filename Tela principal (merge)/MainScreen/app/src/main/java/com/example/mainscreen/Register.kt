@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.android_api.model.UserCadastroEmpresa
 import com.example.android_api.rest.RestEmpresa
@@ -39,12 +40,17 @@ class Register : AppCompatActivity() {
         cadastroResponseCall.enqueue(object: Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if(response.code() == 201){
-                    //TODO: implementar logica de cadastro sucesso
-                    Toast.makeText(baseContext,  "Empresa cadastrada com sucesso!" + response.body().toString(), Toast.LENGTH_LONG).show()
-                }else {
-                    //TODO: implementar logica de cadastro false
-                    Toast.makeText(baseContext,  "A empresa nao foi cadastrada" + response.body().toString(), Toast.LENGTH_LONG).show()
+                    findViewById<TextView>(R.id.tv_dados_invalidos).visibility = View.GONE
+                    val telaDeLogin: Intent = Intent(
+                        baseContext,
+                        Login::class.java
+                    )
+                    telaDeLogin.putExtra("nomeEmpresa", nomeDigitado)
+                    telaDeLogin.putExtra("usuario", usuarioDigitado)
 
+                    startActivity(telaDeLogin)
+                }else {
+                    findViewById<TextView>(R.id.tv_dados_invalidos).visibility = View.VISIBLE
                 }
             }
 
@@ -54,6 +60,7 @@ class Register : AppCompatActivity() {
 
         })
     }
+
 
 
     fun voltar(view:View){
