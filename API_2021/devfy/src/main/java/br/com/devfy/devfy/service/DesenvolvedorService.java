@@ -5,6 +5,7 @@ import br.com.devfy.devfy.entity.Desenvolvedor;
 import br.com.devfy.devfy.repository.DesenvolvedorRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -86,6 +87,17 @@ public class DesenvolvedorService {
         }
         return ResponseEntity.status(404).build();
     }
+
+    public ResponseEntity findDesenvolvedorByLinguagem(String linguagem) {
+        if(desenvolvedorRepository.existsByLinguagem(linguagem)){
+            return ResponseEntity.status(HttpStatus.OK).body(desenvolvedorRepository.findDesenvolvedorByLinguagem(linguagem));
+
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
+    }
+
+
 
 }
 

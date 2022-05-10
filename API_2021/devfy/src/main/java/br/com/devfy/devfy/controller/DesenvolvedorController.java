@@ -6,10 +6,13 @@ import br.com.devfy.devfy.entity.Desenvolvedor;
 import br.com.devfy.devfy.service.DesenvolvedorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -21,7 +24,8 @@ public class DesenvolvedorController {
     private DesenvolvedorService desenvolvedorService;
 
     @GetMapping
-    public ResponseEntity findAll() {
+    public ResponseEntity findAll(
+    ) {
         log.info("findAll em DesenvolvedorController");
         return desenvolvedorService.findAll();
     }
@@ -61,6 +65,13 @@ public class DesenvolvedorController {
     public ResponseEntity logoff(@PathVariable int id) {
         log.info("logoff em DesenvolvedorController");
         return desenvolvedorService.logoff(id);
+    }
+
+    @GetMapping("/{linguagem}")
+    public ResponseEntity<List<Desenvolvedor>> findDesenvolvedorByLinguagem(
+            @PathVariable String linguagem
+            ){
+        return desenvolvedorService.findDesenvolvedorByLinguagem(linguagem);
     }
 
 }

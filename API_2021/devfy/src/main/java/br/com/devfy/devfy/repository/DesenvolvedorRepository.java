@@ -16,5 +16,8 @@ public interface DesenvolvedorRepository extends JpaRepository<Desenvolvedor, In
 
     public Desenvolvedor findDesenvolvedorByUsuarioEqualsAndSenhaEquals(String usuario,String senha);
 
+    public List<Desenvolvedor> findDesenvolvedorByLinguagem(String linguagem);
 
+
+    boolean existsByLinguagem(String linguagem);
 }
