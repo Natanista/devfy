@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-boot-api
+  template:
+    metadata:
+      labels:
+        app: spring-boot-api
+    spec:
+      containers:
+        - name: spring-boot-api
+          image: natanista/natanista-hub:spring-boot-api
+          env:
+            - name: POSTGRES_URL
+              value: "devfy-postgres-db:5432/devfy-db"
+            - name: POSTGRES_USER
+              value: "devfy"
+            - name: POSTGRES_PASSWORD
+              value: "123456"
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: spring-boot-api
+  ports:
+    - port: 8080
+      targetPort: 8080
