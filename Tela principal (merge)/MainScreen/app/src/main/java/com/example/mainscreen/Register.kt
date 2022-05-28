@@ -8,14 +8,14 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.android_api.model.UserCadastroEmpresa
-import com.example.android_api.rest.RestEmpresa
+import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.EmpresaService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class Register : AppCompatActivity() {
-    private val retrofit = RestEmpresa.getInstance()
+    private val retrofit = RestDevfy.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.android_api.model.UserLoginEmpresa
-import com.example.android_api.rest.RestEmpresa
+import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.EmpresaService
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class Login : AppCompatActivity() {
 
-    private val retrofit = RestEmpresa.getInstance()
+    private val retrofit = RestDevfy.getInstance()
     private var nomeEmpresa: String = ""
     private var usuario: String = ""
 
@@ -50,6 +50,7 @@ class Login : AppCompatActivity() {
             override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
                 if(response.body() == true){
                     findViewById<TextView>(R.id.tv_login_invalido).visibility = View.GONE
+
 
                     val home: Intent = Intent(
                         baseContext,

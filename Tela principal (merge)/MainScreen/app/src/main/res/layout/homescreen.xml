@@ -26,14 +26,14 @@
                 <ImageView
                     android:layout_width="128dp"
                     android:layout_height="match_parent"
-                    android:onClick="irPerfil"
-                    android:src="@drawable/user__5_" />
+                    android:src="@drawable/user_icon" />
 
                 <TextView
+                    android:id="@+id/tv_welcome_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8sp"
-                    android:text="Bem vindo, empresa"
+                    android:text="@string/welcome_message"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -56,7 +56,6 @@
                         android:layout_width="88dp"
                         android:layout_height="36dp"
                         android:layout_marginTop="6sp"
-                        android:onClick="irDevs"
                         android:src="@drawable/loupe" />
 
                     <EditText
@@ -83,14 +82,14 @@
                     android:layout_width="72dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="62dp"
-                    android:onClick="panel1"
-                    android:src="@drawable/add__1_" />
+                    android:src="@drawable/adicionar"
+                    android:onClick="irAdicionarProjeto"
+                    />
 
                 <ImageView
                     android:layout_width="72dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="128dp"
-                    android:onClick="panel2"
                     android:src="@drawable/hand" />
 
             </LinearLayout>
@@ -106,7 +105,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="46dp"
                     android:layout_weight="1"
-                    android:onClick="panel1"
                     android:text="Adicionar Projeto" />
 
                 <TextView
@@ -114,7 +112,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_weight="1"
-                    android:onClick="panel2"
                     android:text="Realizar Pagamento" />
             </LinearLayout>
 
@@ -127,15 +124,13 @@
                     android:layout_width="72dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="62dp"
-                    android:onClick="panel3"
                     android:src="@drawable/wallet" />
 
                 <ImageView
                     android:layout_width="72dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="128dp"
-                    android:onClick="panel4"
-                    android:src="@drawable/user__1_" />
+                    android:src="@drawable/usuario" />
             </LinearLayout>
 
             <LinearLayout
@@ -149,7 +144,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="46dp"
                     android:layout_weight="1"
-                    android:onClick="panel3"
                     android:text="Consultar Carteira" />
 
                 <TextView
@@ -157,7 +151,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_weight="1"
-                    android:onClick="panel4"
                     android:text="Devs Recomendados" />
             </LinearLayout>
         </LinearLayout>
@@ -174,31 +167,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="90dp"
                 android:backgroundTint="#2343C4"
-                android:onClick="projetosAberto"
-                android:text="Projetos em aberto"
+                android:text="@string/projetos_abertos"
                 android:textAllCaps="false"
-                app:cornerRadius="10" />
+                app:cornerRadius="10dp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="#2343C4"
-                android:onClick="projetosAndamento"
-                android:text="Projetos em andamento"
-                android:textAllCaps="false"
-                app:cornerRadius="10" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="#2343C4"
-                android:onClick="projetosConcluido"
-                android:text="Projetos concluídos"
-                android:textAllCaps="false"
-                app:cornerRadius="10" />
         </LinearLayout>
 
 
@@ -213,7 +189,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="48sp"
-                android:src="@drawable/logo___azul" />
+                android:src="@drawable/logo" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

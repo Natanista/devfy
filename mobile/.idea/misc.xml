@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.201" />
+        <entry key="app/src/main/res/drawable/borda.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/borda_azul.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_adicionar_projeto.xml" value="0.3254381809568925" />
         <entry key="app/src/main/res/layout/activity_efetuar_pagamento.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17401215805471124" />
         <entry key="app/src/main/res/layout/activity_processamento_pagamento.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_recomendacao_desenvolvedores.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_tela_inicial.xml" value="0.3546875" />
       </map>
     </option>
   </component>
