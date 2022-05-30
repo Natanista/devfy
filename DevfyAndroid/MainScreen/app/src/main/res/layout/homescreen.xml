@@ -90,7 +90,9 @@
                     android:layout_width="72dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="128dp"
-                    android:src="@drawable/hand" />
+                    android:src="@drawable/hand"
+                    android:onClick="irEfetuarPagamento"
+                    />
 
             </LinearLayout>
 

@@ -45,7 +45,8 @@
                 android:layout_width="150sp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/voltar"
+                android:text="@string/vizualizar_projetos"
+                android:onClick="irTelaVizualizarProjetos"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary_devfy_blue"
                 />

@@ -1,5 +1,6 @@
 package com.example.mainscreen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.ProjetoService
+import com.example.mainscreen.databinding.EfetuarPagamentoBinding
 import com.example.mainscreen.model.TemplateProjeto
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,13 +39,13 @@ class AddProjeto : AppCompatActivity() {
         cadastroResponseCall.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.code() == 201) {
-                    Toast.makeText(
+                    val projetosTela: Intent = Intent(
                         baseContext,
-                        "Projeto cadastrado com sucesso!",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        Projetos::class.java
+                    )
+                    startActivity(projetosTela)
                 } else {
-                    Toast.makeText(baseContext, "Nao cadastrou projeto!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext, "Erro ao cadastrar projetos!", Toast.LENGTH_LONG).show()
                 }
             }
 

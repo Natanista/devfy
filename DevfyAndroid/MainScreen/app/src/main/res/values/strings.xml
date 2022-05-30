@@ -14,6 +14,7 @@
     <string name="valor">Valor</string>
     <string name="ex_valor">200</string>
     <string name="btn_adicionar">Adicionar</string>
+    <string name="pagar">Pagar</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
@@ -21,6 +22,7 @@
     <string name="efetuar_pagamento">Efetuar Pagamento</string>
     <string name="pagamento">Pagamento</string>
     <string name="btn_entrar">Entrar</string>
+    <string name="vizualizar_projetos">Entrar</string>
     <string name="pagamento_sucesso">Pagamento efetuado com sucesso!</string>
     <string name="login_invalido">Usuario ou senha incorretos!</string>
     <string name="app_pagamento_informativo">Este pagamento será realizado ao desenvolvedor somente quando for apontado que ele finalizou o projeto.</string>

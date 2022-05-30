@@ -39,5 +39,13 @@ class HomeScreen : AppCompatActivity() {
         startActivity(telaVizualizarProjetos)
     }
 
+    fun irEfetuarPagamento(view: View) {
+        val telaEfetuarPagamento: Intent = Intent(
+            baseContext,
+            EfetuarPagamento::class.java
+        )
+        startActivity(telaEfetuarPagamento)
+    }
+
 
 }
