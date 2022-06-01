@@ -22,9 +22,23 @@
     <string name="efetuar_pagamento">Efetuar Pagamento</string>
     <string name="pagamento">Pagamento</string>
     <string name="btn_entrar">Entrar</string>
-    <string name="vizualizar_projetos">Entrar</string>
+    <string name="vizualizar_projetos">Vizualizar Projetos</string>
     <string name="pagamento_sucesso">Pagamento efetuado com sucesso!</string>
     <string name="login_invalido">Usuario ou senha incorretos!</string>
     <string name="app_pagamento_informativo">Este pagamento será realizado ao desenvolvedor somente quando for apontado que ele finalizou o projeto.</string>
-
+    <string name="represento_empresa">Eu represento uma empresa</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="sou_dev">\nSou um Dev</string>
+    <string name="em_breve">Em breve</string>
+    <string name="dados_invalidos">Dados invalidos, preencha todos os campos!</string>
+    <string name="btn_cadastrar">Cadastrar</string>
+    <string name="projeto">Projeto</string>
+    <string name="desenvolvedor">Desenvolvedor</string>
+    <string name="adicionar_projeto">Adicionar Projeto</string>
+    <string name="realizar_pagamento">Realizar Pagamento</string>
+    <string name="consultar_carteira">Consultar Carteira</string>
+    <string name="devs_recomendados">Devs recomendados</string>
+    <string name="plataforma_inv">Plataforma de investimentos</string>
+    <string name="php">PHP</string>
+    <string name="proj_desc">Descricao do projeto</string>
 </resources>

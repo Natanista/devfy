@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Projeto" />
+                android:text="@string/projeto" />
 
             <EditText
                 android:id="@+id/etProjeto"
@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Valor" />
+                android:text="@string/valor" />
 
             <EditText
                 android:id="@+id/etValor"
@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Desenvolvedor" />
+                android:text="@string/desenvolvedor" />
 
             <EditText
                 android:id="@+id/etDesenvolvedor"

@@ -51,7 +51,7 @@
                     android:layout_width="150sp"
                     android:layout_height="125sp"
                     android:layout_gravity="center"
-                    android:text="Eu represento uma empresa"
+                    android:text="@string/represento_empresa"
                     android:textAlignment="center"
                     android:textColor="@color/azuldevfy"
                     android:textSize="25dp"
@@ -63,7 +63,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@color/azuldevfy"
                     android:onClick="irTelaRegistrar"
-                    android:text="Registrar"
+                    android:text="@string/btn_registrar"
                     android:textColor="@color/white"></Button>
 
             </LinearLayout>
@@ -84,7 +84,7 @@
                     android:layout_width="100sp"
                     android:layout_height="118dp"
                     android:layout_gravity="center"
-                    android:text="\nSou um Dev"
+                    android:text="@string/sou_dev"
                     android:textAlignment="center"
                     android:textColor="@color/azuldevfy"
                     android:textSize="25dp"
@@ -96,7 +96,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@color/gray"
                     android:onClick="embreve"
-                    android:text="Em breve"></Button>
+                    android:text="@string/em_breve"></Button>
 
             </LinearLayout>
 

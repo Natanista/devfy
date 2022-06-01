@@ -107,14 +107,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="46dp"
                     android:layout_weight="1"
-                    android:text="Adicionar Projeto" />
+                    android:text="@string/adicionar_projeto" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_weight="1"
-                    android:text="Realizar Pagamento" />
+                    android:text="@string/realizar_pagamento" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,14 +146,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="46dp"
                     android:layout_weight="1"
-                    android:text="Consultar Carteira" />
+                    android:text="@string/consultar_carteira" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_weight="1"
-                    android:text="Devs Recomendados" />
+                    android:text="@string/devs_recomendados" />
             </LinearLayout>
         </LinearLayout>
 
