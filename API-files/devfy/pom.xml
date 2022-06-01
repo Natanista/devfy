@@ -15,8 +15,8 @@
     <name>devfy</name>
     <description>Developers for you</description>
     <properties>
-        <maven.compiler.source>3.8.6</maven.compiler.source>
-        <maven.compiler.target>3.8.6</maven.compiler.target>
+        <maven.compiler.source>3.8.5</maven.compiler.source>
+        <maven.compiler.target>3.8.5</maven.compiler.target>
         <java.version>17</java.version>
     </properties>
     <dependencies>
@@ -69,14 +69,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>3.10</source>
-                    <target>3.10</target>
-                </configuration>
-            </plugin>
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
