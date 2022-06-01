@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="welcome_message">Welcome, %s!</string>
-
+    <string name="app_name">MainScreen</string>
+    <string name="japossuiconta"><u>I already have an account</u></string>
+    <string name="esquecisenha"><u>Forgot your password?</u></string>
+    <string name="projetos_abertos">Vizualize projects</string>
+    <string name="adicionar_projeto">Add Project</string>
+    <string name="titulo">Title</string>
+    <string name="linguagem">Language</string>
+    <string name="descricao">Description</string>
+    <string name="ex_titulo">Website</string>
+    <string name="ex_linguagem">PHP</string>
+    <string name="ex_descricao">Startup website</string>
+    <string name="valor">Price</string>
+    <string name="ex_valor">200</string>
+    <string name="btn_adicionar">Add</string>
+    <string name="pagar">Make a payment</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="senha">Password</string>
+    <string name="voltar">Back</string>
+    <string name="efetuar_pagamento">Make a payment</string>
+    <string name="pagamento">Payment options</string>
+    <string name="btn_entrar">Login</string>
+    <string name="vizualizar_projetos">Visualize projects</string>
+    <string name="pagamento_sucesso">Your payment has been received!</string>
+    <string name="login_invalido">Wrong password and/or user!</string>
+    <string name="app_pagamento_informativo">This payment will be processed only when the project is finished.</string>
+    <string name="represento_empresa">I'am a company.</string>
+    <string name="btn_registrar">Register</string>
+    <string name="sou_dev">\nI'am a dev</string>
+    <string name="em_breve">Soon</string>
+    <string name="dados_invalidos">Please fill all required fields.</string>
+    <string name="btn_cadastrar">Register</string>
+    <string name="projeto">Project</string>
+    <string name="desenvolvedor">Developer</string>
+    <string name="adicionar_projeto">Add Project</string>
+    <string name="realizar_pagamento">Make a payment</string>
+    <string name="consultar_carteira">Check wallet</string>
+    <string name="devs_recomendados">Recommended Devs</string>
+    <string name="plataforma_inv">Investiment plataform</string>
+    <string name="php">PHP</string>
+    <string name="proj_desc">Project description</string>
 </resources>
