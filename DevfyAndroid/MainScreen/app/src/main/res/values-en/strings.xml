@@ -29,7 +29,7 @@
     <string name="app_pagamento_informativo">This payment will be processed only when the project is finished.</string>
     <string name="represento_empresa">I'am a company.</string>
     <string name="btn_registrar">Register</string>
-    <string name="sou_dev">\nI'am a dev</string> 
+    <string name="sou_dev">\nI'am a dev</string>
     <string name="em_breve">Soon</string>
     <string name="dados_invalidos">Please fill all required fields.</string>
     <string name="btn_cadastrar">Register</string>
