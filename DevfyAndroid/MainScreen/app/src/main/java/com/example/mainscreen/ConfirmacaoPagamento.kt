@@ -12,10 +12,10 @@ class ConfirmacaoPagamento : AppCompatActivity() {
     }
 
     fun irTelaVizualizarProjetos(view: View) {
-        val telaVizualizarProjetos: Intent = Intent(
+        val telaInicial: Intent = Intent(
             baseContext,
-            Projetos::class.java
+            HomeScreen::class.java
         )
-        startActivity(telaVizualizarProjetos)
+        startActivity(telaInicial)
     }
 }

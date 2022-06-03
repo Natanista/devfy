@@ -38,6 +38,14 @@ class Projetos : AppCompatActivity() {
         getProjetosData()
     }
 
+    fun voltar(view: View){
+        val homescreen: Intent = Intent(
+            baseContext,
+            HomeScreen::class.java
+        )
+        startActivity(homescreen)
+    }
+
     private fun getProjetosData() {
 
         val retrofitProjeto = retrofit.create(ProjetoService::class.java)
@@ -50,6 +58,10 @@ class Projetos : AppCompatActivity() {
                 projetoAdapter = ProjetoAdapter(baseContext, responseBody)
                 projetoAdapter.notifyDataSetChanged()
                 projetoRecyclerView.adapter = projetoAdapter
+
+                if(responseBody.isEmpty()){
+                    Toast.makeText(baseContext, "Nenhum projeto disponivel", Toast.LENGTH_LONG).show()
+                }
             }
 
             override fun onFailure(call: Call<List<Projeto>>, t: Throwable) {

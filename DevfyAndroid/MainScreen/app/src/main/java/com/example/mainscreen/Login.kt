@@ -26,6 +26,9 @@ class Login : AppCompatActivity() {
          usuario = intent.getStringExtra(
             "usuario"
         ).toString()
+        if(usuario == "null"){
+            usuario = ""
+        }
          nomeEmpresa = intent.getStringExtra(
             "nomeEmpresa"
         ).toString()
@@ -41,6 +44,7 @@ class Login : AppCompatActivity() {
         val usuarioDigitado: String = findViewById<EditText>(R.id.et_usuario).text.toString()
         val senhaDigitada: String = findViewById<EditText>(R.id.et_senha).text.toString()
         var usuarioEmpresa = UserLoginEmpresa(usuarioDigitado, senhaDigitada)
+        usuario = usuarioDigitado
 
         val retrofitEmpresa = retrofit.create(EmpresaService::class.java)
 

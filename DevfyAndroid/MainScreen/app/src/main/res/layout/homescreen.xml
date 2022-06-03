@@ -61,7 +61,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Pesquise desenvolvedores" />
+                        android:hint="@string/pesquisar_dev" />
                 </LinearLayout>
 
             </LinearLayout>
