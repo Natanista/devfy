@@ -14,6 +14,9 @@
     <string name="ex_descricao">Startup website</string>
     <string name="valor">Price</string>
     <string name="ex_valor">200</string>
+    <string name="editar_projeto">Edit Project</string>
+    <string name="editar">Edit</string>
+    <string name="excluir">Delete</string>
     <string name="btn_adicionar">Add</string>
     <string name="pagar">Make a payment</string>
     <string name="login">Login</string>
@@ -21,6 +24,7 @@
     <string name="senha">Password</string>
     <string name="voltar">Back</string>
     <string name="nome">Name</string>
+    <string name="lembrar_login">Remember user</string>
     <string name="pesquisar_dev">Search Devs</string>
     <string name="empresa">Company</string>
     <string name="efetuar_pagamento">Make a payment</string>

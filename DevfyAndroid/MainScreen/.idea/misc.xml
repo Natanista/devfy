@@ -3,16 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable-v24/borda.xml" value="0.22" />
         <entry key="app/src/main/res/drawable-v24/borda_azul.xml" value="0.22" />
         <entry key="app/src/main/res/layout-en/strings.xml" value="0.34646739130434784" />
         <entry key="app/src/main/res/layout/activity_add_projeto.xml" value="0.18072916666666666" />
-        <entry key="app/src/main/res/layout/activity_adicionar_projeto.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_adicionar_projeto.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.2604166666666667" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25842696629213485" />
         <entry key="app/src/main/res/layout/activity_projetos.xml" value="0.34646739130434784" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2604166666666667" />
+        <entry key="app/src/main/res/layout/activity_tela_editar_projeto.xml" value="0.34646739130434784" />
         <entry key="app/src/main/res/layout/confirmacao_pagamento.xml" value="0.34646739130434784" />
         <entry key="app/src/main/res/layout/efetuar_pagamento.xml" value="0.33" />
         <entry key="app/src/main/res/layout/homescreen.xml" value="0.33" />

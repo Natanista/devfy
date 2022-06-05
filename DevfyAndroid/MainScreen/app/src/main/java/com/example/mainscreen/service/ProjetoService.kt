@@ -4,10 +4,7 @@ import com.example.android_api.model.Desenvolvedor
 import com.example.mainscreen.model.Projeto
 import com.example.mainscreen.model.TemplateProjeto
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ProjetoService {
 
@@ -17,4 +14,21 @@ interface ProjetoService {
     @GET("projetos")
     fun getProjetos(
     ): Call<List<Projeto>>
+
+    @GET("projetos/{id}")
+    fun getProjetosById(
+        @Path("id") id: Int
+    ): Call<Projeto>
+
+    @DELETE("projetos/{id}")
+    fun deleteProject(
+        @Path("id") id: Int
+    ): Call<Void>
+
+    @PUT("projetos/{id}")
+    fun updateProject(
+        @Path("id") id: Int,
+        @Body projeto: TemplateProjeto
+    ): Call<Void>
+
 }

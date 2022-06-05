@@ -13,11 +13,15 @@
     <string name="ex_descricao">Site institucional para startup</string>
     <string name="valor">Valor</string>
     <string name="ex_valor">200</string>
+    <string name="editar">Editar</string>
+    <string name="editar_projeto">Editar Projeto</string>
+    <string name="excluir">Exluir</string>
     <string name="btn_adicionar">Adicionar</string>
     <string name="pagar">Pagar</string>
     <string name="nome">Nome</string>
     <string name="empresa">Empresa</string>
     <string name="login">Login</string>
+    <string name="lembrar_login">Lembrar usuario</string>
     <string name="pesquisar_dev">Pesquisar Devs</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>

@@ -46,6 +46,7 @@ class Projetos : AppCompatActivity() {
         startActivity(homescreen)
     }
 
+
     private fun getProjetosData() {
 
         val retrofitProjeto = retrofit.create(ProjetoService::class.java)
@@ -58,6 +59,17 @@ class Projetos : AppCompatActivity() {
                 projetoAdapter = ProjetoAdapter(baseContext, responseBody)
                 projetoAdapter.notifyDataSetChanged()
                 projetoRecyclerView.adapter = projetoAdapter
+
+                projetoAdapter.onItemClick = {
+                    val tela: Intent = Intent(
+                        baseContext,
+                        TelaEditarProjeto::class.java
+                    )
+                    tela.putExtra("id", it.id)
+
+                    startActivity(tela)
+
+                }
 
                 if(responseBody.isEmpty()){
                     Toast.makeText(baseContext, "Nenhum projeto disponivel", Toast.LENGTH_LONG).show()

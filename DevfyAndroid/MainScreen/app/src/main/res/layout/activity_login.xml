@@ -55,6 +55,7 @@
           android:layout_width="350dp"
           android:layout_height="50dp"
           android:hint="@string/email"
+          android:inputType="text"
           android:textAlignment="center"
           android:background="@drawable/customborder"/>
       <EditText
@@ -83,7 +84,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+      <CheckBox
+          android:id="@+id/check_lembrar_user"
+          android:layout_marginStart="22dp"
+          android:layout_marginTop="10dp"
+          android:textSize="15dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+        android:text="@string/lembrar_login"/>
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -91,7 +101,7 @@
           android:textColor="@color/azuldevfy"
           android:textStyle="bold"
           android:textSize="15dp"
-          android:layout_marginTop="15dp"
+          android:layout_marginTop="10dp"
           android:layout_marginLeft="30dp"/>
     </LinearLayout>
 
