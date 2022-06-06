@@ -1,18 +1,24 @@
 package com.example.mainscreen
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 
 class HomeScreen : AppCompatActivity() {
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homescreen)
-        val nomeEmpresa = intent.getStringExtra(
+        var nomeEmpresa = intent.getStringExtra(
             "nomeEmpresa"
         )
+        sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
+        nomeEmpresa =  sharedPreferences.getString("USER", "natanista")
 
         showWelcomeMessage(nomeEmpresa.toString())
     }

@@ -28,21 +28,47 @@ class Login : AppCompatActivity() {
             "nomeEmpresa"
         ).toString()
         sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
+        if(isChecked()){
+            loadData()
+        }
 
     }
 
-    private fun isChecked(): Boolean {
+    fun loadData(){
+        findViewById<EditText>(R.id.et_usuario).setText(sharedPreferences.getString("USER", ""))
+        findViewById<EditText>(R.id.et_senha).setText(sharedPreferences.getString("PASSWORD", ""))
+        findViewById<CheckBox>(R.id.check_lembrar_user).isChecked  = sharedPreferences.getBoolean("CHECKED", false)
+    }
+
+    fun isChecked(): Boolean{
         return sharedPreferences.getBoolean("CHECKED", false)
     }
+
 
 
     fun logar(view: View) {
         val usuarioDigitado: String = findViewById<EditText>(R.id.et_usuario).text.toString()
         val senhaDigitada: String = findViewById<EditText>(R.id.et_senha).text.toString()
+        val checkbox = findViewById<CheckBox>(R.id.check_lembrar_user).isChecked
+        if(checkbox){
+            sharedPreferences.edit().apply{
+                putBoolean("CHECKED", true)
+                putString("USER", usuarioDigitado)
+                putString("PASSWORD", senhaDigitada)
+            }.apply()
+        }else {
+            sharedPreferences.edit().apply{
+                putBoolean("CHECKED", false)
+                putString("", usuarioDigitado)
+                putString("", senhaDigitada)
+            }.apply()
+        }
+
+
+
+
         var usuarioEmpresa = UserLoginEmpresa(usuarioDigitado, senhaDigitada)
-
         val retrofitEmpresa = retrofit.create(EmpresaService::class.java)
-
         val loginResponseCall: Call<Boolean> = retrofitEmpresa.logar(usuarioEmpresa)
 
         loginResponseCall.enqueue(object : Callback<Boolean> {
