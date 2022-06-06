@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.ProjetoService
-import com.example.mainscreen.adapter.ProjetoAdapter
 import com.example.mainscreen.model.Projeto
 import com.example.mainscreen.model.TemplateProjeto
 import retrofit2.Call

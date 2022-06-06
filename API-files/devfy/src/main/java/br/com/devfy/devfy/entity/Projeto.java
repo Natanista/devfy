@@ -24,6 +24,9 @@ public class Projeto {
     @Column(name = "proj_categoria")
     private String categoria;
 
+    @Column(name = "proj_status")
+    private String status;
+
     @Column(name = "proj_valor")
     private Double valor;
 
@@ -102,6 +105,14 @@ public class Projeto {
         this.categoria = categoria;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Double getValor() {
         return valor;
     }
@@ -109,4 +120,5 @@ public class Projeto {
     public void setValor(Double valor) {
         this.valor = valor;
     }
+
 }

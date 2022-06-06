@@ -137,6 +137,7 @@ public class ProjetoService {
     public ResponseEntity save(Projeto projeto) {
         log.info("save em ProjetoService");
         projeto.setPublicadoEm(LocalDateTime.now());
+        projeto.setStatus("Aberto");
         projetoRepository.save(projeto);
         return ResponseEntity.status(201).build();
     }
