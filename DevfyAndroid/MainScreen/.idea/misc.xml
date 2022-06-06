@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.209375" />
+<<<<<<< HEAD
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_adicionar_projeto.xml" value="0.358695652173913" />
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
@@ -15,6 +16,18 @@
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/homescreen.xml" value="0.358695652173913" />
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/list_projeto.xml" value="0.358695652173913" />
         <entry key="..\:/Users/thall/Downloads/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/list_projeto_aberto.xml" value="0.286231884057971" />
+=======
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_adicionar_projeto.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_login.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_main.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_projetos.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_register.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/activity_tela_editar_projeto.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/confirmacao_pagamento.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/efetuar_pagamento.xml" value="0.33" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/homescreen.xml" value="0.26992753623188404" />
+        <entry key="..\:/Users/Madak/Desktop/devfy/devfy/DevfyAndroid/MainScreen/app/src/main/res/layout/list_projeto.xml" value="0.33" />
+>>>>>>> 8b09c31ce96539f67a78b0c3492a51d57cc95afe
         <entry key="app/src/main/res/drawable-v24/borda.xml" value="0.22" />
         <entry key="app/src/main/res/drawable-v24/borda_azul.xml" value="0.22" />
         <entry key="app/src/main/res/layout-en/strings.xml" value="0.34646739130434784" />
