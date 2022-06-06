@@ -13,24 +13,33 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/efetuar_pagamento"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="34dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:background="@drawable/borda_azul"/>
 
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
+            android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/projeto" />
+                android:text="@string/projeto"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/etProjeto"
@@ -43,7 +52,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/valor" />
+                android:text="@string/valor"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/etValor"
@@ -55,6 +66,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 android:text="@string/desenvolvedor" />
 
             <EditText
@@ -66,10 +79,12 @@
 
 
             <Button
+                android:layout_marginTop="25dp"
                 android:id="@+id/btnPagar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:text="@string/pagar"
+                android:textAllCaps="false"
                 android:onClick="irTelaConfirmacaoPagamento"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary_devfy_blue"
@@ -77,13 +92,16 @@
 
         </LinearLayout>
 
+</LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="350sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40sp"
                 android:gravity="center"
@@ -91,6 +109,21 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo">
+
+            </ImageView>
+
+        </LinearLayout>
+
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
