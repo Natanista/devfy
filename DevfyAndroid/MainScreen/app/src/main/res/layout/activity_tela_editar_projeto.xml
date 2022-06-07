@@ -14,84 +14,113 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:padding="20dp"
             android:text="@string/editar_projeto"
             android:textAlignment="center"
             android:textSize="34dp"
+            android:textColor="@color/white"
+            android:background="@drawable/borda_azul"
             android:textStyle="bold"
             android:layout_marginBottom="20sp"
             />
 
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="30sp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/titulo" />
+                android:text="@string/titulo"
+                android:textStyle="bold"
+                android:textSize="24dp"/>
 
             <EditText
+                android:layout_marginTop="6dp"
                 android:id="@+id/etTitulo"
+                android:background="@drawable/customborder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ex_titulo"
-                android:inputType="text" />
+                android:inputType="text"
+                android:gravity="center"/>
 
 
 
             <TextView
+                android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/linguagem" />
+                android:text="@string/linguagem"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
 
             <EditText
+
+                android:layout_marginTop="6dp"
                 android:id="@+id/etLinguagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ex_linguagem"
-                android:inputType="text" />
+                android:gravity="center"
+                android:inputType="text"
+                android:background="@drawable/customborder"/>
 
             <TextView
+                android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/descricao" />
+                android:text="@string/descricao"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <EditText
+                android:layout_marginTop="6dp"
                 android:id="@+id/etDescricao"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:gravity="center"
                 android:hint="@string/ex_descricao"
+                android:background="@drawable/customborder"
                 android:inputType="text" />
 
 
             <TextView
+                android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/valor" />
+                android:text="@string/valor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etValor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ex_valor"
+                android:gravity="center"
+                android:background="@drawable/customborder"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
+</LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
             android:layout_marginTop="10sp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
             <Button
                 android:id="@+id/btnAdicionarProjeto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
                 android:text="@string/editar"
                 android:textColor="@color/white"
                 android:onClick="editarProjeto"
@@ -99,13 +128,30 @@
                 />
             <Button
                 android:id="@+id/btn_excluir"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/excluir"
                 android:textColor="@color/white"
                 android:onClick="excluirProjeto"
                 android:backgroundTint="@color/primary_red"
                 />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo">
+
+            </ImageView>
+
         </LinearLayout>
 
 
