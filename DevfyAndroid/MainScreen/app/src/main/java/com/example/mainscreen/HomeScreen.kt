@@ -79,7 +79,21 @@ class HomeScreen : AppCompatActivity() {
         startActivity(telaAdicionarProjeto)
     }
 
-    fun irTelaVizualizarProjetos(view: View) {
+    fun irProjetosAberto(view: View) {
+        val telaVizualizarProjetos: Intent = Intent(
+            baseContext,
+            Projetos::class.java
+        )
+        startActivity(telaVizualizarProjetos)
+    }
+    fun irProjetosAndamento(view: View) {
+        val telaVizualizarProjetos: Intent = Intent(
+            baseContext,
+            Projetos::class.java
+        )
+        startActivity(telaVizualizarProjetos)
+    }
+    fun irProjetosConcluido(view: View) {
         val telaVizualizarProjetos: Intent = Intent(
             baseContext,
             Projetos::class.java

@@ -40,7 +40,7 @@ class ProjetoAdapterConcluido(val context: Context, val projetoList: List<Projet
         holder.itemView.setOnClickListener {
             val telaEditarProjetoEmAndamento: Intent = Intent(this.context, Projetos::class.java)
             telaEditarProjetoEmAndamento.putExtra("id",holder.itemId)
-            startActivity(telaEditarProjetoEmAndamento)
+            context.startActivity(telaEditarProjetoEmAndamento)
 
         }
 

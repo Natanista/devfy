@@ -49,6 +49,9 @@
     <string name="plataforma_inv">Investiment plataform</string>
     <string name="php">PHP</string>
     <string name="proj_desc">Project description</string>
+    <string name="proj_andamento">%d Ongoing projects</string>
+    <string name="proj_concluido">%d Completed projects</string>
+    <string name="proj_aberto">%d Open projects</string>
     
     
 </resources>

@@ -12,25 +12,25 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="179dp"
             android:background="@drawable/borda_azul"
             android:orientation="vertical"
             android:paddingTop="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="72dp"
                 android:layout_gravity="start"
                 android:layout_weight="2">
 
                 <ImageView
-                    android:layout_width="128dp"
+                    android:layout_width="108dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/user_icon" />
 
                 <TextView
                     android:id="@+id/tv_welcome_message"
-                    android:layout_width="wrap_content"
+                    android:layout_width="278dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8sp"
                     android:text="@string/welcome_message"
@@ -59,7 +59,7 @@
                         android:src="@drawable/loupe" />
 
                     <EditText
-                        android:layout_width="match_parent"
+                        android:layout_width="256dp"
                         android:layout_height="wrap_content"
                         android:hint="@string/pesquisar_dev" />
                 </LinearLayout>
@@ -167,16 +167,29 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:textColor="@color/white"
-                android:layout_marginBottom="90dp"
                 android:backgroundTint="#2343C4"
-                android:text="@string/projetos_abertos"
-                android:textAllCaps="false"
-                android:onClick="irTelaVizualizarProjetos"
-                app:cornerRadius="10dp" />
+                android:onClick="irProjetosAberto"
+                android:textColor="#FFFFFF"
+                android:text="@string/proj_aberto"
+                android:textAllCaps="false"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2343C4"
+                android:textColor="#FFFFFF"
+                android:onClick="irProjetosAndamento"
+                android:text="@string/proj_andamento"
+                android:textAllCaps="false"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2343C4"
+                android:textColor="#FFFFFF"
+                android:onClick="irProjetosConcluido"
+                android:text="@string/proj_concluido"
+                android:textAllCaps="false" />
         </LinearLayout>
 
 
