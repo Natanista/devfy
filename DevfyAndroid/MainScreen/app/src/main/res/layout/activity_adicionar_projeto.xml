@@ -9,90 +9,138 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:padding="20sp"
             android:text="@string/adicionar_projeto"
             android:textAlignment="center"
             android:textSize="34dp"
             android:textStyle="bold"
-            android:layout_marginBottom="20sp"
-            />
-
+            android:textColor="@color/white"
+            android:background="@drawable/borda_azul"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="30sp">
+            android:gravity="center">
 
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/titulo" />
+
+                android:text="@string/titulo"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                />
 
             <EditText
                 android:id="@+id/etTitulo"
+                android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ex_titulo"
+                android:gravity="center"
+                android:background="@drawable/customborder"
                 android:inputType="text" />
-
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/linguagem" />
+                android:text="@string/linguagem"
+                android:textSize="20dp"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/etLinguagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/customborder"
+                android:gravity="center"
                 android:hint="@string/ex_linguagem"
                 android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/descricao" />
+                android:text="@string/descricao"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
 
             <EditText
                 android:id="@+id/etDescricao"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:hint="@string/ex_descricao"
-                android:inputType="text" />
+                android:background="@drawable/customborder"
+                android:inputType="text"
+                android:layout_marginTop="6dp"
+                android:gravity="center"/>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/valor" />
+                android:text="@string/valor"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp"
+                android:textSize="20dp"/>
 
             <EditText
+                android:layout_marginTop="6dp"
                 android:id="@+id/etValor"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ex_valor"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/customborder"/>
+
             <Button
+                android:layout_marginTop="10dp"
                 android:id="@+id/btnAdicionarProjeto"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_adicionar"
-                android:textColor="@color/white"
-                android:onClick="adicionarProjeto"
                 android:backgroundTint="@color/primary_devfy_blue"
-                />
+                android:onClick="adicionarProjeto"
+                android:text="@string/btn_adicionar"
+                android:textColor="@color/white" />
+        </LinearLayout>
 
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo">
+
+            </ImageView>
+
+        </LinearLayout>
 
 
 

@@ -39,14 +39,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/projeto"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:layout_marginTop="6sp"/>
 
             <EditText
                 android:id="@+id/etProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ex: Site Institucional"
-                android:inputType="text" />
+                android:gravity="center"
+                android:layout_marginTop="6sp"
+                android:inputType="text"
+                android:background="@drawable/customborder"/>
 
 
             <TextView
@@ -54,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/valor"
                 android:textStyle="bold"
+                android:layout_marginTop="6sp"
                 android:textSize="18sp"/>
 
             <EditText
@@ -61,25 +66,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ex: 200,40"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="4sp"
+                android:background="@drawable/customborder"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4sp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:text="@string/desenvolvedor" />
 
             <EditText
+                android:layout_marginTop="6sp"
                 android:id="@+id/etDesenvolvedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ex: Julio Ferreira"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:background="@drawable/customborder"/>
 
 
             <Button
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:id="@+id/btnPagar"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
@@ -96,14 +108,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:orientation="vertical"
             android:gravity="center">
 
             <TextView
                 android:layout_width="350sp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40sp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20sp"
                 android:gravity="center"
                 android:text="@string/app_pagamento_informativo" />
         </LinearLayout>
@@ -111,7 +123,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center">
 
             <ImageView
