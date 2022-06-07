@@ -178,7 +178,6 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2343C4"
                 android:textColor="#FFFFFF"
-                android:onClick="irProjetosAndamento"
                 android:text="@string/proj_andamento"
                 android:textAllCaps="false"/>
 
@@ -187,7 +186,6 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#2343C4"
                 android:textColor="#FFFFFF"
-                android:onClick="irProjetosConcluido"
                 android:text="@string/proj_concluido"
                 android:textAllCaps="false" />
         </LinearLayout>

@@ -1,6 +1,5 @@
 package com.example.android_api.service
 
-import com.example.android_api.model.Desenvolvedor
 import com.example.mainscreen.model.Projeto
 import com.example.mainscreen.model.TemplateProjeto
 import retrofit2.Call

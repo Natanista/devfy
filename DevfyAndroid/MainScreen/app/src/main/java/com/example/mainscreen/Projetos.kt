@@ -14,7 +14,7 @@ import com.example.android_api.model.UserLoginEmpresa
 import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.EmpresaService
 import com.example.android_api.service.ProjetoService
-import com.example.mainscreen.adapter.ProjetoAdapterAberto
+import com.example.mainscreen.adapter.ProjetoAdapter
 import com.example.mainscreen.model.Projeto
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,7 +23,7 @@ import retrofit2.Response
 class Projetos : AppCompatActivity() {
 
     private val retrofit = RestDevfy.getInstance()
-    private lateinit var projetoAdapter: ProjetoAdapterAberto
+    private lateinit var projetoAdapter: ProjetoAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var projetoRecyclerView: RecyclerView
 
@@ -56,7 +56,7 @@ class Projetos : AppCompatActivity() {
         projetoResponseCall.enqueue(object : Callback<List<Projeto>> {
             override fun onResponse(call: Call<List<Projeto>>, response: Response<List<Projeto>>) {
                 val responseBody = response.body()!!
-                projetoAdapter = ProjetoAdapterAberto(baseContext, responseBody)
+                projetoAdapter = ProjetoAdapter(baseContext, responseBody)
                 projetoAdapter.notifyDataSetChanged()
                 projetoRecyclerView.adapter = projetoAdapter
 

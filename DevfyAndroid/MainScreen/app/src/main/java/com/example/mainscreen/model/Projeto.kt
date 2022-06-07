@@ -5,6 +5,5 @@ data class Projeto(
     var titulo: String,
     var linguagem: String,
     var descricao: String,
-    var status: String,
     var valor: Double
 )
