@@ -5,14 +5,12 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.android_api.rest.RestDevfy
 import com.example.android_api.service.ProjetoService
-import com.example.mainscreen.adapter.ProjetoAdapter
 import com.example.mainscreen.model.Projeto
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,18 +24,18 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homescreen)
         var nomeEmpresa = intent.getStringExtra(
-            "nomeEmpresa"
+        "nomeEmpresa"
         )
         sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        nomeEmpresa = sharedPreferences.getString("USER", "natanista")
+//        nomeEmpresa =  sharedPreferences.getString("USER", "natanista")
         showWelcomeMessage(nomeEmpresa.toString())
     }
 
 
-    fun naoPossui(view: View) {
-        Toast.makeText(this, "Função não disponível", Toast.LENGTH_LONG).show()
-    }
 
+    fun naoPossui(view: View){
+        Toast.makeText(this,"Função não disponível",Toast.LENGTH_LONG).show()
+    }
     fun showWelcomeMessage(nomeEmpresa: String) {
         findViewById<TextView>(R.id.tv_welcome_message).text =
             getString(R.string.welcome_message, nomeEmpresa)
@@ -53,36 +51,12 @@ class HomeScreen : AppCompatActivity() {
     }
 
     fun irProjetosAberto(view: View) {
-        val retrofitProjeto = retrofit.create(ProjetoService::class.java)
-
-        val projetoResponseCall: Call<List<Projeto>> = retrofitProjeto.getProjetos()
-
-        projetoResponseCall.enqueue(object : Callback<List<Projeto>> {
-            override fun onResponse(call: Call<List<Projeto>>, response: Response<List<Projeto>>) {
-
-                val responseBody = response.body()!!
-                if (responseBody.isEmpty()) {
-                    Toast.makeText(baseContext, "Nenhum projeto disponivel", Toast.LENGTH_LONG)
-                        .show()
-                } else {
-                    val telaVizualizarProjetos: Intent = Intent(
-                        baseContext,
-                        Projetos::class.java
-                    )
-                    startActivity(telaVizualizarProjetos)
-                }
-
-
-            }
-
-            override fun onFailure(call: Call<List<Projeto>>, t: Throwable) {
-                Log.d("Projetos", "OnFailure: " + t.message)
-            }
-
-        })
+        val telaVizualizarProjetos: Intent = Intent(
+            baseContext,
+            Projetos::class.java
+        )
+        startActivity(telaVizualizarProjetos)
     }
-
-
 
 
     fun irEfetuarPagamento(view: View) {
