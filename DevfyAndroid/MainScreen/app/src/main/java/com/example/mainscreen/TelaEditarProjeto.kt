@@ -45,11 +45,11 @@ class TelaEditarProjeto : AppCompatActivity() {
         updateResponseCall.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.code() == 200) {
-                    val projetosTela: Intent = Intent(
+                    val home: Intent = Intent(
                         baseContext,
-                        Projetos::class.java
+                        HomeScreen::class.java
                     )
-                    startActivity(projetosTela)
+                    startActivity(home)
                 } else {
                     Toast.makeText(baseContext, "Erro ao atualizar projetos!", Toast.LENGTH_LONG).show()
                 }

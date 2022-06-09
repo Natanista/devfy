@@ -52,6 +52,7 @@
     <string name="proj_andamento">Ongoing projects</string>
     <string name="proj_concluido">Completed projects</string>
     <string name="proj_aberto">Open projects</string>
+    <string name="salvar_edicao">Save</string>
     
     
 </resources>

@@ -24,16 +24,18 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homescreen)
         var nomeEmpresa = intent.getStringExtra(
-            "nomeEmpresa"
+        "nomeEmpresa"
         )
         sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        nomeEmpresa =  sharedPreferences.getString("USER", "natanista")
+//        nomeEmpresa =  sharedPreferences.getString("USER", "natanista")
         showWelcomeMessage(nomeEmpresa.toString())
     }
 
 
 
-
+    fun naoPossui(view: View){
+        Toast.makeText(this,"Função não disponível",Toast.LENGTH_LONG).show()
+    }
     fun showWelcomeMessage(nomeEmpresa: String) {
         findViewById<TextView>(R.id.tv_welcome_message).text =
             getString(R.string.welcome_message, nomeEmpresa)

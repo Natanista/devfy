@@ -121,7 +121,7 @@
                 android:id="@+id/btnAdicionarProjeto"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:text="@string/editar"
+                android:text="@string/salvar_edicao"
                 android:textColor="@color/white"
                 android:onClick="editarProjeto"
                 android:backgroundTint="@color/primary_devfy_blue"
