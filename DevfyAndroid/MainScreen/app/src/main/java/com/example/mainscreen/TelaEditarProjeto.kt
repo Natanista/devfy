@@ -45,11 +45,11 @@ class TelaEditarProjeto : AppCompatActivity() {
         updateResponseCall.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.code() == 200) {
-                    val home: Intent = Intent(
+                    val projetosTela: Intent = Intent(
                         baseContext,
-                        HomeScreen::class.java
+                        Projetos::class.java
                     )
-                    startActivity(home)
+                    startActivity(projetosTela)
                 } else {
                     Toast.makeText(baseContext, "Erro ao atualizar projetos!", Toast.LENGTH_LONG).show()
                 }
@@ -72,11 +72,11 @@ class TelaEditarProjeto : AppCompatActivity() {
         deleteResponseCall.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.code() == 200) {
-                    val projetosTela: Intent = Intent(
+                    val homeScreen: Intent = Intent(
                         baseContext,
-                        Projetos::class.java
+                        HomeScreen::class.java
                     )
-                    startActivity(projetosTela)
+                    startActivity(homeScreen)
                 } else {
                     Toast.makeText(baseContext, "Erro ao deletar projetos!", Toast.LENGTH_LONG).show()
                 }

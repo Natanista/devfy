@@ -55,25 +55,32 @@ class Projetos : AppCompatActivity() {
 
         projetoResponseCall.enqueue(object : Callback<List<Projeto>> {
             override fun onResponse(call: Call<List<Projeto>>, response: Response<List<Projeto>>) {
+
                 val responseBody = response.body()!!
-                projetoAdapter = ProjetoAdapter(baseContext, responseBody)
-                projetoAdapter.notifyDataSetChanged()
-                projetoRecyclerView.adapter = projetoAdapter
-
-                projetoAdapter.onItemClick = {
-                    val tela: Intent = Intent(
-                        baseContext,
-                        TelaEditarProjeto::class.java
-                    )
-                    tela.putExtra("id", it.id)
-
-                    startActivity(tela)
-
-                }
-
                 if(responseBody.isEmpty()){
                     Toast.makeText(baseContext, "Nenhum projeto disponivel", Toast.LENGTH_LONG).show()
                 }
+
+                else{
+                    projetoAdapter = ProjetoAdapter(baseContext, responseBody)
+                    projetoAdapter.notifyDataSetChanged()
+                    projetoRecyclerView.adapter = projetoAdapter
+
+                    projetoAdapter.onItemClick = {
+                        val tela: Intent = Intent(
+                            baseContext,
+                            TelaEditarProjeto::class.java
+                        )
+                        tela.putExtra("id", it.id)
+
+                        startActivity(tela)
+
+                    }
+
+                }
+
+
+
             }
 
             override fun onFailure(call: Call<List<Projeto>>, t: Throwable) {
